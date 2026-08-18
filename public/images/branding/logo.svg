@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" fill="none">
+  <!-- Main arch -->
+  <path d="M30 200 L30 100 Q30 18 100 18 Q170 18 170 100 L170 200" stroke="#4a5a38" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Left tree trunk -->
+  <line x1="72" y1="200" x2="72" y2="100" stroke="#4a5a38" stroke-width="6" stroke-linecap="round"/>
+  <!-- Left tree canopy -->
+  <path d="M50 108 Q50 55 72 48 Q94 55 94 108" stroke="#4a5a38" stroke-width="6" fill="none" stroke-linejoin="round"/>
+  <!-- Left tree branches -->
+  <line x1="72" y1="80" x2="57" y2="68" stroke="#4a5a38" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="72" y1="95" x2="87" y2="83" stroke="#4a5a38" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="72" y1="108" x2="58" y2="97" stroke="#4a5a38" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- Right small round tree trunk -->
+  <line x1="112" y1="200" x2="112" y2="135" stroke="#4a5a38" stroke-width="5" stroke-linecap="round"/>
+  <!-- Right small tree canopy circle -->
+  <circle cx="112" cy="118" r="18" stroke="#4a5a38" stroke-width="5" fill="none"/>
+
+  <!-- House walls -->
+  <rect x="130" y="148" width="35" height="52" stroke="#4a5a38" stroke-width="6" fill="none" stroke-linejoin="round"/>
+  <!-- House roof -->
+  <polyline points="125,151 147.5,122 170,151" stroke="#4a5a38" stroke-width="6" fill="none" stroke-linejoin="round"/>
+  <!-- Keyhole circle -->
+  <circle cx="147.5" cy="170" r="7" stroke="#7a5c44" stroke-width="4" fill="none"/>
+  <!-- Keyhole stem -->
+  <rect x="144.5" y="177" width="6" height="12" stroke="#7a5c44" stroke-width="3.5" fill="none" rx="1"/>
+
+  <!-- Text below: MONTESSORI MINDS -->
+  <text x="100" y="232" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700" letter-spacing="2" fill="#4a5a38">MONTESSORI MINDS</text>
+  <!-- Subtext -->
+  <text x="100" y="252" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="400" letter-spacing="1" fill="#7a5c44">By Montessori</text>
+</svg>
