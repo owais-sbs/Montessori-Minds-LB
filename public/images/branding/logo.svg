@@ -1,32 +1,56 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 260" fill="none">
-  <!-- Main arch -->
-  <path d="M30 200 L30 100 Q30 18 100 18 Q170 18 170 100 L170 200" stroke="#4a5a38" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- Outer circle -->
+  <circle cx="100" cy="100" r="94" stroke="#4a5a38" strokeWidth="3.5" fill="none"/>
+
+  <!-- Top text arc — "LA CASA VERDE" -->
+  <defs>
+    <path id="topArc" d="M 22,100 A 78,78 0 0,1 178,100" />
+    <path id="bottomArc" d="M 38,112 A 62,62 0 0,0 162,112" />
+  </defs>
+  <text font-size="13" font-family="Inter, sans-serif" font-weight="600" letter-spacing="3" fill="#4a5a38">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">LA CASA VERDE</textPath>
+  </text>
+
+  <!-- Bottom text — "By Montessori" -->
+  <text font-size="10.5" font-family="Inter, sans-serif" font-weight="400" letter-spacing="1.5" fill="#7a5c44" font-style="italic">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">By Montessori</textPath>
+  </text>
+
+  <!-- Inner arch -->
+  <path
+    d="M52 148 L52 95 Q52 52 100 52 Q148 52 148 95 L148 148"
+    stroke="#4a5a38"
+    stroke-width="4.5"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
 
   <!-- Left tree trunk -->
-  <line x1="72" y1="200" x2="72" y2="100" stroke="#4a5a38" stroke-width="6" stroke-linecap="round"/>
-  <!-- Left tree canopy -->
-  <path d="M50 108 Q50 55 72 48 Q94 55 94 108" stroke="#4a5a38" stroke-width="6" fill="none" stroke-linejoin="round"/>
+  <line x1="78" y1="148" x2="78" y2="105" stroke="#4a5a38" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- Left tree canopy arch -->
+  <path
+    d="M63 109 Q63 70 78 65 Q93 70 93 109"
+    stroke="#4a5a38"
+    stroke-width="3.5"
+    fill="none"
+    stroke-linejoin="round"
+  />
   <!-- Left tree branches -->
-  <line x1="72" y1="80" x2="57" y2="68" stroke="#4a5a38" stroke-width="4.5" stroke-linecap="round"/>
-  <line x1="72" y1="95" x2="87" y2="83" stroke="#4a5a38" stroke-width="4.5" stroke-linecap="round"/>
-  <line x1="72" y1="108" x2="58" y2="97" stroke="#4a5a38" stroke-width="4.5" stroke-linecap="round"/>
+  <line x1="78" y1="87" x2="67" y2="78" stroke="#4a5a38" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="78" y1="97" x2="89" y2="88" stroke="#4a5a38" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="78" y1="107" x2="68" y2="99" stroke="#4a5a38" stroke-width="2.5" stroke-linecap="round"/>
 
-  <!-- Right small round tree trunk -->
-  <line x1="112" y1="200" x2="112" y2="135" stroke="#4a5a38" stroke-width="5" stroke-linecap="round"/>
-  <!-- Right small tree canopy circle -->
-  <circle cx="112" cy="118" r="18" stroke="#4a5a38" stroke-width="5" fill="none"/>
+  <!-- Right small round tree -->
+  <line x1="108" y1="148" x2="108" y2="122" stroke="#4a5a38" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="108" cy="110" r="12" stroke="#4a5a38" stroke-width="3" fill="none"/>
 
-  <!-- House walls -->
-  <rect x="130" y="148" width="35" height="52" stroke="#4a5a38" stroke-width="6" fill="none" stroke-linejoin="round"/>
-  <!-- House roof -->
-  <polyline points="125,151 147.5,122 170,151" stroke="#4a5a38" stroke-width="6" fill="none" stroke-linejoin="round"/>
+  <!-- House -->
+  <rect x="121" y="128" width="24" height="20" stroke="#4a5a38" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+  <!-- Roof -->
+  <polyline points="117,130 133,112 149,130" stroke="#4a5a38" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
   <!-- Keyhole circle -->
-  <circle cx="147.5" cy="170" r="7" stroke="#7a5c44" stroke-width="4" fill="none"/>
+  <circle cx="133" cy="136" r="4" stroke="#7a5c44" stroke-width="2.5" fill="none"/>
   <!-- Keyhole stem -->
-  <rect x="144.5" y="177" width="6" height="12" stroke="#7a5c44" stroke-width="3.5" fill="none" rx="1"/>
-
-  <!-- Text below: MONTESSORI MINDS -->
-  <text x="100" y="232" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="700" letter-spacing="2" fill="#4a5a38">MONTESSORI MINDS</text>
-  <!-- Subtext -->
-  <text x="100" y="252" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="400" letter-spacing="1" fill="#7a5c44">By Montessori</text>
+  <rect x="131" y="140" width="4" height="6" stroke="#7a5c44" stroke-width="2" fill="none" rx="0.5"/>
 </svg>

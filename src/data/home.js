@@ -6,8 +6,8 @@ export const homeHero = {
   title: 'Rooted in Nature,',
   titleLine2: 'Growing in Independence.',
   description:
-    'Welcome to Montessori Minds. A peaceful sanctuary for early learning and mindful growth.',
-  imageAlt: 'Child engaged in Montessori learning at Montessori Minds',
+    'Welcome to Montessori Minds LB. A peaceful sanctuary for early learning and mindful growth.',
+  imageAlt: 'Child engaged in Montessori learning at Montessori Minds LB',
   primaryButton: { label: 'Explore Our Programs', to: ROUTES.programs },
   secondaryButton: { label: 'Schedule A Visit', to: ROUTES.bookATour },
 }
@@ -34,7 +34,7 @@ export const homePhilosophy = {
   eyebrow: 'Philosophy',
   title: 'Montessori Philosophy',
   description:
-    "At Montessori Minds, we believe every child carries within them the potential for purposeful, joyful learning. Our role is to prepare an environment that nurtures that innate drive — with respect, patience, and deep trust in the child's own timeline.",
+    "At Montessori Minds LB, we believe every child carries within them the potential for purposeful, joyful learning. Our role is to prepare an environment that nurtures that innate drive — with respect, patience, and deep trust in the child's own timeline.",
 }
 
 export const homeNature = {
@@ -54,7 +54,7 @@ export const homeIndependence = {
 
 export const homeGalleryPreview = {
   eyebrow: 'Gallery',
-  title: 'Moments at Montessori Minds',
+  title: 'Moments at Montessori Minds LB',
   description:
     'A glimpse into the calm, purposeful beauty of our classrooms and outdoor spaces.',
   linkLabel: 'View Full Gallery',
@@ -63,7 +63,7 @@ export const homeGalleryPreview = {
 
 export const homeFinalCta = {
   eyebrow: 'Get Started',
-  title: 'Begin Their Journey at Montessori Minds',
+  title: 'Begin Their Journey at Montessori Minds LB',
   description:
     'Take the first step toward enrollment or schedule a visit to experience our calm, prepared environment firsthand.',
   primaryButton: {
@@ -87,7 +87,7 @@ export const homeAdmissionCta = {
 
 export const homeBookTourCta = {
   eyebrow: 'Visit Us',
-  title: 'Come See Montessori Minds',
+  title: 'Come See Montessori Minds LB',
   description:
     'Experience our prepared environment firsthand. Schedule a personal tour and discover what makes our community special.',
   buttonLabel: 'Book A Tour',

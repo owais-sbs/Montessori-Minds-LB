@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import { Button } from '../ui'
-import LogoMark from '../ui/LogoMark'
 import { FadeUp, ImageReveal, StaggerContainer, StaggerItem } from '../animations'
 import { images } from '../../data/images'
 import { homeHero } from '../../data/home'
@@ -13,13 +12,6 @@ export default function HeroSection() {
 
           {/* ── Left content ── */}
           <div className="flex flex-col gap-6 py-12 sm:py-16 lg:py-20">
-
-            {/* Logo badge */}
-            <FadeUp delay={0.05} trigger="load">
-              <Link to="/" aria-label="Montessori Minds home" className="inline-block transition-opacity hover:opacity-80">
-                <LogoMark size={120} variant="badge" />
-              </Link>
-            </FadeUp>
 
             {/* Heading */}
             <FadeUp delay={0.15} trigger="load">

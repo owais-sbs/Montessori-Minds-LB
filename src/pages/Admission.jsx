@@ -54,16 +54,16 @@ export default function Admission() {
       <PageHero
         eyebrow="Admissions"
         title="Begin Their Journey"
-        description="Complete the form below to express your interest in enrollment at Montessori Minds."
+        description="Complete the form below to express your interest in enrollment at Montessori Minds LB."
         image={images.classroom}
-        imageAlt="Montessori Minds admissions"
+        imageAlt="Montessori Minds LB admissions"
       />
     <section className="bg-warm-beige py-20 md:py-28">
         <Container size="narrow">
           {submitted ? (
             <SuccessMessage
               title="Application Received"
-              description="Thank you for your interest in Montessori Minds. We will review your submission and be in touch soon."
+              description="Thank you for your interest in Montessori Minds LB. We will review your submission and be in touch soon."
               onReset={() => {
                 reset()
                 setSubmitted(false)

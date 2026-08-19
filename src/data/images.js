@@ -1,42 +1,49 @@
 /**
  * Image asset registry.
  *
- * Placeholder URLs are verified remote assets until client photography is available.
+ * Using provided images until client photography is available.
  * Replace values with paths under public/images/ when assets are ready.
  */
 const placeholders = {
+  // Children in classroom setting
   hero:
-    'https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=1200&q=80',
+    'https://cdn.monkplatform.com/image/czoxODk6Imh0dHBzJTNBJTJGJTJGczMuYW1hem9uYXdzLmNvbSUyRmFjY291bnQtbWVkaWElMkYyMjI2MCUyRnVwbG9hZGVkJTJGcCUyRjBlMTY5Nzg5NTRfMTcwNDk5NDc4NV9wcmVzY2hvb2wyLmpwZyUzRnElM0Q5MCUyNnclM0QxMDY2JTI2aCUzRDcxMiUyNmZpdCUzRG1heCUyNnMlM0Q3OGY3ZDM5MDQ1ZjZlM2VjMDk5NzhiZGM1YzNjNzBlYyI7/preschool2.jpg',
+  // Classroom environment
   classroom:
-    'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80',
+    'https://nucleus-production.s3.amazonaws.com/uploads/WsIttqncNZfdcxxykFeIDRXEqK4vHRgUu1sXRlbC.jpeg',
+  // Prepared environment
   preparedEnvironment:
-    'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80',
+    'https://i.pinimg.com/736x/70/d3/ec/70d3ec47a9349cf18eafe4963fa55904.jpg',
+  // Nature / outdoor
   nature:
-    'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=1600&q=80',
+    'https://i.pinimg.com/736x/12/71/5f/12715f07e3a76d04e57099f91dd4d14d.jpg',
+  // Child independence
   independence:
-    'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKQkkQi-jzw0dwdXafpHKtu3ShFB2mRndxxyibuy14-lyceW4Ariy4d3ad&s=10',
+  // Approach / learning
   approach:
-    'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=1600&q=80',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVwjxmtq1SR_X3_tusGPf5_td1UqfO77N-VqETfpxZug&s=10',
+  // Banner
   banner:
-    'https://images.unsplash.com/photo-1544776193-352d25ca82cd?auto=format&fit=crop&w=1600&q=80',
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4r3auhXowxG0qqd2hJEwmEDVbbOzbakElJcmiIjL1NA&s=10',
   programs: {
-    nest: 'https://images.unsplash.com/photo-1587616211892-f743fcca64f9?auto=format&fit=crop&w=800&q=80',
-    sprout: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=800&q=80',
-    bloom: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80',
+    nest: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4r3auhXowxG0qqd2hJEwmEDVbbOzbakElJcmiIjL1NA&s=10',
+    sprout: 'https://i.pinimg.com/736x/12/71/5f/12715f07e3a76d04e57099f91dd4d14d.jpg',
+    bloom: 'https://cdn.monkplatform.com/image/czoxODk6Imh0dHBzJTNBJTJGJTJGczMuYW1hem9uYXdzLmNvbSUyRmFjY291bnQtbWVkaWElMkYyMjI2MCUyRnVwbG9hZGVkJTJGcCUyRjBlMTY5Nzg5NTRfMTcwNDk5NDc4NV9wcmVzY2hvb2wyLmpwZyUzRnElM0Q5MCUyNnclM0QxMDY2JTI2aCUzRDcxMiUyNmZpdCUzRG1heCUyNnMlM0Q3OGY3ZDM5MDQ1ZjZlM2VjMDk5NzhiZGM1YzNjNzBlYyI7/preschool2.jpg',
   },
   gallery: {
-    classroom1: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80',
-    classroom2: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80',
-    outdoor1: 'https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=800&q=80',
-    outdoor2: 'https://images.unsplash.com/photo-1544776193-352d25ca82cd?auto=format&fit=crop&w=800&q=80',
-    activity1: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=800&q=80',
-    activity2: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80',
-    learning1: 'https://images.unsplash.com/photo-1587616211892-f743fcca64f9?auto=format&fit=crop&w=800&q=80',
-    learning2: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80',
-    crafts1: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=800&q=80',
-    reading1: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&w=800&q=80',
-    playground1: 'https://images.unsplash.com/photo-1472162072942-cd5147eb3902?auto=format&fit=crop&w=800&q=80',
-    blocks1: 'https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&w=800&q=80',
+    classroom1: 'https://nucleus-production.s3.amazonaws.com/uploads/WsIttqncNZfdcxxykFeIDRXEqK4vHRgUu1sXRlbC.jpeg',
+    classroom2: 'https://cdn.monkplatform.com/image/czoxODk6Imh0dHBzJTNBJTJGJTJGczMuYW1hem9uYXdzLmNvbSUyRmFjY291bnQtbWVkaWElMkYyMjI2MCUyRnVwbG9hZGVkJTJGcCUyRjBlMTY5Nzg5NTRfMTcwNDk5NDc4NV9wcmVzY2hvb2wyLmpwZyUzRnElM0Q5MCUyNnclM0QxMDY2JTI2aCUzRDcxMiUyNmZpdCUzRG1heCUyNnMlM0Q3OGY3ZDM5MDQ1ZjZlM2VjMDk5NzhiZGM1YzNjNzBlYyI7/preschool2.jpg',
+    outdoor1: 'https://i.pinimg.com/736x/12/71/5f/12715f07e3a76d04e57099f91dd4d14d.jpg',
+    outdoor2: 'https://i.pinimg.com/736x/70/d3/ec/70d3ec47a9349cf18eafe4963fa55904.jpg',
+    activity1: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVwjxmtq1SR_X3_tusGPf5_td1UqfO77N-VqETfpxZug&s=10',
+    activity2: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTob0LzQRDuyAmj0OFna6JBVar9locWBj7aKzS6qIRSxw&s=10',
+    learning1: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4r3auhXowxG0qqd2hJEwmEDVbbOzbakElJcmiIjL1NA&s=10',
+    learning2: 'https://i.pinimg.com/736x/70/d3/ec/70d3ec47a9349cf18eafe4963fa55904.jpg',
+    crafts1: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVwjxmtq1SR_X3_tusGPf5_td1UqfO77N-VqETfpxZug&s=10',
+    reading1: 'https://nucleus-production.s3.amazonaws.com/uploads/WsIttqncNZfdcxxykFeIDRXEqK4vHRgUu1sXRlbC.jpeg',
+    playground1: 'https://i.pinimg.com/736x/12/71/5f/12715f07e3a76d04e57099f91dd4d14d.jpg',
+    blocks1: 'https://cdn.monkplatform.com/image/czoxODk6Imh0dHBzJTNBJTJGJTJGczMuYW1hem9uYXdzLmNvbSUyRmFjY291bnQtbWVkaWElMkYyMjI2MCUyRnVwbG9hZGVkJTJGcCUyRjBlMTY5Nzg5NTRfMTcwNDk5NDc4NV9wcmVzY2hvb2wyLmpwZyUzRnElM0Q5MCUyNnclM0QxMDY2JTI2aCUzRDcxMiUyNmZpdCUzRG1heCUyNnMlM0Q3OGY3ZDM5MDQ1ZjZlM2VjMDk5NzhiZGM1YzNjNzBlYyI7/preschool2.jpg',
   },
 }
 

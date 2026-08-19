@@ -29,7 +29,7 @@ export default function ProgramCard({ program, showCta = true }) {
       <div className="overflow-hidden">
         <img
           src={program.image}
-          alt={`${program.name} program at Montessori Minds`}
+          alt={`${program.name} program at Montessori Minds LB`}
           className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transform-none"
           loading="lazy"
           referrerPolicy="no-referrer"

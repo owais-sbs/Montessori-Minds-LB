@@ -4,7 +4,7 @@ export const approachHero = {
   eyebrow: 'Our Approach',
   title: 'A Thoughtful Montessori Environment',
   description:
-    'At Montessori Minds, we create a calm, intentional space where children develop independence, concentration, and a lifelong love of learning.',
+    'At Montessori Minds LB, we create a calm, intentional space where children develop independence, concentration, and a lifelong love of learning.',
   image: images.approach,
 }
 

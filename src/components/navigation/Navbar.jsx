@@ -3,7 +3,6 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'motion/react'
 import Container from '../layout/Container'
 import { Button } from '../ui'
-import LogoMark from '../ui/LogoMark'
 import { primaryNavLinks } from '../../data/navigation'
 import { ROUTES } from '../../lib/routes'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
@@ -59,9 +58,9 @@ export default function Navbar() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      <Container className="flex h-[4.5rem] items-center justify-between gap-6">
-        <Link to={ROUTES.home} className="shrink-0 transition-opacity hover:opacity-80" aria-label="Montessori Minds home">
-          <LogoMark size={52} />
+      <Container className="flex h-[5.5rem] items-center justify-between gap-6">
+        <Link to={ROUTES.home} className="shrink-0 transition-opacity hover:opacity-80 p-1" aria-label="Montessori Minds LB home">
+          <img src="/images/branding/logo.svg" alt="Montessori Minds LB logo" className="h-20 w-20 sm:h-24 sm:w-24" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">

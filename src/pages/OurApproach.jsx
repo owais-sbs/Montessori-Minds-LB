@@ -6,7 +6,7 @@ import { approachHero, approachSections } from '../data/approach'
 export default function OurApproach() {
   return (
     <>
-      <PageHero {...approachHero} imageAlt="Montessori learning environment at Montessori Minds" />
+      <PageHero {...approachHero} imageAlt="Montessori learning environment at Montessori Minds LB" />
       {approachSections.map((section, index) => (
         <EditorialSection key={section.id} section={section} index={index} />
       ))}

@@ -45,12 +45,12 @@ export default function BookATour() {
       <PageHero
         eyebrow="Visit Us"
         title="Book A Tour"
-        description="Schedule a personal visit to experience the calm, purposeful beauty of Montessori Minds."
+        description="Schedule a personal visit to experience the calm, purposeful beauty of Montessori Minds LB."
         image={images.preparedEnvironment}
-        imageAlt="Book a tour at Montessori Minds"
+        imageAlt="Book a tour at Montessori Minds LB"
       />
       <section className="bg-warm-beige py-20 md:py-28">
-        <Container size="narrow">
+        <Container>
           {submitted ? (
             <SuccessMessage
               title="Tour Request Received"
@@ -67,10 +67,10 @@ export default function BookATour() {
                 className="flex flex-col gap-8 rounded-3xl bg-warm-cream p-8 md:p-12"
                 noValidate
               >
-                <FormField label="Parent / Guardian Name" id="parentName" error={errors.parentName?.message} required>
-                  <input id="parentName" className={inputClassName(errors.parentName)} {...register('parentName')} aria-invalid={!!errors.parentName} />
-                </FormField>
-                <div className="grid gap-6 md:grid-cols-2">
+                <div className="grid gap-6 md:grid-cols-3">
+                  <FormField label="Parent / Guardian Name" id="parentName" error={errors.parentName?.message} required>
+                    <input id="parentName" className={inputClassName(errors.parentName)} {...register('parentName')} aria-invalid={!!errors.parentName} />
+                  </FormField>
                   <FormField label="Email" id="email" error={errors.email?.message} required>
                     <input id="email" type="email" className={inputClassName(errors.email)} {...register('email')} aria-invalid={!!errors.email} />
                   </FormField>
@@ -78,15 +78,13 @@ export default function BookATour() {
                     <input id="phone" type="tel" className={inputClassName(errors.phone)} {...register('phone')} aria-invalid={!!errors.phone} />
                   </FormField>
                 </div>
-                <div className="grid gap-6 md:grid-cols-2">
+                <div className="grid gap-6 md:grid-cols-4">
                   <FormField label="Child Name" id="childName" error={errors.childName?.message} required>
                     <input id="childName" className={inputClassName(errors.childName)} {...register('childName')} aria-invalid={!!errors.childName} />
                   </FormField>
                   <FormField label="Child Age" id="childAge" error={errors.childAge?.message} required>
                     <input id="childAge" className={inputClassName(errors.childAge)} placeholder="e.g. 2 years" {...register('childAge')} aria-invalid={!!errors.childAge} />
                   </FormField>
-                </div>
-                <div className="grid gap-6 md:grid-cols-2">
                   <FormField label="Preferred Date" id="preferredDate" error={errors.preferredDate?.message} required>
                     <input id="preferredDate" type="date" className={inputClassName(errors.preferredDate)} {...register('preferredDate')} aria-invalid={!!errors.preferredDate} />
                   </FormField>
@@ -99,19 +97,25 @@ export default function BookATour() {
                     </select>
                   </FormField>
                 </div>
-                <FormField label="Number of Visitors" id="numberOfVisitors" error={errors.numberOfVisitors?.message} required>
-                  <select id="numberOfVisitors" className={inputClassName(errors.numberOfVisitors)} {...register('numberOfVisitors')} aria-invalid={!!errors.numberOfVisitors}>
-                    {[1, 2, 3, 4, 5].map((n) => (
-                      <option key={n} value={String(n)}>{n}</option>
-                    ))}
-                  </select>
-                </FormField>
-                <FormField label="Message" id="message">
-                  <textarea id="message" rows={4} className={inputClassName()} placeholder="Any questions or special requests?" {...register('message')} />
-                </FormField>
-                <Button type="submit" disabled={isSubmitting}>
-                  Request A Tour
-                </Button>
+                <div className="grid gap-6 md:grid-cols-3">
+                  <FormField label="Number of Visitors" id="numberOfVisitors" error={errors.numberOfVisitors?.message} required>
+                    <select id="numberOfVisitors" className={inputClassName(errors.numberOfVisitors)} {...register('numberOfVisitors')} aria-invalid={!!errors.numberOfVisitors}>
+                      {[1, 2, 3, 4, 5].map((n) => (
+                        <option key={n} value={String(n)}>{n}</option>
+                      ))}
+                    </select>
+                  </FormField>
+                  <div className="md:col-span-2">
+                    <FormField label="Message" id="message">
+                      <textarea id="message" rows={3} className={inputClassName()} placeholder="Any questions or special requests?" {...register('message')} />
+                    </FormField>
+                  </div>
+                </div>
+                <div className="flex justify-end">
+                  <Button type="submit" disabled={isSubmitting}>
+                    Request A Tour
+                  </Button>
+                </div>
               </form>
             </FadeUp>
           )}

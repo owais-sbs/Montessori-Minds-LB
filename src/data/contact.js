@@ -1,7 +1,7 @@
 export const contactPlaceholders = {
-  address: '123 Green Valley Road, Springfield',
-  email: 'hello@montessoriminds.com',
-  phone: '+1 (555) 123-4567',
+  address: 'Beirut, Lebanon',
+  email: 'hello@montessorimindslb.com',
+  phone: '+961 1 234 567',
   social: {
     instagram: 'https://instagram.com',
     facebook: 'https://facebook.com',
@@ -9,7 +9,7 @@ export const contactPlaceholders = {
 }
 
 export const site = {
-  name: 'Montessori Minds',
+  name: 'Montessori Minds LB',
   tagline:
     'A premium Montessori-inspired preschool where children grow with confidence, curiosity, and care.',
 }

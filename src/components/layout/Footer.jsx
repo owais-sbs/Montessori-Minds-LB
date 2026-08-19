@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import Container from './Container'
-import LogoMark from '../ui/LogoMark'
 import { footerNavLinks, footerProgramLinks } from '../../data/navigation'
 import { contactPlaceholders, site } from '../../data/contact'
 import { ROUTES } from '../../lib/routes'
@@ -13,8 +12,8 @@ export default function Footer() {
       <Container>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div className="flex max-w-xs flex-col gap-4">
-            <Link to={ROUTES.home} className="inline-block transition-opacity hover:opacity-80" aria-label="Montessori Minds home">
-              <LogoMark size={72} />
+            <Link to={ROUTES.home} className="inline-block transition-opacity hover:opacity-80" aria-label="Montessori Minds LB home">
+              <img src="/images/branding/logo.svg" alt="Montessori Minds LB logo" className="h-28 w-28" />
             </Link>
             <Link to={ROUTES.home} className="heading-md text-forest-green transition-colors hover:text-olive">
               {site.name}

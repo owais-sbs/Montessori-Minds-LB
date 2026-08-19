@@ -1,5 +1,5 @@
 /**
- * LogoMark — the circular Montessori Minds badge.
+ * LogoMark — the circular Montessori Minds LB badge.
  * Used in the Navbar, Footer, and Hero section.
  *
  * Props:
@@ -16,7 +16,7 @@ export default function LogoMark({ size = 56, className = '', variant = 'badge' 
         width={size}
         height={size * 1.1}
         fill="none"
-        aria-label="Montessori Minds logo"
+        aria-label="Montessori Minds LB logo"
         role="img"
         className={className}
       >
@@ -78,13 +78,13 @@ export default function LogoMark({ size = 56, className = '', variant = 'badge' 
       <circle cx="100" cy="100" r="94" stroke="#4a5a38" strokeWidth="4" fill="none" />
       <circle cx="100" cy="100" r="86" stroke="#4a5a38" strokeWidth="1.5" fill="none" opacity="0.3" />
 
-      {/* Top text arc — "MONTESSORI MINDS" */}
+      {/* Top text arc — "MONTESSORI MINDS LB" */}
       <defs>
         <path id="topArc" d="M 20,100 A 80,80 0 0,1 180,100" />
         <path id="bottomArc" d="M 35,115 A 65,65 0 0,0 165,115" />
       </defs>
       <text fontSize="11.5" fontFamily="Inter, sans-serif" fontWeight="600" letterSpacing="3.5" fill="#4a5a38">
-        <textPath href="#topArc" startOffset="50%" textAnchor="middle">MONTESSORI MINDS</textPath>
+        <textPath href="#topArc" startOffset="50%" textAnchor="middle">MONTESSORI MINDS LB</textPath>
       </text>
 
       {/* Bottom text — "A Preschool" */}
