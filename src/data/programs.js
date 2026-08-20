@@ -65,7 +65,7 @@ export const programsPage = {
     title: 'Programs Designed for Every Stage',
     description:
       "From infancy through preschool, each program honors the child's natural development with a calm, prepared environment.",
-    imageAlt: 'Montessori Minds LB classroom overview',
+    imageAlt: 'La Casa Verde classroom overview',
   },
   admissionCta: {
     eyebrow: 'Admissions',
@@ -77,7 +77,7 @@ export const programsPage = {
   tourCta: {
     eyebrow: 'Visit',
     title: 'See Our Programs in Person',
-    description: 'A tour is the best way to experience the Montessori Minds LB difference.',
+    description: 'A tour is the best way to experience the La Casa Verde difference.',
     buttonLabel: 'Book A Tour',
   },
 }

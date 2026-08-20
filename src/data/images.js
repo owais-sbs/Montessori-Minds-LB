@@ -50,7 +50,7 @@ const placeholders = {
 /** Local asset paths — swap placeholders above for these when files exist. */
 export const imagePaths = {
   branding: {
-    logo: '/images/branding/logo.svg',
+    logo: '/images/branding/logo.png',
   },
   hero: {
     main: '/images/hero/hero.jpg',

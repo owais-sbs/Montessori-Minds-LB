@@ -54,16 +54,16 @@ export default function Admission() {
       <PageHero
         eyebrow="Admissions"
         title="Begin Their Journey"
-        description="Complete the form below to express your interest in enrollment at Montessori Minds LB."
+        description="Complete the form below to express your interest in enrollment at La Casa Verde."
         image={images.classroom}
-        imageAlt="Montessori Minds LB admissions"
+        imageAlt="La Casa Verde admissions"
       />
-    <section className="bg-warm-beige py-20 md:py-28">
-        <Container size="narrow">
+      <section className="bg-warm-beige py-20 md:py-28">
+        <Container>
           {submitted ? (
             <SuccessMessage
               title="Application Received"
-              description="Thank you for your interest in Montessori Minds LB. We will review your submission and be in touch soon."
+              description="Thank you for your interest in La Casa Verde. We will review your submission and be in touch soon."
               onReset={() => {
                 reset()
                 setSubmitted(false)
@@ -78,15 +78,13 @@ export default function Admission() {
               >
                 <fieldset className="flex flex-col gap-6">
                   <legend className="heading-md mb-2">Parent / Guardian Information</legend>
-                  <div className="grid gap-6 md:grid-cols-2">
+                  <div className="grid gap-6 md:grid-cols-4">
                     <FormField label="First Name" id="parentFirstName" error={errors.parentFirstName?.message} required>
                       <input id="parentFirstName" className={inputClassName(errors.parentFirstName)} {...register('parentFirstName')} aria-invalid={!!errors.parentFirstName} />
                     </FormField>
                     <FormField label="Last Name" id="parentLastName" error={errors.parentLastName?.message} required>
                       <input id="parentLastName" className={inputClassName(errors.parentLastName)} {...register('parentLastName')} aria-invalid={!!errors.parentLastName} />
                     </FormField>
-                  </div>
-                  <div className="grid gap-6 md:grid-cols-2">
                     <FormField label="Email" id="email" error={errors.email?.message} required>
                       <input id="email" type="email" className={inputClassName(errors.email)} {...register('email')} aria-invalid={!!errors.email} />
                     </FormField>
@@ -98,15 +96,13 @@ export default function Admission() {
 
                 <fieldset className="flex flex-col gap-6">
                   <legend className="heading-md mb-2">Child Information</legend>
-                  <div className="grid gap-6 md:grid-cols-2">
+                  <div className="grid gap-6 md:grid-cols-4">
                     <FormField label="Child First Name" id="childFirstName" error={errors.childFirstName?.message} required>
                       <input id="childFirstName" className={inputClassName(errors.childFirstName)} {...register('childFirstName')} aria-invalid={!!errors.childFirstName} />
                     </FormField>
                     <FormField label="Child Last Name" id="childLastName" error={errors.childLastName?.message} required>
                       <input id="childLastName" className={inputClassName(errors.childLastName)} {...register('childLastName')} aria-invalid={!!errors.childLastName} />
                     </FormField>
-                  </div>
-                  <div className="grid gap-6 md:grid-cols-2">
                     <FormField label="Date of Birth" id="dateOfBirth" error={errors.dateOfBirth?.message} required>
                       <input id="dateOfBirth" type="date" className={inputClassName(errors.dateOfBirth)} {...register('dateOfBirth')} aria-invalid={!!errors.dateOfBirth} />
                     </FormField>
@@ -123,26 +119,30 @@ export default function Admission() {
 
                 <fieldset className="flex flex-col gap-6">
                   <legend className="heading-md mb-2">Additional Information</legend>
-                  <FormField label="Previous School / Preschool" id="previousSchool">
-                    <input id="previousSchool" className={inputClassName()} {...register('previousSchool')} />
-                  </FormField>
-                  <FormField label="Special Requirements" id="specialRequirements">
-                    <textarea id="specialRequirements" rows={3} className={inputClassName()} {...register('specialRequirements')} />
-                  </FormField>
-                  <FormField label="Message" id="message">
-                    <textarea id="message" rows={4} className={inputClassName()} {...register('message')} />
-                  </FormField>
-                  <FormField label="Referral Source" id="referralSource" error={errors.referralSource?.message} required>
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <FormField label="Previous School / Preschool" id="previousSchool">
+                      <input id="previousSchool" className={inputClassName()} {...register('previousSchool')} />
+                    </FormField>
+                    <FormField label="Referral Source" id="referralSource" error={errors.referralSource?.message} required>
                       <select id="referralSource" className={inputClassName(errors.referralSource)} {...register('referralSource')}>
                         <option value="" disabled>How did you hear about us?</option>
-                      {referralOptions.map((opt) => (
-                        <option key={opt.value} value={opt.value}>{opt.label}</option>
-                      ))}
-                    </select>
-                  </FormField>
+                        {referralOptions.map((opt) => (
+                          <option key={opt.value} value={opt.value}>{opt.label}</option>
+                        ))}
+                      </select>
+                    </FormField>
+                  </div>
+                  <div className="grid gap-6 md:grid-cols-2">
+                    <FormField label="Special Requirements" id="specialRequirements">
+                      <textarea id="specialRequirements" rows={3} className={inputClassName()} {...register('specialRequirements')} />
+                    </FormField>
+                    <FormField label="Message" id="message">
+                      <textarea id="message" rows={3} className={inputClassName()} {...register('message')} />
+                    </FormField>
+                  </div>
                 </fieldset>
 
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                   <label htmlFor="consent" className="flex items-start gap-3">
                     <input
                       id="consent"
@@ -156,16 +156,15 @@ export default function Admission() {
                       I understand that submitting this form is an expression of interest and does not guarantee enrollment.
                     </span>
                   </label>
-                  {errors.consent && (
-                    <p id="consent-error" className="text-sm text-red-700" role="alert">
-                      {errors.consent.message}
-                    </p>
-                  )}
+                  <Button type="submit" disabled={isSubmitting} className="shrink-0">
+                    Submit Application
+                  </Button>
                 </div>
-
-                <Button type="submit" disabled={isSubmitting}>
-                  Submit Application
-                </Button>
+                {errors.consent && (
+                  <p id="consent-error" className="text-sm text-red-700 -mt-2" role="alert">
+                    {errors.consent.message}
+                  </p>
+                )}
               </form>
             </FadeUp>
           )}

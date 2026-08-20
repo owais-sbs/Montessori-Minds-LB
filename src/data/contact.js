@@ -1,7 +1,8 @@
 export const contactPlaceholders = {
-  address: 'Beirut, Lebanon',
-  email: 'hello@montessorimindslb.com',
-  phone: '+961 1 234 567',
+  address: 'Choueifat, Lebanon, Saida Old Road, Al Omara District',
+  email: 'administration@montessorimindslb.com',
+  phone: '+961 71 007 150',
+  phoneRaw: '0096171007150',
   social: {
     instagram: 'https://instagram.com',
     facebook: 'https://facebook.com',
@@ -9,7 +10,8 @@ export const contactPlaceholders = {
 }
 
 export const site = {
-  name: 'Montessori Minds LB',
+  name: 'La Casa Verde',
+  subtitle: 'By Montessori Minds',
   tagline:
-    'A premium Montessori-inspired preschool where children grow with confidence, curiosity, and care.',
+    'A nature-inspired Montessori preschool nurturing independence, curiosity, and confidence in young learners.',
 }

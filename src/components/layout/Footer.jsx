@@ -12,12 +12,15 @@ export default function Footer() {
       <Container>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div className="flex max-w-xs flex-col gap-4">
-            <Link to={ROUTES.home} className="inline-block transition-opacity hover:opacity-80" aria-label="Montessori Minds LB home">
-              <img src="/images/branding/logo.svg" alt="Montessori Minds LB logo" className="h-28 w-28" />
+            <Link to={ROUTES.home} className="inline-block transition-opacity hover:opacity-80" aria-label="La Casa Verde home">
+              <img src="/images/branding/La casa verde logo2.png" alt="La Casa Verde logo" className="h-36 w-36 object-contain" />
             </Link>
-            <Link to={ROUTES.home} className="heading-md text-forest-green transition-colors hover:text-olive">
-              {site.name}
-            </Link>
+            <div>
+              <Link to={ROUTES.home} className="heading-md text-forest-green transition-colors hover:text-olive">
+                {site.name}
+              </Link>
+              <p className="body-sm text-muted-text mt-1">{site.subtitle}</p>
+            </div>
             <p className="body-sm">{site.tagline}</p>
           </div>
 
@@ -49,10 +52,14 @@ export default function Footer() {
 
           <div>
             <h2 className="eyebrow mb-4">Contact</h2>
-            <address className="body-sm flex flex-col gap-2 not-italic">
+            <address className="body-sm flex flex-col gap-3 not-italic">
               <p>{contactPlaceholders.address}</p>
-              <a href={`mailto:${contactPlaceholders.email}`} className="transition-colors hover:text-forest-green">{contactPlaceholders.email}</a>
-              <a href={`tel:${contactPlaceholders.phone}`} className="transition-colors hover:text-forest-green">{contactPlaceholders.phone}</a>
+              <a href={`mailto:${contactPlaceholders.email}`} className="transition-colors hover:text-forest-green break-all">
+                {contactPlaceholders.email}
+              </a>
+              <a href={`tel:${contactPlaceholders.phoneRaw}`} className="transition-colors hover:text-forest-green">
+                {contactPlaceholders.phone}
+              </a>
             </address>
             <div className="mt-6 flex items-center gap-4" aria-label="Social links">
               <a href={contactPlaceholders.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-text transition-colors hover:text-forest-green">

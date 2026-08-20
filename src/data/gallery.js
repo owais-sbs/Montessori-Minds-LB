@@ -112,9 +112,9 @@ export const galleryPreviewItems = galleryItems.slice(0, 9)
 export const galleryPage = {
   hero: {
     eyebrow: 'Gallery',
-    title: 'Life at Montessori Minds LB',
+    title: 'Life at La Casa Verde',
     description:
       'Explore our classrooms, outdoor spaces, and the meaningful moments that define our community.',
-    imageAlt: 'Outdoor learning environment at Montessori Minds LB',
+    imageAlt: 'Outdoor learning environment at La Casa Verde',
   },
 }

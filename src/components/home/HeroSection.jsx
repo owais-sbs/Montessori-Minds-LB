@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import { Button } from '../ui'
 import { FadeUp, ImageReveal, StaggerContainer, StaggerItem } from '../animations'
 import { images } from '../../data/images'
@@ -8,10 +7,15 @@ export default function HeroSection() {
   return (
     <section className="relative bg-warm-cream overflow-hidden">
       <div className="mx-auto max-w-[75rem] px-[clamp(1.25rem,4vw,2.5rem)]">
-        <div className="grid min-h-[calc(100svh-4.5rem)] items-center gap-8 lg:grid-cols-2 lg:gap-12">
+        <div className="grid min-h-[calc(100svh-6.5rem)] items-center gap-8 lg:grid-cols-2 lg:gap-12">
 
           {/* ── Left content ── */}
           <div className="flex flex-col gap-6 py-12 sm:py-16 lg:py-20">
+
+            {/* Eyebrow */}
+            <FadeUp delay={0.05} trigger="load">
+              <p className="eyebrow">{homeHero.eyebrow}</p>
+            </FadeUp>
 
             {/* Heading */}
             <FadeUp delay={0.15} trigger="load">
@@ -24,7 +28,7 @@ export default function HeroSection() {
 
             {/* Description */}
             <FadeUp delay={0.28} trigger="load">
-              <p className="body-lg max-w-sm text-muted-text">
+              <p className="body-lg max-w-md text-muted-text">
                 {homeHero.description}
               </p>
             </FadeUp>
