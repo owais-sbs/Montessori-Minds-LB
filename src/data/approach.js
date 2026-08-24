@@ -1,10 +1,10 @@
-import { images } from './images'
+﻿import { images } from './images'
 
 export const approachHero = {
   eyebrow: 'Our Approach',
   title: 'A Thoughtful Montessori Environment',
   description:
-    'At La Casa Verde, we create a calm, intentional space where children develop independence, concentration, and a lifelong love of learning.',
+    'At La Casa Verde, we create a calm and intentional space where children develop independence, focus, and a genuine love of learning.',
   image: images.approach,
 }
 
@@ -14,7 +14,7 @@ export const approachSections = [
     eyebrow: 'Philosophy',
     title: 'Our Montessori Approach',
     description:
-      'We follow the Montessori method — honoring each child\'s natural development through respect, observation, and a carefully prepared environment that invites purposeful work.',
+      'We follow the Montessori method, which means we honor each child as they are. We observe, we prepare the environment, and we trust the child to lead their own learning.',
     image: images.classroom,
     reverse: false,
   },
@@ -23,7 +23,7 @@ export const approachSections = [
     eyebrow: 'Environment',
     title: 'Prepared Environment',
     description:
-      'Every shelf, material, and corner of our classrooms is intentionally designed. Beauty, order, and accessibility allow children to choose meaningful work and develop deep concentration.',
+      'Every shelf, every material, every corner of our classroom is there for a reason. Children can see what is available, make their own choices, and work with focus.',
     image: images.preparedEnvironment,
     reverse: true,
   },
@@ -32,7 +32,7 @@ export const approachSections = [
     eyebrow: 'Development',
     title: 'Independence',
     description:
-      'From pouring water to dressing themselves, children are given real opportunities to care for themselves and their environment — building confidence that lasts a lifetime.',
+      'From pouring their own water to getting dressed on their own, children here get real chances to care for themselves. That builds confidence that lasts.',
     image: images.independence,
     reverse: false,
   },
@@ -41,7 +41,7 @@ export const approachSections = [
     eyebrow: 'Daily Living',
     title: 'Practical Life',
     description:
-      'Everyday activities — food preparation, cleaning, gardening — are not chores but pathways to coordination, focus, and a sense of belonging within the community.',
+      'Cooking, cleaning, gardening. These are not chores here. They are how children learn coordination, focus, and what it means to be part of a community.',
     image: images.gallery.activity1,
     reverse: true,
   },
@@ -50,7 +50,7 @@ export const approachSections = [
     eyebrow: 'Exploration',
     title: 'Sensory Learning',
     description:
-      'Rich sensory experiences refine the child\'s ability to classify, compare, and understand the world — laying the foundation for mathematics, language, and scientific thinking.',
+      'Through touch, sight, sound, and movement, children learn to observe, compare, and make sense of the world. This lays the groundwork for math, language, and science later on.',
     image: images.gallery.learning1,
     reverse: false,
   },
@@ -59,7 +59,7 @@ export const approachSections = [
     eyebrow: 'Community',
     title: 'Grace & Courtesy',
     description:
-      'Children learn to navigate social life with kindness — greeting one another, resolving conflicts peacefully, and treating their environment and peers with respect.',
+      'Children learn how to greet each other, how to wait their turn, and how to solve disagreements with kindness. These are life skills as much as social skills.',
     image: images.gallery.activity2,
     reverse: true,
   },
@@ -68,7 +68,7 @@ export const approachSections = [
     eyebrow: 'Outdoors',
     title: 'Nature & Outdoor Learning',
     description:
-      'Time outdoors is essential. Children observe seasons, care for plants, and connect with the natural world — deepening their sense of wonder and responsibility.',
+      'We spend time outside every day. Children watch the seasons change, care for plants, and connect with the natural world around them.',
     image: images.nature,
     reverse: false,
   },
@@ -77,7 +77,7 @@ export const approachSections = [
     eyebrow: 'Guidance',
     title: 'Role of the Teacher',
     description:
-      'Our guides observe, prepare the environment, and offer gentle support — stepping back to allow the child\'s own intelligence and curiosity to lead the way.',
+      'Our teachers observe, prepare, and guide gently. They know when to step in and when to step back, so the child can lead their own discovery.',
     image: images.gallery.classroom2,
     reverse: true,
   },
@@ -86,27 +86,27 @@ export const approachSections = [
 export const philosophyPoints = [
   {
     title: 'Independence',
-    description: 'Children develop self-reliance through meaningful, age-appropriate work.',
+    description: 'Children learn to do things for themselves through meaningful, hands-on work.',
   },
   {
     title: 'Respect',
-    description: 'Every child is honored as a capable, unique individual.',
+    description: 'Every child is seen as a capable person with their own ideas and pace.',
   },
   {
     title: 'Concentration',
-    description: 'Uninterrupted work cycles nurture deep focus and satisfaction.',
+    description: 'Long, uninterrupted work time helps children find deep focus and satisfaction.',
   },
   {
     title: 'Practical Life',
-    description: 'Real-world skills build coordination, order, and confidence.',
+    description: 'Real tasks like cooking and cleaning build coordination, order, and confidence.',
   },
   {
     title: 'Curiosity',
-    description: 'Wonder is cultivated through exploration and discovery.',
+    description: 'We encourage questions, exploration, and the joy of figuring things out.',
   },
   {
     title: 'Purposeful Learning',
-    description: 'Every activity has intention — nothing is busy work.',
+    description: 'Every activity in our classroom has a clear intention. Nothing is busywork.',
   },
 ]
 
@@ -114,21 +114,21 @@ export const developmentFocus = [
   {
     title: 'Confidence',
     description:
-      'Through mastery of everyday tasks, children discover their own capability and inner strength.',
+      'When children master everyday tasks, they discover what they are truly capable of.',
   },
   {
     title: 'Independence',
     description:
-      'Freedom within limits empowers children to make choices, solve problems, and take ownership of their learning.',
+      'Freedom within clear limits lets children make choices, solve problems, and own their learning.',
   },
   {
     title: 'Concentration',
     description:
-      'Extended periods of focused work build the mental discipline essential for future academic success.',
+      'Extended time with focused work builds the kind of attention that helps children succeed later in school and life.',
   },
   {
     title: 'Social Development',
     description:
-      'Mixed-age classrooms foster mentorship, empathy, and a natural sense of community.',
+      'Our mixed-age classrooms create natural opportunities for older children to mentor younger ones, building empathy and community.',
   },
 ]

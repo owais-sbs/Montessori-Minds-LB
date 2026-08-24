@@ -1,4 +1,4 @@
-import { images } from './images'
+﻿import { images } from './images'
 
 export const galleryCategories = [
   { id: 'all', label: 'All' },
@@ -114,7 +114,7 @@ export const galleryPage = {
     eyebrow: 'Gallery',
     title: 'Life at La Casa Verde',
     description:
-      'Explore our classrooms, outdoor spaces, and the meaningful moments that define our community.',
+      'Take a look at our classrooms, outdoor areas, and the everyday moments that make our school special.',
     imageAlt: 'Outdoor learning environment at La Casa Verde',
   },
 }

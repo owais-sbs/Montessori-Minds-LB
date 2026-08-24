@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Container from '../components/layout/Container'
@@ -46,7 +46,7 @@ export default function BookATour() {
       <PageHero
         eyebrow="Visit Us"
         title="Book A Tour"
-        description="Schedule a personal visit to experience the calm, purposeful beauty of La Casa Verde."
+        description="Come see our school for yourself. We would love to show you around."
         image={images.preparedEnvironment}
         imageAlt="Book a tour at La Casa Verde preschool"
       />
@@ -99,7 +99,7 @@ export default function BookATour() {
           {submitted ? (
             <SuccessMessage
               title="Tour Request Received"
-              description="Thank you for your interest in La Casa Verde. We will confirm your visit details shortly."
+              description="Thank you! We got your request and will be in touch soon to confirm your visit."
               onReset={() => {
                 reset()
                 setSubmitted(false)

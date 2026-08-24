@@ -1,4 +1,4 @@
-import Container from '../layout/Container'
+﻿import Container from '../layout/Container'
 import { FadeUp, StaggerContainer, StaggerItem } from '../animations'
 
 const features = [
@@ -10,7 +10,7 @@ const features = [
       </svg>
     ),
     title: 'Authentic Montessori Education',
-    description: 'We uphold the highest standards of Montessori practice — ensuring consistency, integrity, and respect for the child at every stage.',
+    description: 'We hold ourselves to the highest Montessori standards. That means real consistency, real integrity, and real respect for your child.',
   },
   {
     icon: (
@@ -20,7 +20,7 @@ const features = [
       </svg>
     ),
     title: 'Nature-Inspired Learning',
-    description: 'Our environment connects children with nature — building awareness, calm, and a deep respect for the natural world around them.',
+    description: 'Our school brings children close to nature. They learn to slow down, observe, and care for the world around them.',
   },
   {
     icon: (
@@ -52,7 +52,7 @@ export default function WhyChooseUsSection() {
           <p className="eyebrow">Why La Casa Verde</p>
           <h2 className="heading-xl mt-4">Why Families Choose Us</h2>
           <p className="body-lg mt-4">
-            Choosing the right preschool is one of the most important decisions a family makes. Here&apos;s what sets La Casa Verde apart.
+            Choosing a preschool is a big decision. Here is what makes La Casa Verde different.
           </p>
         </FadeUp>
         <StaggerContainer className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" stagger={0.1}>

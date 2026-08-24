@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import Container from '../components/layout/Container'
@@ -54,7 +54,7 @@ export default function Admission() {
       <PageHero
         eyebrow="Admissions"
         title="Begin Their Journey"
-        description="Complete the form below to express your interest in enrollment at La Casa Verde."
+        description="Interested in enrolling your child? Fill out the form below and we will get back to you."
         image={images.classroom}
         imageAlt="La Casa Verde admissions"
       />
@@ -63,7 +63,7 @@ export default function Admission() {
           {submitted ? (
             <SuccessMessage
               title="Application Received"
-              description="Thank you for your interest in La Casa Verde. We will review your submission and be in touch soon."
+              description="Thank you! We have received your application and will be in touch soon."
               onReset={() => {
                 reset()
                 setSubmitted(false)

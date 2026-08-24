@@ -1,4 +1,4 @@
-import PageHero from '../components/sections/PageHero'
+﻿import PageHero from '../components/sections/PageHero'
 import EditorialSection from '../components/approach/EditorialSection'
 import BookTourCTASection from '../components/home/BookTourCTASection'
 import { approachHero, approachSections } from '../data/approach'
@@ -6,7 +6,7 @@ import { approachHero, approachSections } from '../data/approach'
 export default function OurApproach() {
   return (
     <>
-      <PageHero {...approachHero} imageAlt="Montessori learning environment at La Casa Verde" />
+      <PageHero {...approachHero} imageAlt="Our Montessori classroom at La Casa Verde" />
       {approachSections.map((section, index) => (
         <EditorialSection key={section.id} section={section} index={index} />
       ))}

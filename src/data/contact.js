@@ -1,6 +1,6 @@
-export const contactPlaceholders = {
+﻿export const contactPlaceholders = {
   address: 'Choueifat, Lebanon, Saida Old Road, Al Omara District',
-  email: 'administration@montessorimindslb.com',
+  email: 'hello@montessorimindslb.com',
   phone: '+961 71 007 150',
   phoneRaw: '0096171007150',
   social: {
@@ -13,5 +13,5 @@ export const site = {
   name: 'La Casa Verde',
   subtitle: 'By Montessori Minds',
   tagline:
-    'A nature-inspired Montessori preschool nurturing independence, curiosity, and confidence in young learners.',
+    'A Montessori preschool in Lebanon where children learn through nature, play, and hands-on discovery.',
 }
