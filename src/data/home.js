@@ -7,7 +7,7 @@ export const homeHero = {
   titleLine2: 'Montessori Preschool in Choueifat',
   description:
     'Rooted in nature, growing in independence. A Montessori preschool where children discover the joy of learning and the confidence that comes from doing things on their own.',
-  imageAlt: 'Children learning at La Casa Verde Montessori preschool in Choueifat, Lebanon',
+  imageAlt: 'Two children in La Casa Verde uniforms reading together in the Montessori classroom',
   primaryButton: { label: 'Explore Our Programs', to: ROUTES.programs },
   secondaryButton: { label: 'Schedule A Tour', to: ROUTES.bookATour },
 }
@@ -20,7 +20,7 @@ export const homePreparedEnvironment = {
   linkLabel: 'Discover Our Approach',
   linkTo: ROUTES.ourApproach,
   imageAlt:
-    'Montessori prepared classroom with wooden shelves and learning materials',
+    'Children working independently with Montessori materials in a prepared classroom',
 }
 
 export const homePrograms = {
@@ -49,14 +49,14 @@ export const homeIndependence = {
   title: 'Nurturing Independence & Confidence',
   description:
     'Montessori education is about the whole child. We help children build not just academic skills, but also the emotional and social foundations they need to thrive.',
-  imageAlt: 'Child developing independence through purposeful activity',
+  imageAlt: 'Child pouring water between pitchers during a Montessori practical life activity',
 }
 
 export const homeGalleryPreview = {
   eyebrow: 'Gallery',
   title: 'Life at La Casa Verde',
   description:
-    'A look inside our classrooms and outdoor spaces.',
+    'A look inside our classrooms, nature corners, and daily learning moments.',
   linkLabel: 'View Full Gallery',
   linkTo: ROUTES.gallery,
 }

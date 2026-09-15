@@ -42,7 +42,7 @@ export const approachSections = [
     title: 'Practical Life',
     description:
       'Cooking, cleaning, gardening. These are not chores here. They are how children learn coordination, focus, and what it means to be part of a community.',
-    image: images.gallery.activity1,
+    image: images.gallery.activity2,
     reverse: true,
   },
   {
@@ -51,7 +51,7 @@ export const approachSections = [
     title: 'Sensory Learning',
     description:
       'Through touch, sight, sound, and movement, children learn to observe, compare, and make sense of the world. This lays the groundwork for math, language, and science later on.',
-    image: images.gallery.learning1,
+    image: images.gallery.sensoryTiles,
     reverse: false,
   },
   {
@@ -60,7 +60,7 @@ export const approachSections = [
     title: 'Grace & Courtesy',
     description:
       'Children learn how to greet each other, how to wait their turn, and how to solve disagreements with kindness. These are life skills as much as social skills.',
-    image: images.gallery.activity2,
+    image: images.gallery.emotions,
     reverse: true,
   },
   {
@@ -78,7 +78,7 @@ export const approachSections = [
     title: 'Role of the Teacher',
     description:
       'Our teachers observe, prepare, and guide gently. They know when to step in and when to step back, so the child can lead their own discovery.',
-    image: images.gallery.classroom2,
+    image: images.approach,
     reverse: true,
   },
 ]

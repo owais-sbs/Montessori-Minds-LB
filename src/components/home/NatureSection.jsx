@@ -8,11 +8,9 @@ export default function NatureSection() {
     <section className="relative min-h-[420px] overflow-hidden py-20 md:min-h-[520px] md:py-28">
       <img
         src={images.nature}
-        alt=""
-        aria-hidden="true"
+        alt="Indoor plants and nature corner at La Casa Verde Montessori preschool"
         className="absolute inset-0 h-full w-full object-cover"
         loading="lazy"
-        referrerPolicy="no-referrer"
       />
       <div className="absolute inset-0 bg-forest-green/60" aria-hidden="true" />
       <Container className="relative">
