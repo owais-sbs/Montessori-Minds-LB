@@ -10,12 +10,15 @@ import { FadeUp } from '../components/animations'
 import { bookTourSchema } from '../lib/schemas/bookTour'
 import { contactPlaceholders } from '../data/contact'
 import { images } from '../data/images'
+import usePageMeta from '../hooks/usePageMeta'
+import { pageSeo } from '../lib/seo'
 
 const timeOptions = [
   '9:00 AM', '10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM',
 ]
 
 export default function BookATour() {
+  usePageMeta(pageSeo.bookATour)
   const [submitted, setSubmitted] = useState(false)
   const {
     register,

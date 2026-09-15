@@ -2,12 +2,12 @@
 import { images } from './images'
 
 export const homeHero = {
-  eyebrow: 'A Montessori Preschool in Lebanon',
-  title: 'Rooted in Nature,',
-  titleLine2: 'Growing in Independence.',
+  eyebrow: 'By Montessori Minds · Choueifat, Lebanon',
+  title: 'La Casa Verde',
+  titleLine2: 'Montessori Preschool in Choueifat',
   description:
-    'Welcome to La Casa Verde. A place where children discover the joy of learning and the confidence that comes from doing things on their own.',
-  imageAlt: 'Children learning at La Casa Verde Montessori preschool',
+    'Rooted in nature, growing in independence. A Montessori preschool where children discover the joy of learning and the confidence that comes from doing things on their own.',
+  imageAlt: 'Children learning at La Casa Verde Montessori preschool in Choueifat, Lebanon',
   primaryButton: { label: 'Explore Our Programs', to: ROUTES.programs },
   secondaryButton: { label: 'Schedule A Tour', to: ROUTES.bookATour },
 }

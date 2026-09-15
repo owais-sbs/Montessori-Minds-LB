@@ -10,6 +10,8 @@ import { FadeUp } from '../components/animations'
 import { admissionSchema } from '../lib/schemas/admission'
 import { programOptions } from '../data/programs'
 import { images } from '../data/images'
+import usePageMeta from '../hooks/usePageMeta'
+import { pageSeo } from '../lib/seo'
 
 const referralOptions = [
   { value: 'website', label: 'Website' },
@@ -20,6 +22,7 @@ const referralOptions = [
 ]
 
 export default function Admission() {
+  usePageMeta(pageSeo.admission)
   const [submitted, setSubmitted] = useState(false)
   const {
     register,

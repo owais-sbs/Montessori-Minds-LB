@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import Container from './Container'
 import { footerNavLinks, footerProgramLinks } from '../../data/navigation'
-import { contactPlaceholders, site } from '../../data/contact'
+import { contactPlaceholders, externalResources, site } from '../../data/contact'
 import { ROUTES } from '../../lib/routes'
 
 export default function Footer() {
@@ -75,6 +75,20 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
+            <ul className="mt-6 flex flex-col gap-2">
+              {externalResources.map(({ label, href }) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="body-sm transition-colors hover:text-forest-green"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 

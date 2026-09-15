@@ -13,5 +13,12 @@ export const site = {
   name: 'La Casa Verde',
   subtitle: 'By Montessori Minds',
   tagline:
-    'A Montessori preschool in Lebanon where children learn through nature, play, and hands-on discovery.',
+    'A Montessori preschool in Choueifat, Lebanon where children learn through nature, play, and hands-on discovery.',
 }
+
+export const externalResources = [
+  {
+    label: 'American Montessori Society',
+    href: 'https://amshq.org/',
+  },
+]

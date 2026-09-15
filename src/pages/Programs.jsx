@@ -4,8 +4,12 @@ import CTASection from '../components/sections/CTASection'
 import { programs, programsPage } from '../data/programs'
 import { images } from '../data/images'
 import { ROUTES } from '../lib/routes'
+import usePageMeta from '../hooks/usePageMeta'
+import { pageSeo } from '../lib/seo'
 
 export default function Programs() {
+  usePageMeta(pageSeo.programs)
+
   return (
     <>
       <PageHero
