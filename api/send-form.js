@@ -1,4 +1,15 @@
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { config as loadDotenv } from 'dotenv'
 import { sendFormEmail } from '../server/sendMail.js'
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+function loadEnvFiles() {
+  const root = path.resolve(__dirname, '..')
+  loadDotenv({ path: path.join(root, '.env.local'), override: false })
+  loadDotenv({ path: path.join(root, '.env'), override: false })
+}
 
 function setCors(res) {
   res.setHeader('Access-Control-Allow-Origin', '*')
@@ -30,6 +41,7 @@ function readJsonBody(req) {
 
 export default async function handler(req, res) {
   setCors(res)
+  loadEnvFiles()
 
   if (req.method === 'OPTIONS') {
     res.statusCode = 204

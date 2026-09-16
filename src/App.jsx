@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import PublicLayout from './components/layout/PublicLayout'
+import ScrollToTop from './components/navigation/ScrollToTop'
 import Home from './pages/Home'
 import OurApproach from './pages/OurApproach'
 import Programs from './pages/Programs'
@@ -11,6 +12,7 @@ import { ROUTES } from './lib/routes'
 export default function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<PublicLayout />}>
           <Route path={ROUTES.home} element={<Home />} />

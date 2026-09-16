@@ -1,13 +1,26 @@
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { config as loadDotenv } from 'dotenv'
 import nodemailer from 'nodemailer'
 import { buildAdmissionEmail, buildTourEmail } from './emailTemplate.js'
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+
+function loadEnvFiles() {
+  const root = path.resolve(__dirname, '..')
+  loadDotenv({ path: path.join(root, '.env.local'), override: false })
+  loadDotenv({ path: path.join(root, '.env'), override: false })
+}
+
 function requiredEnv(name) {
+  loadEnvFiles()
   const value = process.env[name]
   if (!value) throw new Error(`Missing environment variable: ${name}`)
   return value
 }
 
 export function createMailTransport() {
+  loadEnvFiles()
   const port = Number(process.env.SMTP_PORT || 587)
   const secure = String(process.env.SMTP_SECURE || 'false') === 'true'
 
@@ -24,6 +37,8 @@ export function createMailTransport() {
 }
 
 export async function sendFormEmail({ formType, data }) {
+  loadEnvFiles()
+
   if (!formType || !data || typeof data !== 'object') {
     throw new Error('Invalid form payload')
   }

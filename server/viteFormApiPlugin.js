@@ -1,7 +1,17 @@
-import { config as loadEnv } from 'dotenv'
-import { sendFormEmail } from '../server/sendMail.js'
+import path from 'node:path'
+import { fileURLToPath } from 'node:url'
+import { config as loadDotenv } from 'dotenv'
+import { sendFormEmail } from './sendMail.js'
 
-loadEnv()
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const envPath = path.resolve(__dirname, '../.env')
+
+function ensureSmtpEnv() {
+  // Always load from project-root .env so Vite middleware has SMTP_* available.
+  loadDotenv({ path: envPath, override: false })
+}
+
+ensureSmtpEnv()
 
 async function readBody(req) {
   const chunks = []
@@ -39,6 +49,7 @@ export function formEmailApiPlugin() {
         }
 
         try {
+          ensureSmtpEnv()
           const body = await readBody(req)
           const result = await sendFormEmail({
             formType: body.formType,
