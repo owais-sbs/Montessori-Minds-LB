@@ -12,6 +12,7 @@ import { programOptions } from '../data/programs'
 import { images } from '../data/images'
 import usePageMeta from '../hooks/usePageMeta'
 import { pageSeo } from '../lib/seo'
+import { submitFormEmail } from '../lib/submitFormEmail'
 
 const referralOptions = [
   { value: 'website', label: 'Website' },
@@ -24,6 +25,7 @@ const referralOptions = [
 export default function Admission() {
   usePageMeta(pageSeo.admission)
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState('')
   const {
     register,
     handleSubmit,
@@ -48,8 +50,14 @@ export default function Admission() {
     },
   })
 
-  const onSubmit = () => {
-    setSubmitted(true)
+  const onSubmit = async (data) => {
+    setSubmitError('')
+    try {
+      await submitFormEmail('admission', data)
+      setSubmitted(true)
+    } catch (error) {
+      setSubmitError(error?.message || 'Something went wrong. Please try again.')
+    }
   }
 
   return (
@@ -160,12 +168,17 @@ export default function Admission() {
                     </span>
                   </label>
                   <Button type="submit" disabled={isSubmitting} className="shrink-0">
-                    Submit Application
+                    {isSubmitting ? 'Sending…' : 'Submit Application'}
                   </Button>
                 </div>
                 {errors.consent && (
                   <p id="consent-error" className="text-sm text-red-700 -mt-2" role="alert">
                     {errors.consent.message}
+                  </p>
+                )}
+                {submitError && (
+                  <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800" role="alert">
+                    {submitError}
                   </p>
                 )}
               </form>

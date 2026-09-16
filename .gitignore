@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 .audit-pages
+.env
+.env.*
+!.env.example
+_fix_approach.py
 
 # Editor directories and files
 .vscode/*

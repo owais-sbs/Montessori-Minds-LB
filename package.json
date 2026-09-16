@@ -10,12 +10,14 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^6.0.5",
+    "dotenv": "^17.4.2",
     "vite": "^8.2.0"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.1",
     "@tailwindcss/vite": "^4.3.3",
     "motion": "^13.1.0",
+    "nodemailer": "^10.0.10",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "react-hook-form": "^7.85.0",

@@ -12,6 +12,7 @@ import { contactPlaceholders } from '../data/contact'
 import { images } from '../data/images'
 import usePageMeta from '../hooks/usePageMeta'
 import { pageSeo } from '../lib/seo'
+import { submitFormEmail } from '../lib/submitFormEmail'
 
 const timeOptions = [
   '9:00 AM', '10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM',
@@ -20,6 +21,7 @@ const timeOptions = [
 export default function BookATour() {
   usePageMeta(pageSeo.bookATour)
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState('')
   const {
     register,
     handleSubmit,
@@ -40,8 +42,14 @@ export default function BookATour() {
     },
   })
 
-  const onSubmit = () => {
-    setSubmitted(true)
+  const onSubmit = async (data) => {
+    setSubmitError('')
+    try {
+      await submitFormEmail('tour', data)
+      setSubmitted(true)
+    } catch (error) {
+      setSubmitError(error?.message || 'Something went wrong. Please try again.')
+    }
   }
 
   return (
@@ -159,9 +167,14 @@ export default function BookATour() {
                     </FormField>
                   </div>
                 </div>
-                <div className="flex justify-end">
+                <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
+                  {submitError && (
+                    <p className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800 sm:mr-auto" role="alert">
+                      {submitError}
+                    </p>
+                  )}
                   <Button type="submit" disabled={isSubmitting}>
-                    Request A Tour
+                    {isSubmitting ? 'Sending…' : 'Request A Tour'}
                   </Button>
                 </div>
               </form>
