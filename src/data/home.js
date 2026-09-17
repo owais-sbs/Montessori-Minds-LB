@@ -5,7 +5,7 @@ export const homeHero = {
   title: 'Montessori School in Choueifat',
   titleLine2: 'Pre-School & Nursery',
   description:
-    'Montessori Minds offers a nurturing Montessori learning environment for young children in Choueifat — hands-on discovery, independence, and early childhood care rooted in authentic Montessori education.',
+    'Montessori Minds is a Montessori school in Choueifat, Lebanon, offering nurturing pre-school and nursery programs for young children — hands-on discovery, independence, and authentic early childhood education.',
   imageAlt: 'Children learning together at La Casa Verde by Montessori Minds in Choueifat',
   primaryButton: { label: 'Explore Our Programs', to: ROUTES.programs },
   secondaryButton: { label: 'Schedule A Tour', to: ROUTES.bookATour },
@@ -33,7 +33,7 @@ export const homePhilosophy = {
   eyebrow: 'Philosophy',
   title: 'Montessori Education at Montessori Minds',
   description:
-    'We believe children are naturally curious and capable. Our role is to prepare the environment, observe carefully, and support independence, curiosity, and joyful early learning.',
+    'We believe children are naturally curious and capable. Families across Lebanon — including those traveling from the greater Beirut and Baabda areas — visit our Choueifat campus for Montessori education rooted in observation, independence, and joyful early learning.',
 }
 
 export const homeNature = {
@@ -64,7 +64,7 @@ export const homeFinalCta = {
   eyebrow: 'Get Started',
   title: 'Begin Their Journey at Montessori Minds',
   description:
-    'Ready to take the next step? Explore our Montessori nursery and pre-school pathways, start an application, or visit us in Choueifat.',
+    'Looking for a Montessori school near Choueifat? Explore our nursery and pre-school pathways, start an application, or book a tour of La Casa Verde by Montessori Minds.',
   primaryButton: {
     label: 'Start An Application',
     to: ROUTES.admission,

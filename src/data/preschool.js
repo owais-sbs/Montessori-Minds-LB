@@ -50,13 +50,27 @@ export const preschoolPage = {
       eyebrow: 'Environment',
       title: 'Our Pre-School Learning Environment',
       description:
-        'Families looking for preschool in Choueifat find a nature-inspired classroom designed for movement, focus, and joy. La Casa Verde by Montessori Minds offers a Montessori early childhood program grounded in observation and respect.',
+        'Families looking for preschool in Choueifat — and parents searching for Montessori preschool near Choueifat from nearby communities such as Beirut and Baabda — find a nature-inspired classroom designed for movement, focus, and joy. La Casa Verde by Montessori Minds offers a Montessori early childhood program grounded in observation and respect.',
       image: images.preparedEnvironment,
       imageAlt: 'Prepared Montessori pre-school environment at Montessori Minds',
       reverse: true,
       links: [
         { label: 'La Casa Verde by Montessori Minds', to: ROUTES.laCasaVerde },
         { label: 'Explore our Montessori nursery', to: ROUTES.nursery },
+      ],
+    },
+    {
+      id: 'toddlers-preschool',
+      eyebrow: 'Young Children',
+      title: 'Montessori Preschool for Toddlers Growing Into Independence',
+      description:
+        'As toddlers mature into the pre-school years, they are ready for deeper concentration and collaborative work. Our Montessori preschool for young children builds on early childhood education in Lebanon with purposeful materials, mixed-age community, and calm daily rhythms.',
+      image: images.gallery.learning2,
+      imageAlt: 'Young children learning together in Montessori pre-school at Montessori Minds',
+      reverse: false,
+      links: [
+        { label: 'Montessori Nursery in Choueifat', to: ROUTES.nursery },
+        { label: 'View all programs', to: ROUTES.programs },
       ],
     },
   ],

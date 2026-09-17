@@ -54,7 +54,7 @@ export const laCasaVerdePage = {
       eyebrow: 'Community',
       title: 'La Casa Verde by Montessori Minds Choueifat',
       description:
-        'Located on Saida Old Road in Al Omara District, Choueifat, La Casa Verde by Montessori Minds welcomes families seeking respectful Montessori education in Lebanon. Visit us to experience the classroom atmosphere firsthand.',
+        'Located on Saida Old Road in Al Omara District, Choueifat, La Casa Verde by Montessori Minds welcomes families from across Lebanon — including the greater Beirut and Baabda areas — who are seeking respectful Montessori education. Visit our Choueifat campus to experience the classroom atmosphere firsthand.',
       image: images.nature,
       imageAlt: 'Nature corner at La Casa Verde Montessori Lebanon',
       reverse: true,
@@ -66,7 +66,7 @@ export const laCasaVerdePage = {
   ],
   cta: {
     eyebrow: 'Visit',
-    title: 'Come See La Casa Verde',
+    title: 'Come See La Casa Verde by Montessori Minds',
     description:
       'The best way to understand La Casa Verde by Montessori Minds is to walk through our classrooms and meet our guides.',
     buttonLabel: 'Book A Tour',

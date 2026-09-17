@@ -30,17 +30,20 @@ export const nurseryPage = {
       eyebrow: 'Toddlers',
       title: 'Montessori for Toddlers',
       description:
-        'Toddlers thrive when they can move, choose, and try for themselves. Our toddler Montessori program in Choueifat emphasizes practical life, language-rich moments, and respectful guidance — Montessori education for toddlers that feels warm and purposeful.',
+        'Toddlers thrive when they can move, choose, and try for themselves. Our toddler Montessori program in Choueifat — a nursery for toddlers and young children — emphasizes practical life, language-rich moments, and respectful guidance. Families seeking nursery school in Choueifat or early years nursery options in Lebanon are welcome to visit.',
       image: images.independence,
       imageAlt: 'Toddler practicing independence in the Montessori nursery',
       reverse: true,
+      links: [
+        { label: 'Toddler & nursery programs', to: ROUTES.programs },
+      ],
     },
     {
       id: 'care',
       eyebrow: 'Care',
       title: 'Exploration, Care, and Development',
       description:
-        'Nursery school days balance rest, play, and hands-on discovery. Guides partner with families so each child feels known. For parents seeking nursery in Choueifat, we offer early childhood care rooted in Montessori principles.',
+        'Nursery school days balance rest, play, and hands-on discovery. Guides partner with families so each child feels known. For parents seeking nursery in Choueifat — or a Montessori nursery near Choueifat from nearby Beirut and Baabda communities — we offer early years care rooted in Montessori principles.',
       image: images.gallery.mealtime,
       imageAlt: 'Children sharing a calm mealtime in our Montessori nursery',
       reverse: false,
