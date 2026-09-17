@@ -1,5 +1,6 @@
 ﻿import Container from '../layout/Container'
 import { FadeUp, StaggerContainer, StaggerItem } from '../animations'
+import { homeWhyChoose } from '../../data/home'
 
 const features = [
   {
@@ -49,11 +50,9 @@ export default function WhyChooseUsSection() {
     <section className="bg-warm-beige py-20 md:py-28">
       <Container>
         <FadeUp className="mx-auto max-w-2xl text-center mb-14">
-          <p className="eyebrow">Why Montessori Minds</p>
-          <h2 className="heading-xl mt-4">Why Families Choose Us</h2>
-          <p className="body-lg mt-4">
-            Choosing a Montessori school is a meaningful decision. Here is what makes La Casa Verde by Montessori Minds different.
-          </p>
+          <p className="eyebrow">{homeWhyChoose.eyebrow}</p>
+          <h2 className="heading-xl mt-4">{homeWhyChoose.title}</h2>
+          <p className="body-lg mt-4">{homeWhyChoose.description}</p>
         </FadeUp>
         <StaggerContainer className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" stagger={0.1}>
           {features.map((feature) => (

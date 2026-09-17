@@ -45,8 +45,8 @@ export const laCasaVerdePage = {
       imageAlt: 'Prepared Montessori environment at La Casa Verde Choueifat',
       reverse: false,
       links: [
-        { label: 'Montessori Nursery in Choueifat', to: ROUTES.nursery },
-        { label: 'Montessori Pre-School in Choueifat', to: ROUTES.preschool },
+        { label: 'Discover our Montessori Nursery', to: ROUTES.nursery },
+        { label: 'Explore Montessori pre-school', to: ROUTES.preschool },
       ],
     },
     {

@@ -21,4 +21,8 @@ export const externalResources = [
     label: 'American Montessori Society',
     href: 'https://amshq.org/',
   },
+  {
+    label: 'Association Montessori Internationale',
+    href: 'https://montessori-ami.org/',
+  },
 ]

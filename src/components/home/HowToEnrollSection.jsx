@@ -29,7 +29,7 @@ export default function HowToEnrollSection() {
           <p className="eyebrow">How to Apply</p>
           <h2 className="heading-xl mt-4">Three Simple Steps</h2>
           <p className="body-lg mt-4">
-            Getting started is easy. We are here to support you every step of the way.
+            Getting started at our Montessori school in Choueifat is simple. Tour the classrooms, meet our guides, and take the next step toward nursery or pre-school enrollment with a team that partners closely with families.
           </p>
         </FadeUp>
         <StaggerContainer className="grid gap-8 md:grid-cols-3" stagger={0.12}>

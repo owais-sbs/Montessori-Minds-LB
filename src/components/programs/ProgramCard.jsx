@@ -23,13 +23,25 @@ const icons = {
   ),
 }
 
+function programCta(program) {
+  if (program.id === 'bloom') {
+    return { to: ROUTES.preschool, label: 'Explore Montessori pre-school' }
+  }
+  if (program.id === 'sprout') {
+    return { to: ROUTES.nursery, label: 'Discover our toddler nursery' }
+  }
+  return { to: ROUTES.nursery, label: 'Explore our infant nursery' }
+}
+
 export default function ProgramCard({ program, showCta = true }) {
+  const cta = programCta(program)
+
   return (
     <article className="group flex flex-col overflow-hidden rounded-2xl bg-white shadow-sm transition-[box-shadow,transform] duration-300 hover:-translate-y-1 hover:shadow-md motion-reduce:transform-none">
       <div className="overflow-hidden">
         <img
           src={program.image}
-          alt={`${program.name} program at La Casa Verde`}
+          alt={`${program.name} Montessori program at La Casa Verde by Montessori Minds`}
           className="aspect-[4/3] w-full object-cover transition-transform duration-500 group-hover:scale-[1.03] motion-reduce:transform-none"
           loading="lazy"
           referrerPolicy="no-referrer"
@@ -44,10 +56,10 @@ export default function ProgramCard({ program, showCta = true }) {
         <p className="body-md flex-1">{program.shortDescription}</p>
         {showCta && (
           <Link
-            to={ROUTES.programs}
+            to={cta.to}
             className="inline-flex items-center gap-2 font-body text-[0.8125rem] font-medium uppercase tracking-[0.12em] text-forest-green transition-colors group-hover:text-olive"
           >
-            Learn More
+            {cta.label}
             <span className="transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transform-none" aria-hidden="true">
               →
             </span>

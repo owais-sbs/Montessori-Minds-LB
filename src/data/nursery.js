@@ -58,8 +58,8 @@ export const nurseryPage = {
       imageAlt: 'Guide supporting young learners at Montessori Minds nursery',
       reverse: true,
       links: [
-        { label: 'Montessori Pre-School in Choueifat', to: ROUTES.preschool },
-        { label: 'La Casa Verde by Montessori Minds', to: ROUTES.laCasaVerde },
+        { label: 'Explore our Montessori Pre-School', to: ROUTES.preschool },
+        { label: 'Explore La Casa Verde by Montessori Minds', to: ROUTES.laCasaVerde },
       ],
     },
   ],

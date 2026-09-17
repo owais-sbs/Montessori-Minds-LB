@@ -62,15 +62,15 @@ export default function PreparedEnvironmentAndProgramsSection() {
               <p className="body-md mt-3 text-muted-text">
                 Explore our{' '}
                 <Link to={ROUTES.nursery} className="text-olive transition-colors hover:text-forest-green">
-                  Montessori nursery
+                  Montessori nursery pathways
                 </Link>
                 {' '}and{' '}
                 <Link to={ROUTES.preschool} className="text-olive transition-colors hover:text-forest-green">
                   Montessori pre-school
                 </Link>
-                {' '}pathways — or learn more about{' '}
+                {' '}— or{' '}
                 <Link to={ROUTES.laCasaVerde} className="text-olive transition-colors hover:text-forest-green">
-                  La Casa Verde by Montessori Minds
+                  explore La Casa Verde by Montessori Minds
                 </Link>
                 .
               </p>

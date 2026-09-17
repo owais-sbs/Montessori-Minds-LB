@@ -4,7 +4,7 @@ export const approachHero = {
   eyebrow: 'Our Approach',
   title: 'Montessori Education & Early Learning',
   description:
-    'At Montessori Minds, we create a calm, intentional environment where children develop independence, focus, and a genuine love of learning through authentic Montessori practice.',
+    'At Montessori Minds, we create a calm, intentional environment where children develop independence, focus, and a genuine love of learning. Our approach to Montessori education in Lebanon is grounded in observation, prepared classrooms, and respectful partnership with families.',
   image: images.approach,
 }
 
@@ -14,13 +14,13 @@ export const approachSections = [
     eyebrow: 'Philosophy',
     title: 'Our Montessori Approach',
     description:
-      'We follow the Montessori method, which means we honor each child as they are. We observe, prepare the environment, and trust the child to lead their own early childhood learning.',
+      'We follow the Montessori method, which means we honor each child as they are. We observe, prepare the environment, and trust the child to lead their own early childhood learning. Families seeking Montessori education in Beirut and across Mount Lebanon often visit our Choueifat campus to see this approach in daily practice.',
     image: images.classroom,
     imageAlt: 'Children working in a Montessori early learning classroom',
     reverse: false,
     links: [
-      { label: 'Montessori Pre-School in Choueifat', to: '/preschool' },
-      { label: 'Montessori Nursery in Choueifat', to: '/nursery' },
+      { label: 'Explore our Montessori Pre-School', to: '/preschool' },
+      { label: 'Discover our Montessori Nursery', to: '/nursery' },
     ],
   },
   {
@@ -28,7 +28,7 @@ export const approachSections = [
     eyebrow: 'Environment',
     title: 'Prepared Environment',
     description:
-      'Every shelf, every material, every corner of our classroom is there for a reason. Children can see what is available, make their own choices, and work with focus.',
+      'Every shelf, every material, every corner of our classroom is there for a reason. Children can see what is available, make their own choices, and work with focus — the foundation of Montessori early childhood education.',
     image: images.preparedEnvironment,
     reverse: true,
   },
@@ -37,7 +37,7 @@ export const approachSections = [
     eyebrow: 'Development',
     title: 'Independence',
     description:
-      'From pouring their own water to getting dressed on their own, children here get real chances to care for themselves. That builds confidence that lasts.',
+      'From pouring their own water to getting dressed on their own, children here get real chances to care for themselves. That builds confidence that lasts — a core outcome of Montessori education for toddlers and young children.',
     image: images.independence,
     reverse: false,
   },
@@ -46,7 +46,7 @@ export const approachSections = [
     eyebrow: 'Daily Living',
     title: 'Practical Life',
     description:
-      'Cooking, cleaning, gardening. These are not chores here. They are how children learn coordination, focus, and what it means to be part of a community.',
+      'Cooking, cleaning, gardening. These are not chores here. They are how children learn coordination, focus, and what it means to be part of a community — purposeful work at the heart of our Montessori early childhood program.',
     image: images.gallery.activity2,
     reverse: true,
   },
@@ -82,12 +82,12 @@ export const approachSections = [
     eyebrow: 'Guidance',
     title: 'Role of the Teacher',
     description:
-      'Our teachers observe, prepare, and guide gently. They know when to step in and when to step back, so the child can lead their own discovery.',
+      'Our teachers observe, prepare, and guide gently. They know when to step in and when to step back, so the child can lead their own discovery within a Montessori school community built on trust.',
     image: images.approach,
     imageAlt: 'Montessori guide supporting early childhood learning at Montessori Minds',
     reverse: true,
     links: [
-      { label: 'La Casa Verde by Montessori Minds', to: '/la-casa-verde' },
+      { label: 'Explore La Casa Verde by Montessori Minds', to: '/la-casa-verde' },
     ],
   },
 ]
