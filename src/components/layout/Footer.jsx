@@ -12,8 +12,8 @@ export default function Footer() {
       <Container>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4 lg:gap-12">
           <div className="flex max-w-xs flex-col gap-4">
-            <Link to={ROUTES.home} className="inline-block transition-opacity hover:opacity-80" aria-label="La Casa Verde home">
-              <img src="/images/branding/La casa verde logo2.png" alt="La Casa Verde logo" className="h-36 w-36 object-contain" />
+            <Link to={ROUTES.home} className="inline-block transition-opacity hover:opacity-80" aria-label="La Casa Verde by Montessori Minds home">
+              <img src="/images/branding/La casa verde logo2.png" alt="La Casa Verde by Montessori Minds logo" className="h-36 w-36 object-contain" />
             </Link>
             <div>
               <Link to={ROUTES.home} className="heading-md text-forest-green transition-colors hover:text-olive">

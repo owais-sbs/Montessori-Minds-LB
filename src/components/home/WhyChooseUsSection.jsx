@@ -49,10 +49,10 @@ export default function WhyChooseUsSection() {
     <section className="bg-warm-beige py-20 md:py-28">
       <Container>
         <FadeUp className="mx-auto max-w-2xl text-center mb-14">
-          <p className="eyebrow">Why La Casa Verde</p>
+          <p className="eyebrow">Why Montessori Minds</p>
           <h2 className="heading-xl mt-4">Why Families Choose Us</h2>
           <p className="body-lg mt-4">
-            Choosing a preschool is a big decision. Here is what makes La Casa Verde different.
+            Choosing a Montessori school is a meaningful decision. Here is what makes La Casa Verde by Montessori Minds different.
           </p>
         </FadeUp>
         <StaggerContainer className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" stagger={0.1}>

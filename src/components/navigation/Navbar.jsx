@@ -59,8 +59,8 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
     >
       <Container className="flex h-[6.5rem] items-center justify-between gap-6">
-        <Link to={ROUTES.home} className="shrink-0 transition-opacity hover:opacity-80 py-3" aria-label="La Casa Verde home">
-          <img src="/images/branding/La casa verde logo2.png" alt="La Casa Verde logo" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
+        <Link to={ROUTES.home} className="shrink-0 transition-opacity hover:opacity-80 py-3" aria-label="La Casa Verde by Montessori Minds home">
+          <img src="/images/branding/La casa verde logo2.png" alt="La Casa Verde by Montessori Minds logo" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">

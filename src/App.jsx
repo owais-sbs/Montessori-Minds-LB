@@ -3,6 +3,9 @@ import PublicLayout from './components/layout/PublicLayout'
 import ScrollToTop from './components/navigation/ScrollToTop'
 import PageLoader from './components/animations/PageLoader'
 import Home from './pages/Home'
+import LaCasaVerde from './pages/LaCasaVerde'
+import Preschool from './pages/Preschool'
+import Nursery from './pages/Nursery'
 import OurApproach from './pages/OurApproach'
 import Programs from './pages/Programs'
 import Admission from './pages/Admission'
@@ -18,6 +21,9 @@ export default function App() {
       <Routes>
         <Route element={<PublicLayout />}>
           <Route path={ROUTES.home} element={<Home />} />
+          <Route path={ROUTES.laCasaVerde} element={<LaCasaVerde />} />
+          <Route path={ROUTES.preschool} element={<Preschool />} />
+          <Route path={ROUTES.nursery} element={<Nursery />} />
           <Route path={ROUTES.ourApproach} element={<OurApproach />} />
           <Route path={ROUTES.programs} element={<Programs />} />
           <Route path={ROUTES.admission} element={<Admission />} />

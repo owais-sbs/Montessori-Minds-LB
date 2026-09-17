@@ -1,10 +1,8 @@
 import Container from '../layout/Container'
 import ProgramCard from '../programs/ProgramCard'
-import CTASection from '../sections/CTASection'
-import PageHero from '../sections/PageHero'
+import { Link } from 'react-router-dom'
 import { StaggerContainer, StaggerItem, FadeUp } from '../animations'
 import { programs } from '../../data/programs'
-import { images } from '../../data/images'
 import { ROUTES } from '../../lib/routes'
 
 export default function ProgramDetail({ program, index }) {
@@ -22,7 +20,7 @@ export default function ProgramDetail({ program, index }) {
           <div className={`overflow-hidden rounded-3xl ${isReverse ? 'lg:order-1' : ''}`}>
             <img
               src={program.image}
-              alt={`${program.name} program`}
+              alt={`${program.name} Montessori program for ${program.ageRange} at Montessori Minds in Choueifat`}
               className="aspect-[4/3] w-full object-cover"
               loading="lazy"
               referrerPolicy="no-referrer"
@@ -38,6 +36,24 @@ export function ProgramsOverview() {
   return (
     <section className="bg-warm-beige py-20 md:py-28">
       <Container>
+        <FadeUp className="mx-auto mb-12 max-w-2xl text-center">
+          <h2 className="heading-xl">Choose the Right Pathway</h2>
+          <p className="body-lg mt-4">
+            Learn more about our{' '}
+            <Link to={ROUTES.nursery} className="text-olive transition-colors hover:text-forest-green">
+              Montessori nursery in Choueifat
+            </Link>
+            {' '}and{' '}
+            <Link to={ROUTES.preschool} className="text-olive transition-colors hover:text-forest-green">
+              Montessori pre-school in Choueifat
+            </Link>
+            , or visit{' '}
+            <Link to={ROUTES.laCasaVerde} className="text-olive transition-colors hover:text-forest-green">
+              La Casa Verde by Montessori Minds
+            </Link>
+            .
+          </p>
+        </FadeUp>
         <StaggerContainer className="grid gap-8 md:grid-cols-3" stagger={0.1}>
           {programs.map((program) => (
             <StaggerItem key={program.id}>

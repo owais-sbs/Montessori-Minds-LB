@@ -13,7 +13,7 @@ export const site = {
   name: 'La Casa Verde',
   subtitle: 'By Montessori Minds',
   tagline:
-    'A Montessori preschool in Choueifat, Lebanon where children learn through nature, play, and hands-on discovery.',
+    'Montessori school, pre-school, and nursery in Choueifat, Lebanon — where children learn through nature, play, and hands-on discovery.',
 }
 
 export const externalResources = [

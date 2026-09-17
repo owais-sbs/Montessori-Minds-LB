@@ -1,7 +1,7 @@
 import { ROUTES } from '../lib/routes'
-import { programs } from './programs'
 
 export const primaryNavLinks = [
+  { label: 'La Casa Verde', to: ROUTES.laCasaVerde },
   { label: 'Our Approach', to: ROUTES.ourApproach },
   { label: 'Programs', to: ROUTES.programs },
   { label: 'Admissions', to: ROUTES.admission },
@@ -9,6 +9,9 @@ export const primaryNavLinks = [
 ]
 
 export const footerNavLinks = [
+  { label: 'La Casa Verde by Montessori Minds', to: ROUTES.laCasaVerde },
+  { label: 'Montessori Pre-School in Choueifat', to: ROUTES.preschool },
+  { label: 'Montessori Nursery in Choueifat', to: ROUTES.nursery },
   { label: 'Our Approach', to: ROUTES.ourApproach },
   { label: 'Programs', to: ROUTES.programs },
   { label: 'Admission', to: ROUTES.admission },
@@ -16,7 +19,9 @@ export const footerNavLinks = [
   { label: 'Book A Tour', to: ROUTES.bookATour },
 ]
 
-export const footerProgramLinks = programs.map(({ name }) => ({
-  label: name,
-  to: ROUTES.programs,
-}))
+export const footerProgramLinks = [
+  { label: 'The Nest', to: ROUTES.nursery },
+  { label: 'The Sprout', to: ROUTES.nursery },
+  { label: 'The Bloom', to: ROUTES.preschool },
+  { label: 'All Programs', to: ROUTES.programs },
+]

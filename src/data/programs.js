@@ -8,7 +8,7 @@ export const programs = [
     ageRange: 'Infants (0-18 months)',
     shortDescription: 'A gentle start for our youngest learners.',
     description:
-      'In The Nest, infants are welcomed into a warm, safe space designed for exploration and connection. We follow their natural rhythm of play, rest, and discovery.',
+      'In The Nest, infants are welcomed into a warm Montessori nursery space designed for exploration and connection. We follow their natural rhythm of play, rest, and discovery.',
     image: images.programs.nest,
     icon: 'nest',
     features: [
@@ -25,7 +25,7 @@ export const programs = [
     ageRange: 'Toddlers (18 months - 3 years)',
     shortDescription: 'Exploring, moving, and growing with joy.',
     description:
-      'The Sprout program is built around what toddlers do best: move, explore, and test their independence. Every day brings new chances to try things on their own.',
+      'The Sprout is our Montessori toddler pathway — built around movement, exploration, and growing independence. Every day brings new chances for toddlers to try things on their own.',
     image: images.programs.sprout,
     icon: 'sprout',
     features: [
@@ -42,7 +42,7 @@ export const programs = [
     ageRange: 'Preschool (3-6 years)',
     shortDescription: 'Getting ready to take on the world.',
     description:
-      'The Bloom classroom is where children dive deeper into Montessori materials, work together on projects, and build the confidence and focus they will carry forward.',
+      'The Bloom is our Montessori pre-school classroom, where children dive deeper into Montessori materials, collaborate on projects, and build the confidence and focus they will carry forward.',
     image: images.programs.bloom,
     icon: 'bloom',
     features: [
@@ -62,22 +62,22 @@ export const programOptions = programs.map(({ id, name }) => ({
 export const programsPage = {
   hero: {
     eyebrow: 'Programs',
-    title: 'Programs for Every Stage',
+    title: 'Montessori Programs for Every Stage',
     description:
-      'From infancy through preschool, each program is built around your child at their stage of growth.',
-    imageAlt: 'La Casa Verde classroom overview',
+      'From Montessori nursery pathways for infants and toddlers to Montessori pre-school for ages 3–6, each program at La Casa Verde by Montessori Minds is built around your child’s development.',
+    imageAlt: 'Montessori classroom overview at Montessori Minds in Choueifat',
   },
   admissionCta: {
     eyebrow: 'Admissions',
     title: 'Ready to Enroll?',
     description:
-      'Start your application or schedule a visit to learn more about our programs.',
+      'Start your application or schedule a visit to learn more about our nursery and pre-school programs.',
     buttonLabel: 'Start An Application',
   },
   tourCta: {
     eyebrow: 'Visit',
     title: 'See Our Programs in Person',
-    description: 'A tour is the best way to see what makes La Casa Verde different.',
+    description: 'A tour is the best way to experience Montessori education at Montessori Minds in Choueifat.',
     buttonLabel: 'Book A Tour',
   },
 }

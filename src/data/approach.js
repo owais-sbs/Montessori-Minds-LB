@@ -2,9 +2,9 @@
 
 export const approachHero = {
   eyebrow: 'Our Approach',
-  title: 'A Thoughtful Montessori Environment',
+  title: 'Montessori Education & Early Learning',
   description:
-    'At La Casa Verde, we create a calm and intentional space where children develop independence, focus, and a genuine love of learning.',
+    'At Montessori Minds, we create a calm, intentional environment where children develop independence, focus, and a genuine love of learning through authentic Montessori practice.',
   image: images.approach,
 }
 
@@ -14,9 +14,14 @@ export const approachSections = [
     eyebrow: 'Philosophy',
     title: 'Our Montessori Approach',
     description:
-      'We follow the Montessori method, which means we honor each child as they are. We observe, we prepare the environment, and we trust the child to lead their own learning.',
+      'We follow the Montessori method, which means we honor each child as they are. We observe, prepare the environment, and trust the child to lead their own early childhood learning.',
     image: images.classroom,
+    imageAlt: 'Children working in a Montessori early learning classroom',
     reverse: false,
+    links: [
+      { label: 'Montessori Pre-School in Choueifat', to: '/preschool' },
+      { label: 'Montessori Nursery in Choueifat', to: '/nursery' },
+    ],
   },
   {
     id: 'prepared-environment',
@@ -79,7 +84,11 @@ export const approachSections = [
     description:
       'Our teachers observe, prepare, and guide gently. They know when to step in and when to step back, so the child can lead their own discovery.',
     image: images.approach,
+    imageAlt: 'Montessori guide supporting early childhood learning at Montessori Minds',
     reverse: true,
+    links: [
+      { label: 'La Casa Verde by Montessori Minds', to: '/la-casa-verde' },
+    ],
   },
 ]
 

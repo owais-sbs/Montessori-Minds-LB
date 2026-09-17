@@ -10,7 +10,7 @@ export default function OurApproach() {
 
   return (
     <>
-      <PageHero {...approachHero} imageAlt="Our Montessori classroom at La Casa Verde" />
+      <PageHero {...approachHero} imageAlt="Montessori education and early learning at Montessori Minds in Choueifat" />
       {approachSections.map((section, index) => (
         <EditorialSection key={section.id} section={section} index={index} />
       ))}

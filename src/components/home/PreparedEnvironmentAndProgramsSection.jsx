@@ -1,8 +1,10 @@
 import Container from '../layout/Container'
 import { FadeUp, StaggerContainer, StaggerItem } from '../animations'
+import { Link } from 'react-router-dom'
 import { images } from '../../data/images'
 import { homePreparedEnvironment } from '../../data/home'
 import { programs } from '../../data/programs'
+import { ROUTES } from '../../lib/routes'
 
 const icons = {
   nest: (
@@ -36,6 +38,12 @@ export default function PreparedEnvironmentAndProgramsSection() {
           <FadeUp className="flex flex-col gap-5">
             <h2 className="heading-xl">{homePreparedEnvironment.title}</h2>
             <p className="body-md text-muted-text">{homePreparedEnvironment.description}</p>
+            <Link
+              to={homePreparedEnvironment.linkTo}
+              className="body-sm font-medium text-olive transition-colors hover:text-forest-green"
+            >
+              {homePreparedEnvironment.linkLabel} →
+            </Link>
             <div className="mt-3 overflow-hidden rounded-2xl">
               <img
                 src={images.preparedEnvironment}
@@ -51,11 +59,29 @@ export default function PreparedEnvironmentAndProgramsSection() {
           <div className="flex flex-col gap-6">
             <FadeUp delay={0.1}>
               <h2 className="heading-xl">Our Programs</h2>
+              <p className="body-md mt-3 text-muted-text">
+                Explore our{' '}
+                <Link to={ROUTES.nursery} className="text-olive transition-colors hover:text-forest-green">
+                  Montessori nursery
+                </Link>
+                {' '}and{' '}
+                <Link to={ROUTES.preschool} className="text-olive transition-colors hover:text-forest-green">
+                  Montessori pre-school
+                </Link>
+                {' '}pathways — or learn more about{' '}
+                <Link to={ROUTES.laCasaVerde} className="text-olive transition-colors hover:text-forest-green">
+                  La Casa Verde by Montessori Minds
+                </Link>
+                .
+              </p>
             </FadeUp>
 
             {/* Program cards — 3 columns on sm+, stacked on mobile */}
             <StaggerContainer className="grid grid-cols-1 gap-4 sm:grid-cols-3" stagger={0.08}>
-              {programs.map((program) => (
+              {programs.map((program) => {
+                const programTo =
+                  program.id === 'bloom' ? ROUTES.preschool : ROUTES.nursery
+                return (
                 <StaggerItem
                   key={program.id}
                   className="flex flex-col gap-3 rounded-2xl bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 motion-reduce:transform-none"
@@ -65,13 +91,18 @@ export default function PreparedEnvironmentAndProgramsSection() {
                     {icons[program.icon]}
                   </div>
                   {/* Name */}
-                  <h3 className="font-display text-lg font-medium text-forest-green leading-tight">{program.name}</h3>
+                  <h3 className="font-display text-lg font-medium text-forest-green leading-tight">
+                    <Link to={programTo} className="transition-colors hover:text-olive">
+                      {program.name}
+                    </Link>
+                  </h3>
                   {/* Age range */}
                   <p className="text-[0.7rem] font-medium uppercase tracking-wider text-soft-olive">{program.ageRange}</p>
                   {/* Short description */}
                   <p className="body-sm flex-1">{program.shortDescription}</p>
                 </StaggerItem>
-              ))}
+                )
+              })}
             </StaggerContainer>
           </div>
 
