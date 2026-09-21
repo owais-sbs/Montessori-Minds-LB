@@ -25,24 +25,6 @@ function MenuIcon({ open }) {
   )
 }
 
-function BrandMark() {
-  return (
-    <div className="flex items-center gap-3">
-      <img
-        src={LOGO_SRC}
-        alt=""
-        className="h-14 w-14 object-contain sm:h-[4.25rem] sm:w-[4.25rem]"
-      />
-      <div className="hidden min-w-0 flex-col sm:flex">
-        <span className="font-display text-lg leading-tight text-deep-forest">{site.name}</span>
-        <span className="text-[0.65rem] font-medium uppercase tracking-[0.18em] text-muted-text">
-          {site.subtitle}
-        </span>
-      </div>
-    </div>
-  )
-}
-
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const menuId = useId()
@@ -71,6 +53,11 @@ export default function Navbar() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [menuOpen])
 
+  const navLinkClass = ({ isActive }) =>
+    `whitespace-nowrap font-body text-[0.625rem] font-medium uppercase tracking-[0.1em] transition-colors xl:text-[0.6875rem] xl:tracking-[0.12em] ${
+      isActive ? 'text-accent-rose' : 'text-deep-forest hover:text-accent-rose'
+    }`
+
   return (
     <motion.header
       className="fixed top-0 left-0 right-0 z-50 border-b border-deep-forest/8 bg-white/96 text-deep-forest shadow-sm backdrop-blur-xl"
@@ -78,27 +65,38 @@ export default function Navbar() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      <Container className="flex h-[var(--header-height)] items-center justify-between gap-4">
-        <Link to={ROUTES.home} className="shrink-0 transition-opacity hover:opacity-85 py-1" aria-label={`${site.name} home`}>
-          <BrandMark />
+      <Container className="flex h-[var(--header-height)] items-center justify-between gap-3 lg:gap-4">
+        <Link
+          to={ROUTES.home}
+          className="shrink-0 py-1 transition-opacity hover:opacity-85"
+          aria-label={`${site.name} by ${site.subtitle} — home`}
+        >
+          <img
+            src={LOGO_SRC}
+            alt=""
+            className="h-12 w-12 object-contain sm:h-14 sm:w-14 lg:h-[3.75rem] lg:w-[3.75rem]"
+          />
         </Link>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
-          <ul className="flex items-center gap-6">
+        <nav
+          className="hidden min-w-0 flex-1 items-center justify-end gap-3 lg:flex xl:gap-4"
+          aria-label="Primary navigation"
+        >
+          <ul className="flex max-w-full flex-nowrap items-center gap-x-2.5 xl:gap-x-3.5">
             {primaryNavLinks.map(({ label, to }) => (
-              <li key={to}>
-                <NavLink
-                  to={to}
-                  className={({ isActive }) =>
-                    `button-text transition-colors ${isActive ? 'text-accent-rose' : 'text-deep-forest hover:text-accent-rose'}`
-                  }
-                >
+              <li key={to} className="shrink-0">
+                <NavLink to={to} className={navLinkClass}>
                   {label}
                 </NavLink>
               </li>
             ))}
           </ul>
-          <Button to={ROUTES.bookATour} variant="primary">
+          <Button
+            to={ROUTES.bookATour}
+            variant="primary"
+            className="!px-4 !py-2.5 !text-[0.65rem] xl:!px-5 xl:!text-[0.7rem]"
+            showArrow={false}
+          >
             Book a visit
           </Button>
         </nav>
@@ -106,7 +104,7 @@ export default function Navbar() {
         <button
           ref={menuButtonRef}
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-deep-forest transition-colors hover:bg-deep-forest/6 lg:hidden"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-deep-forest transition-colors hover:bg-deep-forest/6 lg:hidden"
           aria-expanded={menuOpen}
           aria-controls={menuId}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
