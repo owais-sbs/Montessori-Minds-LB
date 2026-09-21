@@ -1,18 +1,27 @@
-import { motion } from 'motion/react'
+import { useEffect, useRef, useState } from 'react'
+import { motion, useInView } from 'motion/react'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
-import { DEFAULT_DURATION } from './animationDefaults'
+import { DEFAULT_DURATION, SCROLL_VIEWPORT, SCROLL_STAGGER } from './animationDefaults'
 
 export default function StaggerContainer({
   children,
   className,
-  stagger = 0.14,
+  stagger = SCROLL_STAGGER,
   delay = 0,
-  once = false,
   as = 'div',
   trigger = 'view',
   ...props
 }) {
   const prefersReducedMotion = useReducedMotion()
+  const ref = useRef(null)
+  const isInView = useInView(ref, SCROLL_VIEWPORT)
+  const [active, setActive] = useState(trigger === 'load')
+
+  useEffect(() => {
+    if (trigger === 'load' || prefersReducedMotion) return
+    if (isInView) setActive(true)
+  }, [isInView, trigger, prefersReducedMotion])
+
   const Component = motion[as] ?? motion.div
 
   if (prefersReducedMotion) {
@@ -26,18 +35,12 @@ export default function StaggerContainer({
 
   const animationProps =
     trigger === 'load'
-      ? {
-          initial: 'hidden',
-          animate: 'visible',
-        }
-      : {
-          initial: 'hidden',
-          whileInView: 'visible',
-          viewport: { once, amount: 0.15 },
-        }
+      ? { initial: 'hidden', animate: 'visible' }
+      : { initial: 'hidden', animate: active ? 'visible' : 'hidden' }
 
   return (
     <Component
+      ref={ref}
       className={className}
       variants={{
         hidden: {},

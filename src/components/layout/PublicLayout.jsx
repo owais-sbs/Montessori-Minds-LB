@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from 'react-router-dom'
 import Navbar from '../navigation/Navbar'
 import Footer from './Footer'
-import WhatsAppButton from './WhatsAppButton'
+import CallButton from './CallButton'
 import MobileStickyCTA from './MobileStickyCTA'
 import PageTransition from '../animations/PageTransition'
 import { ROUTES } from '../../lib/routes'
@@ -23,7 +23,7 @@ export default function PublicLayout() {
         <PageTransition />
       </main>
       <Footer />
-      <WhatsAppButton />
+      <CallButton />
       <MobileStickyCTA />
     </div>
   )

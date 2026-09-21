@@ -1,10 +1,11 @@
-import { motion } from 'motion/react'
+import { useEffect, useRef, useState } from 'react'
+import { motion, useInView } from 'motion/react'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 import {
   DEFAULT_DELAY,
   SCROLL_DURATION,
-  DEFAULT_VIEWPORT_AMOUNT,
   DEFAULT_Y_OFFSET,
+  SCROLL_VIEWPORT,
   SMOOTH_EASE,
 } from './animationDefaults'
 
@@ -13,7 +14,6 @@ export default function FadeUp({
   className,
   delay = DEFAULT_DELAY,
   duration = SCROLL_DURATION,
-  once = false,
   y = DEFAULT_Y_OFFSET,
   x = 0,
   as = 'div',
@@ -22,6 +22,18 @@ export default function FadeUp({
   ...props
 }) {
   const prefersReducedMotion = useReducedMotion()
+  const ref = useRef(null)
+  const isInView = useInView(ref, {
+    ...SCROLL_VIEWPORT,
+    amount: typeof SCROLL_VIEWPORT.amount === 'number' ? SCROLL_VIEWPORT.amount : 0.12,
+  })
+  const [active, setActive] = useState(trigger === 'load')
+
+  useEffect(() => {
+    if (trigger === 'load' || prefersReducedMotion) return
+    if (isInView) setActive(true)
+  }, [isInView, trigger, prefersReducedMotion])
+
   const Component = motion[as] ?? motion.div
 
   if (prefersReducedMotion) {
@@ -39,14 +51,11 @@ export default function FadeUp({
   const animationProps =
     trigger === 'load'
       ? { initial, animate: visible }
-      : {
-          initial,
-          whileInView: visible,
-          viewport: { once, amount: DEFAULT_VIEWPORT_AMOUNT },
-        }
+      : { initial, animate: active ? visible : initial }
 
   return (
     <Component
+      ref={ref}
       className={className}
       transition={{ duration, delay, ease: SMOOTH_EASE }}
       {...animationProps}
