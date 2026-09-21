@@ -1,11 +1,11 @@
-import { useEffect } from 'react'
+import { useLayoutEffect } from 'react'
 import {
   absoluteUrl,
   defaultSeo,
   getBreadcrumbJsonLd,
   getFaqPageJsonLd,
   getWebPageJsonLd,
-} from '../lib/seo'
+} from '../lib/seo.js'
 
 function upsertMeta(selector, attrs) {
   let el = document.head.querySelector(selector)
@@ -52,10 +52,11 @@ export default function usePageMeta({
   breadcrumb,
   faqs,
 } = {}) {
-  useEffect(() => {
+  useLayoutEffect(() => {
     const pageTitle = title || defaultSeo.title
     const pageDescription = description || defaultSeo.description
-    const pageUrl = absoluteUrl(path || '/')
+    const pagePath = path ?? '/'
+    const pageUrl = absoluteUrl(pagePath)
     const pageImage = image || defaultSeo.image
 
     document.title = pageTitle
@@ -92,10 +93,6 @@ export default function usePageMeta({
       property: 'og:image',
       content: pageImage,
     })
-    upsertMeta('meta[property="og:image:alt"]', {
-      property: 'og:image:alt',
-      content: 'Montessori Minds — Montessori nursery and pre-school in Choueifat, Lebanon',
-    })
     upsertMeta('meta[name="twitter:card"]', {
       name: 'twitter:card',
       content: 'summary_large_image',
@@ -114,19 +111,11 @@ export default function usePageMeta({
     })
     upsertLink('canonical', pageUrl)
 
-    if (path) {
-      upsertJsonLd(
-        'page-jsonld',
-        getWebPageJsonLd({ title: pageTitle, description: pageDescription, path }),
-      )
-      upsertJsonLd(
-        'breadcrumb-jsonld',
-        getBreadcrumbJsonLd({ path, breadcrumb }),
-      )
-      upsertJsonLd('faq-jsonld', getFaqPageJsonLd(faqs))
-    } else {
-      upsertJsonLd('breadcrumb-jsonld', null)
-      upsertJsonLd('faq-jsonld', null)
-    }
+    upsertJsonLd(
+      'page-jsonld',
+      getWebPageJsonLd({ title: pageTitle, description: pageDescription, path: pagePath }),
+    )
+    upsertJsonLd('breadcrumb-jsonld', getBreadcrumbJsonLd({ path: pagePath, breadcrumb }))
+    upsertJsonLd('faq-jsonld', getFaqPageJsonLd(faqs))
   }, [title, description, path, image, breadcrumb, faqs])
 }

@@ -5,12 +5,8 @@ import CreamHeroSection from '../components/sections/CreamHeroSection'
 import Container from '../components/layout/Container'
 import { FadeUp } from '../components/animations'
 import { ROUTES } from '../lib/routes'
-import usePageMeta from '../hooks/usePageMeta'
-import { pageSeo } from '../lib/seo'
 
 export default function Programs() {
-  usePageMeta(pageSeo.programs)
-
   return (
     <>
       <CreamHeroSection

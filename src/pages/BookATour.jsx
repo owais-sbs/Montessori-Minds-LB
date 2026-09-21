@@ -10,14 +10,11 @@ import { FadeUp } from '../components/animations'
 import { bookTourSchema } from '../lib/schemas/bookTour'
 import { contactPlaceholders } from '../data/contact'
 import { programOptions } from '../data/programs'
-import usePageMeta from '../hooks/usePageMeta'
-import { pageSeo } from '../lib/seo'
 import { submitFormEmail } from '../lib/submitFormEmail'
 
 const timeOptions = ['9:00 AM', '10:00 AM', '11:00 AM', '1:00 PM', '2:00 PM', '3:00 PM']
 
 export default function BookATour() {
-  usePageMeta(pageSeo.bookATour)
   const [submitted, setSubmitted] = useState(false)
   const [submitError, setSubmitError] = useState('')
   const whatsappHref = `https://wa.me/${contactPlaceholders.phoneRaw.replace(/\D/g, '')}`
