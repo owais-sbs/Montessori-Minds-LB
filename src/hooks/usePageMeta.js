@@ -75,7 +75,7 @@ export default function usePageMeta({
     })
     upsertMeta('meta[property="og:locale"]', {
       property: 'og:locale',
-      content: 'en_LB',
+      content: 'en_US',
     })
     upsertMeta('meta[property="og:title"]', {
       property: 'og:title',

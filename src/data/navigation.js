@@ -4,6 +4,8 @@ export const primaryNavLinks = [
   { label: 'La Casa Verde', to: ROUTES.laCasaVerde },
   { label: 'Our Approach', to: ROUTES.ourApproach },
   { label: 'Programs', to: ROUTES.programs },
+  { label: 'Nursery', to: ROUTES.nursery },
+  { label: 'Pre-School', to: ROUTES.preschool },
   { label: 'Admissions', to: ROUTES.admission },
   { label: 'Gallery', to: ROUTES.gallery },
 ]

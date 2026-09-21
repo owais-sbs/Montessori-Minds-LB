@@ -2,12 +2,14 @@ import { ROUTES } from '../lib/routes'
 
 export const homeHeroBrief = {
   eyebrow: 'Montessori Minds',
-  titleLine1: 'Montessori nursery & pre-school in Choueifat.',
-  titleAccent: 'Little hands. Big beginnings.',
+  titleLine1: 'Little hands.',
+  titleAccent: 'Big beginnings.',
+  keywordLine:
+    'Montessori school, nursery and pre-school in Choueifat, Lebanon.',
   description:
-    'Montessori Minds is a Montessori school in Choueifat serving families across Lebanon — including Beirut and Mount Lebanon — with nurturing nursery and pre-school programs.',
+    'Montessori Minds welcomes families from Choueifat, Beirut and Mount Lebanon with nurturing nursery and pre-school programs for ages 6 months to 6 years.',
   primaryCta: { label: 'Book a visit', to: ROUTES.bookATour },
-  secondaryCta: { label: 'Discover Montessori', href: '#emotional-hook' },
+  secondaryCta: { label: 'Discover our approach', to: ROUTES.ourApproach },
   infoBar:
     'Ages 6 months – 6 years · Choueifat, Lebanon · Arabic · English · French',
   videoSrc: '/videos/hero.mp4',

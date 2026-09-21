@@ -25,7 +25,7 @@ export default function ParentsPageContent() {
               <StaggerItem key={step.title}>
                 <div className={`px-5 py-6 ${index < c.journey.length - 1 ? 'border-b border-warm-cream/12' : ''}`}>
                   <p className="numbered-index">{String(index + 1).padStart(2, '0')}</p>
-                  <p className="heading-sm mt-2">{step.title}</p>
+                  <h3 className="heading-sm mt-2">{step.title}</h3>
                   <p className="body-sm mt-2">{step.description}</p>
                 </div>
               </StaggerItem>
@@ -53,7 +53,7 @@ export default function ParentsPageContent() {
           <StaggerContainer className="flex flex-col gap-3" stagger={0.12}>
             {c.homeTips.map((tip) => (
               <StaggerItem key={tip.title} className="rounded-2xl border border-warm-cream/12 bg-warm-cream/5 px-5 py-5">
-                <p className="heading-sm">{tip.title}</p>
+                <h3 className="heading-sm">{tip.title}</h3>
                 <p className="body-sm mt-2">{tip.description}</p>
               </StaggerItem>
             ))}

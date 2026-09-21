@@ -28,7 +28,7 @@ export default function OurPeopleSection() {
               </div>
               <div className="p-5">
                 <p className="program-age-label !text-accent-rose">{person.role}</p>
-                <p className="heading-sm mt-2">{person.name}</p>
+                <h3 className="heading-sm mt-2">{person.name}</h3>
                 <p className="body-sm mt-2">{person.note}</p>
               </div>
             </StaggerItem>

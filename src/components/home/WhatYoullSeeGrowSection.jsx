@@ -27,7 +27,7 @@ export default function WhatYoullSeeGrowSection() {
                   index < whatYoullSeeGrow.rows.length - 1 ? 'border-b border-warm-cream/12' : ''
                 }`}
               >
-                <p className="font-display text-base italic text-accent-rose sm:text-lg">{row.quality}</p>
+                <h3 className="font-display text-base italic text-accent-rose sm:text-lg">{row.quality}</h3>
                 <p className="mt-2 font-display text-[clamp(1.35rem,4vw,1.65rem)] leading-snug text-white">
                   &ldquo;{row.childVoice}&rdquo;
                 </p>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Button } from '../ui'
 import { FadeUp, StaggerContainer, StaggerItem } from '../animations'
 import { images } from '../../data/images'
@@ -27,6 +28,9 @@ export default function HeroSection() {
             <br />
             <span className="headline-accent">{homeHeroBrief.titleAccent}</span>
           </h1>
+          <p className="text-[0.9rem] font-medium leading-relaxed text-warm-cream/95 sm:text-[0.95rem]">
+            {homeHeroBrief.keywordLine}
+          </p>
           <p className="text-[0.9rem] leading-relaxed text-warm-cream/92 sm:text-[0.95rem]">
             {homeHeroBrief.description}
           </p>
@@ -39,13 +43,13 @@ export default function HeroSection() {
             </Button>
           </StaggerItem>
           <StaggerItem>
-            <a
-              href={homeHeroBrief.secondaryCta.href}
-              className="inline-flex items-center gap-1 font-body text-[0.7rem] font-medium uppercase tracking-[0.16em] text-warm-cream/95 sm:text-xs"
+            <Link
+              to={homeHeroBrief.secondaryCta.to}
+              className="inline-flex items-center gap-1 font-body text-[0.7rem] font-medium uppercase tracking-[0.16em] text-warm-cream/95 transition-colors hover:text-white sm:text-xs"
             >
               {homeHeroBrief.secondaryCta.label}
-              <span aria-hidden="true">↓</span>
-            </a>
+              <span aria-hidden="true">→</span>
+            </Link>
           </StaggerItem>
         </StaggerContainer>
 

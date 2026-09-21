@@ -13,10 +13,9 @@ export default function EmotionalHookSection() {
             <p className="eyebrow">{emotionalHook.eyebrow}</p>
             <h2 className="font-display text-[clamp(1.65rem,5vw,2.35rem)] font-normal leading-[1.15] text-deep-forest">
               {emotionalHook.title}
-            </h2>
-            <p className="font-display text-[clamp(1.35rem,4.5vw,1.85rem)] font-normal leading-snug text-deep-forest">
+              <br />
               <span className="headline-accent">{emotionalHook.titleAccent}</span>
-            </p>
+            </h2>
           </FadeUp>
 
           <FadeUp x={-24} delay={0.12} className="mt-6 max-w-lg">

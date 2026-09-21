@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Container from '../layout/Container'
 import Accordion from '../ui/Accordion'
 import CreamHeroSection from '../sections/CreamHeroSection'
@@ -17,7 +18,17 @@ export default function AboutPageContent() {
         <Container size="narrow">
           <FadeUp x={-20} className="flex flex-col gap-5 text-left">
             <p className="body-lg">{c.intro}</p>
-            <p className="body-md leading-relaxed">{c.purpose}</p>
+            <p className="body-md leading-relaxed">
+              {c.purpose} Explore our{' '}
+              <Link to={ROUTES.nursery} className="underline decoration-deep-forest/25 underline-offset-4 hover:text-accent-rose">
+                Montessori nursery
+              </Link>{' '}
+              and{' '}
+              <Link to={ROUTES.preschool} className="underline decoration-deep-forest/25 underline-offset-4 hover:text-accent-rose">
+                pre-school in Choueifat
+              </Link>
+              .
+            </p>
             <p className="body-md leading-relaxed">{c.founderStory}</p>
           </FadeUp>
           <FadeUp delay={0.12} className="mt-8 flex flex-wrap gap-2">
@@ -50,7 +61,7 @@ export default function AboutPageContent() {
                 />
                 <div className="p-5">
                   <p className="program-age-label !text-accent-rose">{person.role}</p>
-                  <p className="heading-sm mt-2">{person.name}</p>
+                <h3 className="heading-sm mt-2">{person.name}</h3>
                   <p className="body-sm mt-2 italic">&ldquo;{person.quote}&rdquo;</p>
                 </div>
               </StaggerItem>

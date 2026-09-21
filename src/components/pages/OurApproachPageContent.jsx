@@ -33,7 +33,7 @@ export default function OurApproachPageContent() {
                 className="rounded-2xl border border-warm-cream/12 bg-warm-cream/5 px-5 py-5"
               >
                 <p className="numbered-index">{String(index + 1).padStart(2, '0')}</p>
-                <p className="heading-sm mt-2">{item.label}</p>
+                <h3 className="heading-sm mt-2">{item.label}</h3>
                 <p className="body-sm mt-2">{item.detail}</p>
               </StaggerItem>
             ))}
@@ -50,7 +50,7 @@ export default function OurApproachPageContent() {
           <StaggerContainer className="grid gap-4 md:grid-cols-2 lg:grid-cols-3" stagger={0.1}>
             {c.learningAreas.map((area) => (
               <StaggerItem key={area.name} className="program-card">
-                <p className="program-age-label">{area.name}</p>
+                <h3 className="program-age-label">{area.name}</h3>
                 <p className="body-sm mt-3">{area.description}</p>
               </StaggerItem>
             ))}

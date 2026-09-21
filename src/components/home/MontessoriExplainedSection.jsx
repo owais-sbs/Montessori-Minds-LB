@@ -35,7 +35,7 @@ export default function MontessoriExplainedSection() {
                   <span className="font-body text-[0.65rem] font-medium uppercase tracking-[0.16em] text-accent-rose">
                     {String(index + 1).padStart(2, '0')}
                   </span>
-                  <span className="font-display text-xl text-deep-forest sm:text-2xl">{step.label}</span>
+                  <h3 className="font-display text-xl text-deep-forest sm:text-2xl">{step.label}</h3>
                 </div>
                 <span className="max-w-[9rem] text-right font-body text-xs leading-snug text-muted-text sm:max-w-none sm:text-sm">
                   {step.prompt}

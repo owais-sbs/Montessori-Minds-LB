@@ -53,7 +53,7 @@ export default function ProgramPageTemplate({ content, titleAs = 'h2' }) {
           <StaggerContainer className="grid gap-3 md:grid-cols-2" stagger={0.1}>
             {content.inside.items.map((item) => (
               <StaggerItem key={item} className="program-card">
-                <p className="body-sm">{item}</p>
+                <h3 className="body-sm font-medium text-deep-forest">{item}</h3>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -70,7 +70,7 @@ export default function ProgramPageTemplate({ content, titleAs = 'h2' }) {
             {content.developing.map((item, index) => (
               <StaggerItem key={item.title}>
                 <div className={`px-5 py-5 ${index < content.developing.length - 1 ? 'border-b border-warm-cream/12' : ''}`}>
-                  <p className="heading-sm">{item.title}</p>
+                  <h3 className="heading-sm">{item.title}</h3>
                   <p className="body-sm mt-2">{item.description}</p>
                 </div>
               </StaggerItem>
@@ -90,7 +90,7 @@ export default function ProgramPageTemplate({ content, titleAs = 'h2' }) {
               <StaggerItem key={moment.time}>
                 <div className="numbered-row">
                   <span className="numbered-index">{String(index + 1).padStart(2, '0')}</span>
-                  <p className="heading-sm text-deep-forest">{moment.time}</p>
+                  <h3 className="heading-sm text-deep-forest">{moment.time}</h3>
                   <p className="body-sm">{moment.detail}</p>
                 </div>
               </StaggerItem>

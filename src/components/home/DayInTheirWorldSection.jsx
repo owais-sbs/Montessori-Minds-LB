@@ -22,7 +22,7 @@ export default function DayInTheirWorldSection() {
               <div className="numbered-row md:grid md:grid-cols-[1.1fr_1fr_1.2fr] md:gap-4 md:items-start">
                 <div>
                   <span className="numbered-index">{String(index + 1).padStart(2, '0')}</span>
-                  <p className="heading-sm mt-1">{moment.time}</p>
+                  <h3 className="heading-sm mt-1">{moment.time}</h3>
                 </div>
                 <p className="body-sm italic font-display text-accent-rose">&ldquo;{moment.childVoice}&rdquo;</p>
                 <p className="body-sm">{moment.experience}</p>
