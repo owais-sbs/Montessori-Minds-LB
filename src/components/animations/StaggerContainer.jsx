@@ -5,9 +5,9 @@ import { DEFAULT_DURATION } from './animationDefaults'
 export default function StaggerContainer({
   children,
   className,
-  stagger = 0.1,
+  stagger = 0.14,
   delay = 0,
-  once = true,
+  once = false,
   as = 'div',
   trigger = 'view',
   ...props

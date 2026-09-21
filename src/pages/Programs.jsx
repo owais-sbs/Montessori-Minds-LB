@@ -1,8 +1,9 @@
-import PageHero from '../components/sections/PageHero'
-import ProgramDetail, { ProgramsOverview } from '../components/programs/ProgramDetail'
+import { Link } from 'react-router-dom'
+import HomeProgramsSection from '../components/home/HomeProgramsSection'
 import CTASection from '../components/sections/CTASection'
-import { programs, programsPage } from '../data/programs'
-import { images } from '../data/images'
+import CreamHeroSection from '../components/sections/CreamHeroSection'
+import Container from '../components/layout/Container'
+import { FadeUp } from '../components/animations'
 import { ROUTES } from '../lib/routes'
 import usePageMeta from '../hooks/usePageMeta'
 import { pageSeo } from '../lib/seo'
@@ -12,32 +13,37 @@ export default function Programs() {
 
   return (
     <>
-      <PageHero
-        eyebrow={programsPage.hero.eyebrow}
-        title={programsPage.hero.title}
-        description={programsPage.hero.description}
-        image={images.classroom}
-        imageAlt={programsPage.hero.imageAlt}
+      <CreamHeroSection
+        eyebrow="Programs"
+        title="A place for every stage of becoming."
+        titleAccent="Choose the path that fits your child."
+        description="Compare Infant Community, Toddler Community and Children's House — then visit our Montessori nursery or pre-school in Choueifat."
       />
-      <ProgramsOverview />
-      {programs.map((program, index) => (
-        <ProgramDetail key={program.id} program={program} index={index} />
-      ))}
+      <HomeProgramsSection />
+      <section className="bg-warm-beige py-10 md:py-12">
+        <Container size="narrow">
+          <FadeUp className="body-md text-center">
+            <Link to={ROUTES.nursery} className="underline decoration-deep-forest/25 underline-offset-4 hover:text-accent-rose">
+              Montessori nursery in Choueifat
+            </Link>
+            {' · '}
+            <Link to={ROUTES.preschool} className="underline decoration-deep-forest/25 underline-offset-4 hover:text-accent-rose">
+              Montessori pre-school in Choueifat
+            </Link>
+            {' · '}
+            <Link to={ROUTES.laCasaVerde} className="underline decoration-deep-forest/25 underline-offset-4 hover:text-accent-rose">
+              La Casa Verde by Montessori Minds
+            </Link>
+          </FadeUp>
+        </Container>
+      </section>
       <CTASection
-        eyebrow={programsPage.admissionCta.eyebrow}
-        title={programsPage.admissionCta.title}
-        description={programsPage.admissionCta.description}
-        buttonLabel={programsPage.admissionCta.buttonLabel}
-        buttonTo={ROUTES.admission}
-        variant="cream"
-      />
-      <CTASection
-        eyebrow={programsPage.tourCta.eyebrow}
-        title={programsPage.tourCta.title}
-        description={programsPage.tourCta.description}
-        buttonLabel={programsPage.tourCta.buttonLabel}
+        eyebrow="Visit"
+        title="Compare programs in person."
+        titleAccent="Book your visit."
+        buttonLabel="Book a visit"
         buttonTo={ROUTES.bookATour}
-        variant="beige"
+        variant="cream"
       />
     </>
   )

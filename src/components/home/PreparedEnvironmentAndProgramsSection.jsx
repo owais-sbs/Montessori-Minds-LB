@@ -1,111 +1,77 @@
 import Container from '../layout/Container'
 import { FadeUp, StaggerContainer, StaggerItem } from '../animations'
+import { TextLink } from '../ui'
 import { Link } from 'react-router-dom'
 import { images } from '../../data/images'
-import { homePreparedEnvironment } from '../../data/home'
+import { homePreparedEnvironment, homePrograms } from '../../data/home'
 import { programs } from '../../data/programs'
 import { ROUTES } from '../../lib/routes'
 
-const icons = {
-  nest: (
-    <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-      <path d="M4 14c0-4 3.5-8 8-8s8 4 8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M6 14h12l-1.5 4H7.5L6 14z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
-    </svg>
-  ),
-  sprout: (
-    <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-      <path d="M12 20V10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M12 10C12 6 8 4 5 6c2 2 2 6 7 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-      <path d="M12 10c0-4 4-6 7-4-2 2-2 6-7 6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  ),
-  bloom: (
-    <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-      <circle cx="12" cy="12" r="2.5" stroke="currentColor" strokeWidth="1.5" />
-      <path d="M12 4v3M12 17v3M4 12h3M17 12h3M6.3 6.3l2.1 2.1M15.6 15.6l2.1 2.1M17.7 6.3l-2.1 2.1M8.4 15.6l-2.1 2.1" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  ),
-}
-
 export default function PreparedEnvironmentAndProgramsSection() {
   return (
-    <section className="bg-warm-beige py-16 md:py-24 lg:py-28">
+    <section className="section-dark py-16 md:py-24 lg:py-28">
       <Container>
-        <div className="grid gap-12 md:gap-16 lg:grid-cols-2 lg:gap-14 xl:gap-20">
-
-          {/* ── LEFT: A Prepared Environment ── */}
-          <FadeUp className="flex flex-col gap-5">
-            <h2 className="heading-xl">{homePreparedEnvironment.title}</h2>
-            <p className="body-md text-muted-text">{homePreparedEnvironment.description}</p>
-            <Link
-              to={homePreparedEnvironment.linkTo}
-              className="body-sm font-medium text-olive transition-colors hover:text-forest-green"
-            >
-              {homePreparedEnvironment.linkLabel} →
-            </Link>
-            <div className="mt-3 overflow-hidden rounded-2xl">
-              <img
-                src={images.preparedEnvironment}
-                alt={homePreparedEnvironment.imageAlt}
-                className="aspect-[4/3] w-full object-cover transition-transform duration-700 hover:scale-[1.02] motion-reduce:transform-none"
-                loading="lazy"
-                referrerPolicy="no-referrer"
-              />
+        <div className="grid gap-14 lg:grid-cols-2 lg:gap-16">
+          <FadeUp className="flex flex-col gap-6">
+            <p className="eyebrow">What you&apos;ll see grow</p>
+            <h2 className="heading-xl">
+              {homePreparedEnvironment.title}
+              <br />
+              <span className="headline-accent">every day.</span>
+            </h2>
+            <p className="body-md">{homePreparedEnvironment.description}</p>
+            <TextLink to={homePreparedEnvironment.linkTo} className="!text-warm-cream/90 decoration-warm-cream/30 hover:!text-white">
+              {homePreparedEnvironment.linkLabel}
+            </TextLink>
+            <div className="numbered-list-panel numbered-list-panel-dark mt-2">
+              {programs.map((program, index) => (
+                <div key={program.id} className="numbered-row">
+                  <span className="numbered-index">{String(index + 1).padStart(2, '0')}</span>
+                  <h3 className="heading-sm">{program.name}</h3>
+                  <p className="body-sm italic font-display text-accent-rose">{program.shortDescription}</p>
+                </div>
+              ))}
             </div>
           </FadeUp>
 
-          {/* ── RIGHT: Our Programs ── */}
           <div className="flex flex-col gap-6">
             <FadeUp delay={0.1}>
-              <h2 className="heading-xl">Our Programs</h2>
-              <p className="body-md mt-3 text-muted-text">
-                Explore our{' '}
-                <Link to={ROUTES.nursery} className="text-olive transition-colors hover:text-forest-green">
-                  Montessori nursery pathways
-                </Link>
-                {' '}and{' '}
-                <Link to={ROUTES.preschool} className="text-olive transition-colors hover:text-forest-green">
-                  Montessori pre-school
-                </Link>
-                {' '}— or{' '}
-                <Link to={ROUTES.laCasaVerde} className="text-olive transition-colors hover:text-forest-green">
-                  explore La Casa Verde by Montessori Minds
-                </Link>
-                .
-              </p>
+              <p className="eyebrow">{homePrograms.eyebrow}</p>
+              <h2 className="heading-xl">
+                Nursery &amp; pre-school programs
+                <br />
+                <span className="headline-accent">simply.</span>
+              </h2>
+              <p className="body-md mt-4">{homePrograms.description}</p>
             </FadeUp>
 
-            {/* Program cards — 3 columns on sm+, stacked on mobile */}
-            <StaggerContainer className="grid grid-cols-1 gap-4 sm:grid-cols-3" stagger={0.08}>
+            <StaggerContainer className="grid grid-cols-1 gap-4 sm:grid-cols-2" stagger={0.08}>
               {programs.map((program) => {
-                const programTo =
-                  program.id === 'bloom' ? ROUTES.preschool : ROUTES.nursery
+                const programTo = program.id === 'bloom' ? ROUTES.preschool : ROUTES.nursery
                 return (
-                <StaggerItem
-                  key={program.id}
-                  className="flex flex-col gap-3 rounded-2xl bg-white p-5 shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5 motion-reduce:transform-none"
-                >
-                  {/* Icon */}
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-warm-cream text-olive">
-                    {icons[program.icon]}
-                  </div>
-                  {/* Name */}
-                  <h3 className="font-display text-lg font-medium text-forest-green leading-tight">
-                    <Link to={programTo} className="transition-colors hover:text-olive">
-                      {program.name}
-                    </Link>
-                  </h3>
-                  {/* Age range */}
-                  <p className="text-[0.7rem] font-medium uppercase tracking-wider text-soft-olive">{program.ageRange}</p>
-                  {/* Short description */}
-                  <p className="body-sm flex-1">{program.shortDescription}</p>
-                </StaggerItem>
+                  <StaggerItem key={program.id} className="program-card !bg-warm-cream/95 !text-dark-text">
+                    <p className="program-age-label">{program.ageRange}</p>
+                    <h3 className="heading-sm mt-2 text-deep-forest">
+                      <Link to={programTo} className="transition-colors hover:text-accent-rose">
+                        {program.name}
+                      </Link>
+                    </h3>
+                    <p className="body-sm mt-2">{program.shortDescription}</p>
+                  </StaggerItem>
                 )
               })}
             </StaggerContainer>
-          </div>
 
+            <FadeUp delay={0.2} className="overflow-hidden rounded-2xl">
+              <img
+                src={images.preparedEnvironment}
+                alt={homePreparedEnvironment.imageAlt}
+                className="aspect-[4/3] w-full object-cover"
+                loading="lazy"
+                referrerPolicy="no-referrer"
+              />
+            </FadeUp>
+          </div>
         </div>
       </Container>
     </section>

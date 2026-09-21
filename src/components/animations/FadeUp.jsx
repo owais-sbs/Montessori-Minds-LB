@@ -2,7 +2,7 @@ import { motion } from 'motion/react'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 import {
   DEFAULT_DELAY,
-  DEFAULT_DURATION,
+  SCROLL_DURATION,
   DEFAULT_VIEWPORT_AMOUNT,
   DEFAULT_Y_OFFSET,
   SMOOTH_EASE,
@@ -12,9 +12,10 @@ export default function FadeUp({
   children,
   className,
   delay = DEFAULT_DELAY,
-  duration = DEFAULT_DURATION,
-  once = true,
+  duration = SCROLL_DURATION,
+  once = false,
   y = DEFAULT_Y_OFFSET,
+  x = 0,
   as = 'div',
   trigger = 'view',
   scale = 1,
@@ -32,8 +33,8 @@ export default function FadeUp({
     )
   }
 
-  const initial = { opacity: 0, y, scale }
-  const visible = { opacity: 1, y: 0, scale: 1 }
+  const initial = { opacity: 0, y, x, scale }
+  const visible = { opacity: 1, y: 0, x: 0, scale: 1 }
 
   const animationProps =
     trigger === 'load'

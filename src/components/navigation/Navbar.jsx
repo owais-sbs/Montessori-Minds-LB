@@ -1,15 +1,17 @@
-import { useEffect, useId, useRef, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { motion, AnimatePresence } from 'motion/react'
 import Container from '../layout/Container'
 import { Button } from '../ui'
 import { primaryNavLinks } from '../../data/navigation'
 import { ROUTES } from '../../lib/routes'
+import { LOGO_SRC } from '../../data/branding'
+import { site } from '../../data/contact'
+import { useEffect, useId, useRef, useState } from 'react'
+import { motion, AnimatePresence } from 'motion/react'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 
 function MenuIcon({ open }) {
   return (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true" className="text-deep-forest">
       {open ? (
         <path d="M6 6L18 18M18 6L6 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       ) : (
@@ -20,6 +22,24 @@ function MenuIcon({ open }) {
         </>
       )}
     </svg>
+  )
+}
+
+function BrandMark() {
+  return (
+    <div className="flex items-center gap-3">
+      <img
+        src={LOGO_SRC}
+        alt=""
+        className="h-14 w-14 object-contain sm:h-[4.25rem] sm:w-[4.25rem]"
+      />
+      <div className="hidden min-w-0 flex-col sm:flex">
+        <span className="font-display text-lg leading-tight text-deep-forest">{site.name}</span>
+        <span className="text-[0.65rem] font-medium uppercase tracking-[0.18em] text-muted-text">
+          {site.subtitle}
+        </span>
+      </div>
+    </div>
   )
 }
 
@@ -53,14 +73,14 @@ export default function Navbar() {
 
   return (
     <motion.header
-      className="sticky top-0 z-50 border-b border-forest-green/8 bg-warm-cream/92 backdrop-blur-md"
-      initial={prefersReducedMotion ? false : { opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+      className="fixed top-0 left-0 right-0 z-50 border-b border-deep-forest/8 bg-white/96 text-deep-forest shadow-sm backdrop-blur-xl"
+      initial={prefersReducedMotion ? false : { opacity: 0, y: -8 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
     >
-      <Container className="flex h-[6.5rem] items-center justify-between gap-6">
-        <Link to={ROUTES.home} className="shrink-0 transition-opacity hover:opacity-80 py-3" aria-label="La Casa Verde by Montessori Minds home">
-          <img src="/images/branding/La casa verde logo2.png" alt="La Casa Verde by Montessori Minds logo" className="h-16 w-16 sm:h-20 sm:w-20 object-contain" />
+      <Container className="flex h-[var(--header-height)] items-center justify-between gap-4">
+        <Link to={ROUTES.home} className="shrink-0 transition-opacity hover:opacity-85 py-1" aria-label={`${site.name} home`}>
+          <BrandMark />
         </Link>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary navigation">
@@ -70,7 +90,7 @@ export default function Navbar() {
                 <NavLink
                   to={to}
                   className={({ isActive }) =>
-                    `button-text transition-colors ${isActive ? 'text-olive' : 'text-forest-green hover:text-olive'}`
+                    `button-text transition-colors ${isActive ? 'text-accent-rose' : 'text-deep-forest hover:text-accent-rose'}`
                   }
                 >
                   {label}
@@ -79,14 +99,14 @@ export default function Navbar() {
             ))}
           </ul>
           <Button to={ROUTES.bookATour} variant="primary">
-            Book A Tour
+            Book a visit
           </Button>
         </nav>
 
         <button
           ref={menuButtonRef}
           type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-forest-green transition-colors hover:bg-forest-green/6 lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full text-deep-forest transition-colors hover:bg-deep-forest/6 lg:hidden"
           aria-expanded={menuOpen}
           aria-controls={menuId}
           aria-label={menuOpen ? 'Close menu' : 'Open menu'}
@@ -104,7 +124,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            className="overflow-hidden border-b border-forest-green/8 bg-warm-cream lg:hidden"
+            className="overflow-hidden border-b border-deep-forest/8 bg-white lg:hidden"
             aria-label="Mobile navigation"
           >
             <Container className="flex flex-col gap-8 py-8">
@@ -119,7 +139,7 @@ export default function Navbar() {
                     <NavLink
                       to={to}
                       className={({ isActive }) =>
-                        `button-text text-base transition-colors ${isActive ? 'text-olive' : 'text-forest-green hover:text-olive'}`
+                        `button-text text-base transition-colors ${isActive ? 'text-accent-rose' : 'text-deep-forest hover:text-accent-rose'}`
                       }
                     >
                       {label}
@@ -128,7 +148,7 @@ export default function Navbar() {
                 ))}
               </ul>
               <Button to={ROUTES.bookATour} variant="primary" className="self-start">
-                Book A Tour
+                Book a visit
               </Button>
             </Container>
           </motion.nav>

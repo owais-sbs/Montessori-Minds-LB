@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { absoluteUrl, defaultSeo } from '../lib/seo'
+import { absoluteUrl, defaultSeo, getWebPageJsonLd } from '../lib/seo'
 
 function upsertMeta(selector, attrs) {
   let el = document.head.querySelector(selector)
@@ -20,6 +20,17 @@ function upsertLink(rel, href) {
     document.head.appendChild(el)
   }
   el.setAttribute('href', href)
+}
+
+function upsertJsonLd(id, data) {
+  let el = document.getElementById(id)
+  if (!el) {
+    el = document.createElement('script')
+    el.id = id
+    el.type = 'application/ld+json'
+    document.head.appendChild(el)
+  }
+  el.textContent = JSON.stringify(data)
 }
 
 export default function usePageMeta({ title, description, path, image } = {}) {
@@ -64,5 +75,12 @@ export default function usePageMeta({ title, description, path, image } = {}) {
       content: pageImage,
     })
     upsertLink('canonical', pageUrl)
+
+    if (path) {
+      upsertJsonLd(
+        'page-jsonld',
+        getWebPageJsonLd({ title: pageTitle, description: pageDescription, path }),
+      )
+    }
   }, [title, description, path, image])
 }

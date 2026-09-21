@@ -1,4 +1,6 @@
 export const DEFAULT_DURATION = 0.7
+export const SCROLL_DURATION = 0.9
+export const SCROLL_STAGGER = 0.14
 export const DEFAULT_DELAY = 0
 export const DEFAULT_Y_OFFSET = 30
 export const DEFAULT_VIEWPORT_AMOUNT = 0.15

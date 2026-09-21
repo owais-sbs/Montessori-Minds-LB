@@ -9,6 +9,8 @@ export const homeHero = {
   imageAlt: 'Children learning together at La Casa Verde by Montessori Minds in Choueifat',
   primaryButton: { label: 'Explore Our Programs', to: ROUTES.programs },
   secondaryButton: { label: 'Schedule A Tour', to: ROUTES.bookATour },
+  infoBar:
+    'Ages 6 months – 6 years · Choueifat, Lebanon · Arabic · English · French',
 }
 
 export const homePreparedEnvironment = {

@@ -1,16 +1,15 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'motion/react'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
 import { SMOOTH_EASE } from './animationDefaults'
 
-const LOGO_SRC = '/images/branding/La casa verde logo2.png'
+import { LOGO_SRC } from '../../data/branding'
 const MIN_VISIBLE_MS = 1200
 const EXIT_MS = 650
 
 export default function PageLoader() {
   const prefersReducedMotion = useReducedMotion()
   const [phase, setPhase] = useState(() => (prefersReducedMotion ? 'done' : 'show'))
-  const startedRef = useRef(false)
 
   useEffect(() => {
     if (prefersReducedMotion) {
@@ -18,9 +17,6 @@ export default function PageLoader() {
       document.body.style.overflow = ''
       return undefined
     }
-
-    if (startedRef.current) return undefined
-    startedRef.current = true
 
     document.body.style.overflow = 'hidden'
 
@@ -33,6 +29,7 @@ export default function PageLoader() {
     return () => {
       window.clearTimeout(exitTimer)
       window.clearTimeout(doneTimer)
+      document.body.style.overflow = ''
     }
   }, [prefersReducedMotion])
 
@@ -49,7 +46,7 @@ export default function PageLoader() {
           aria-live="polite"
           role="status"
         >
-          <span className="sr-only">Loading La Casa Verde</span>
+          <span className="sr-only">Loading Montessori Minds</span>
 
           <div
             className="pointer-events-none absolute inset-0"
@@ -91,7 +88,7 @@ export default function PageLoader() {
 
             <div className="flex flex-col items-center gap-2">
               <motion.p
-                className="font-display text-2xl font-medium tracking-tight text-forest-green sm:text-3xl"
+                className="font-display text-2xl font-normal tracking-tight text-deep-forest sm:text-3xl"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.22, duration: 0.55, ease: SMOOTH_EASE }}

@@ -9,15 +9,15 @@ export default function ProgramDetail({ program, index }) {
   const isReverse = index % 2 !== 0
 
   return (
-    <section className={`py-20 md:py-28 ${index % 2 === 0 ? 'bg-warm-cream' : 'bg-warm-beige'}`}>
+    <section className={`py-14 md:py-20 ${index % 2 === 0 ? 'bg-warm-cream' : 'section-dark'}`}>
       <Container>
-        <div className={`grid items-center gap-12 lg:grid-cols-2 lg:gap-20 ${isReverse ? '' : ''}`}>
-          <FadeUp className={`flex flex-col gap-5 ${isReverse ? 'lg:order-2' : ''}`}>
+        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+          <FadeUp x={-20} className={`flex max-w-lg flex-col gap-4 ${isReverse ? 'lg:order-2' : ''}`}>
             <p className="eyebrow">{program.ageRange}</p>
-            <h2 className="heading-xl">{program.name}</h2>
-            <p className="body-lg">{program.description}</p>
+            <h2 className="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-normal leading-snug">{program.name}</h2>
+            <p className="body-md text-[0.95rem] leading-relaxed">{program.description}</p>
           </FadeUp>
-          <div className={`overflow-hidden rounded-3xl ${isReverse ? 'lg:order-1' : ''}`}>
+          <FadeUp delay={0.1} className={`overflow-hidden rounded-2xl ${isReverse ? 'lg:order-1' : ''}`}>
             <img
               src={program.image}
               alt={`${program.name} Montessori program for ${program.ageRange} at Montessori Minds in Choueifat`}
@@ -25,7 +25,7 @@ export default function ProgramDetail({ program, index }) {
               loading="lazy"
               referrerPolicy="no-referrer"
             />
-          </div>
+          </FadeUp>
         </div>
       </Container>
     </section>
@@ -34,11 +34,11 @@ export default function ProgramDetail({ program, index }) {
 
 export function ProgramsOverview() {
   return (
-    <section className="bg-warm-beige py-20 md:py-28">
+    <section className="bg-warm-cream py-14 md:py-20">
       <Container>
-        <FadeUp className="mx-auto mb-12 max-w-2xl text-center">
-          <h2 className="heading-xl">Choose the Right Pathway</h2>
-          <p className="body-lg mt-4">
+        <FadeUp className="mx-auto mb-10 max-w-xl text-left md:max-w-2xl md:text-center">
+          <h2 className="font-display text-[clamp(1.5rem,3vw,2.25rem)] font-normal text-deep-forest">Choose the right pathway</h2>
+          <p className="body-md mt-4 text-[0.95rem]">
             Learn more about our{' '}
             <Link to={ROUTES.nursery} className="text-olive transition-colors hover:text-forest-green">
               Montessori nursery in Choueifat
@@ -54,7 +54,7 @@ export function ProgramsOverview() {
             .
           </p>
         </FadeUp>
-        <StaggerContainer className="grid gap-8 md:grid-cols-3" stagger={0.1}>
+        <StaggerContainer className="grid gap-5 md:grid-cols-3" stagger={0.14}>
           {programs.map((program) => (
             <StaggerItem key={program.id}>
               <ProgramCard program={program} showCta={false} />

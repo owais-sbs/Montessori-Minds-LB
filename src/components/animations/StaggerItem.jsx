@@ -1,11 +1,11 @@
 import { motion } from 'motion/react'
 import { useReducedMotion } from '../../hooks/useReducedMotion'
-import { DEFAULT_DURATION, DEFAULT_Y_OFFSET, SMOOTH_EASE } from './animationDefaults'
+import { DEFAULT_DURATION, SCROLL_DURATION, DEFAULT_Y_OFFSET, SMOOTH_EASE } from './animationDefaults'
 
 export default function StaggerItem({
   children,
   className,
-  duration = DEFAULT_DURATION,
+  duration = SCROLL_DURATION,
   y = DEFAULT_Y_OFFSET,
   as = 'div',
   ...props

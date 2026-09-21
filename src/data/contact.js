@@ -3,6 +3,7 @@
   email: 'hello@montessorimindslb.com',
   phone: '+961 71 007 150',
   phoneRaw: '0096171007150',
+  hours: 'Monday – Friday · 8:00 AM – 4:00 PM',
   social: {
     instagram: 'https://instagram.com',
     facebook: 'https://facebook.com',

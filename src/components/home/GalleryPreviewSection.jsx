@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom'
 import Container from '../layout/Container'
 import SectionHeading from '../ui/SectionHeading'
+import { TextLink } from '../ui'
 import { FadeUp, StaggerContainer, StaggerItem } from '../animations'
 import { galleryPreviewItems } from '../../data/gallery'
 import { homeGalleryPreview } from '../../data/home'
@@ -35,13 +35,7 @@ export default function GalleryPreviewSection() {
           ))}
         </StaggerContainer>
         <div className="mt-10 text-center">
-          <Link
-            to={homeGalleryPreview.linkTo}
-            className="inline-flex items-center gap-2 font-body text-[0.8125rem] font-medium uppercase tracking-[0.12em] text-forest-green transition-colors hover:text-olive"
-          >
-            {homeGalleryPreview.linkLabel}
-            <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true">→</span>
-          </Link>
+          <TextLink to={homeGalleryPreview.linkTo}>{homeGalleryPreview.linkLabel}</TextLink>
         </div>
       </Container>
     </section>

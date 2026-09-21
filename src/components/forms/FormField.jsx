@@ -22,7 +22,7 @@ export default function FormField({
   return (
     <div className="flex flex-col gap-2">
       {!hideLabel && label && (
-        <label htmlFor={id} className="body-sm font-medium text-forest-green">
+        <label htmlFor={id} className="body-sm font-medium text-deep-forest">
           {label}
           {required && <span className="text-olive"> *</span>}
         </label>
@@ -38,7 +38,7 @@ export default function FormField({
 }
 
 export function inputClassName(hasError) {
-  return `w-full min-w-0 rounded-xl border bg-white px-4 py-3 body-md text-forest-green transition-colors focus:border-olive focus:outline-none focus:ring-2 focus:ring-olive/20 ${
-    hasError ? 'border-red-400' : 'border-forest-green/15'
+  return `w-full min-w-0 rounded-2xl border bg-white px-4 py-3.5 body-md text-deep-forest transition-colors focus:border-accent-rose/50 focus:outline-none focus:ring-2 focus:ring-accent-rose/15 ${
+    hasError ? 'border-red-400' : 'border-deep-forest/12'
   }`
 }

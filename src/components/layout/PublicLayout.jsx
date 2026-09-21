@@ -1,19 +1,30 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet, useLocation } from 'react-router-dom'
 import Navbar from '../navigation/Navbar'
 import Footer from './Footer'
+import WhatsAppButton from './WhatsAppButton'
+import MobileStickyCTA from './MobileStickyCTA'
 import PageTransition from '../animations/PageTransition'
+import { ROUTES } from '../../lib/routes'
 
 export default function PublicLayout() {
+  const { pathname } = useLocation()
+  const isHome = pathname === ROUTES.home
+
   return (
     <div className="flex min-h-svh flex-col">
       <a href="#main-content" className="skip-link">
         Skip to main content
       </a>
       <Navbar />
-      <main id="main-content" className="flex-1">
+      <main
+        id="main-content"
+        className={`flex-1 pb-24 md:pb-0 ${isHome ? '' : 'pt-[var(--header-height)]'}`}
+      >
         <PageTransition />
       </main>
       <Footer />
+      <WhatsAppButton />
+      <MobileStickyCTA />
     </div>
   )
 }

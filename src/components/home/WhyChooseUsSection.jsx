@@ -1,65 +1,57 @@
 ﻿import Container from '../layout/Container'
+import { TextLink } from '../ui'
 import { FadeUp, StaggerContainer, StaggerItem } from '../animations'
 import { homeWhyChoose } from '../../data/home'
+import { ROUTES } from '../../lib/routes'
 
 const features = [
   {
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" className="h-10 w-10 text-olive" aria-hidden="true">
-        <circle cx="24" cy="24" r="20" />
-        <path d="M16 24l5 5 11-11" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    ),
     title: 'Authentic Montessori Education',
+    quote: 'Real consistency. Real respect.',
     description: 'We hold ourselves to the highest Montessori standards. That means real consistency, real integrity, and real respect for your child.',
   },
   {
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" className="h-10 w-10 text-olive" aria-hidden="true">
-        <path d="M24 4v4M24 40v4M4 24h4M40 24h4M9 9l3 3M36 36l3 3M9 39l3-3M36 12l3-3" strokeLinecap="round" />
-        <circle cx="24" cy="24" r="10" />
-      </svg>
-    ),
     title: 'Nature-Inspired Learning',
+    quote: 'Slow down. Observe. Care.',
     description: 'Our school brings children close to nature. They learn to slow down, observe, and care for the world around them.',
   },
   {
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" className="h-10 w-10 text-olive" aria-hidden="true">
-        <path d="M24 6c-6 0-12 4-12 12 0 6 4 10 8 14l4 6 4-6c4-4 8-8 8-14 0-8-6-12-12-12z" />
-        <circle cx="24" cy="18" r="4" />
-      </svg>
-    ),
     title: 'We Honor Individual Growth',
+    quote: 'Each child, their own pace.',
     description: 'Each child is free to grow at their own pace within a carefully prepared environment that nurtures independence and confidence.',
   },
   {
-    icon: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="2" className="h-10 w-10 text-olive" aria-hidden="true">
-        <path d="M12 38V22l12-12 12 12v16" strokeLinecap="round" strokeLinejoin="round" />
-        <rect x="19" y="28" width="10" height="10" rx="1" />
-      </svg>
-    ),
     title: 'A True Learning Community',
+    quote: 'Home and school together.',
     description: 'We view education as a partnership with families. Children thrive when home and school work together in harmony.',
   },
 ]
 
 export default function WhyChooseUsSection() {
   return (
-    <section className="bg-warm-beige py-20 md:py-28">
+    <section className="bg-warm-cream py-20 md:py-28">
       <Container>
-        <FadeUp className="mx-auto max-w-2xl text-center mb-14">
+        <FadeUp className="mx-auto max-w-2xl text-center">
           <p className="eyebrow">{homeWhyChoose.eyebrow}</p>
-          <h2 className="heading-xl mt-4">{homeWhyChoose.title}</h2>
-          <p className="body-lg mt-4">{homeWhyChoose.description}</p>
+          <h2 className="heading-xl mt-4 text-deep-forest">
+            {homeWhyChoose.title}
+            <br />
+            <span className="headline-accent">with confidence.</span>
+          </h2>
+          <p className="body-lg mt-5">{homeWhyChoose.description}</p>
+          <p className="quote-serif mt-10 text-deep-forest">&ldquo;I can do it myself.&rdquo;</p>
+          <div className="mt-8">
+            <TextLink to={ROUTES.ourApproach}>Discover our approach</TextLink>
+          </div>
         </FadeUp>
-        <StaggerContainer className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4" stagger={0.1}>
-          {features.map((feature) => (
+
+        <StaggerContainer className="numbered-list-panel mx-auto mt-14 max-w-3xl" stagger={0.08}>
+          {features.map((feature, index) => (
             <StaggerItem key={feature.title}>
-              <div className="flex flex-col items-center gap-4 rounded-2xl bg-warm-cream p-6 sm:p-8 text-center h-full shadow-sm border border-forest-green/5">
-                {feature.icon}
-                <h3 className="heading-sm">{feature.title}</h3>
+              <div className="numbered-row">
+                <span className="numbered-index">{String(index + 1).padStart(2, '0')}</span>
+                <h3 className="heading-sm text-deep-forest">{feature.title}</h3>
+                <p className="font-display text-base italic text-accent-rose">{feature.quote}</p>
                 <p className="body-sm">{feature.description}</p>
               </div>
             </StaggerItem>
