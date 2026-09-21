@@ -16,7 +16,7 @@ const defaultFaqs = [
   { id: 'languages', title: 'Languages', body: 'We describe only the language model we actually deliver.' },
 ]
 
-const nurseryFaqs = [
+export const nurseryFaqs = [
   {
     id: 'area',
     title: 'Do you serve families outside Choueifat?',
@@ -30,7 +30,7 @@ const nurseryFaqs = [
   ...defaultFaqs.slice(0, 3),
 ]
 
-const preschoolFaqs = [
+export const preschoolFaqs = [
   {
     id: 'preschool-beirut',
     title: 'Is this a good fit if we live in Beirut?',

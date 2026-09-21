@@ -2,8 +2,8 @@ import { ROUTES } from '../lib/routes'
 
 export const homeHeroBrief = {
   eyebrow: 'Montessori Minds',
-  titleLine1: 'Little hands.',
-  titleAccent: 'Big beginnings.',
+  titleLine1: 'Montessori nursery & pre-school in Choueifat.',
+  titleAccent: 'Little hands. Big beginnings.',
   description:
     'Montessori Minds is a Montessori school in Choueifat serving families across Lebanon — including Beirut and Mount Lebanon — with nurturing nursery and pre-school programs.',
   primaryCta: { label: 'Book a visit', to: ROUTES.bookATour },

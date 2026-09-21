@@ -1,5 +1,11 @@
 import { useEffect } from 'react'
-import { absoluteUrl, defaultSeo, getWebPageJsonLd } from '../lib/seo'
+import {
+  absoluteUrl,
+  defaultSeo,
+  getBreadcrumbJsonLd,
+  getFaqPageJsonLd,
+  getWebPageJsonLd,
+} from '../lib/seo'
 
 function upsertMeta(selector, attrs) {
   let el = document.head.querySelector(selector)
@@ -23,6 +29,11 @@ function upsertLink(rel, href) {
 }
 
 function upsertJsonLd(id, data) {
+  if (!data) {
+    const existing = document.getElementById(id)
+    if (existing) existing.remove()
+    return
+  }
   let el = document.getElementById(id)
   if (!el) {
     el = document.createElement('script')
@@ -33,7 +44,14 @@ function upsertJsonLd(id, data) {
   el.textContent = JSON.stringify(data)
 }
 
-export default function usePageMeta({ title, description, path, image } = {}) {
+export default function usePageMeta({
+  title,
+  description,
+  path,
+  image,
+  breadcrumb,
+  faqs,
+} = {}) {
   useEffect(() => {
     const pageTitle = title || defaultSeo.title
     const pageDescription = description || defaultSeo.description
@@ -45,6 +63,18 @@ export default function usePageMeta({ title, description, path, image } = {}) {
     upsertMeta('meta[name="description"]', {
       name: 'description',
       content: pageDescription,
+    })
+    upsertMeta('meta[property="og:type"]', {
+      property: 'og:type',
+      content: 'website',
+    })
+    upsertMeta('meta[property="og:site_name"]', {
+      property: 'og:site_name',
+      content: 'Montessori Minds',
+    })
+    upsertMeta('meta[property="og:locale"]', {
+      property: 'og:locale',
+      content: 'en_LB',
     })
     upsertMeta('meta[property="og:title"]', {
       property: 'og:title',
@@ -61,6 +91,14 @@ export default function usePageMeta({ title, description, path, image } = {}) {
     upsertMeta('meta[property="og:image"]', {
       property: 'og:image',
       content: pageImage,
+    })
+    upsertMeta('meta[property="og:image:alt"]', {
+      property: 'og:image:alt',
+      content: 'Montessori Minds — Montessori nursery and pre-school in Choueifat, Lebanon',
+    })
+    upsertMeta('meta[name="twitter:card"]', {
+      name: 'twitter:card',
+      content: 'summary_large_image',
     })
     upsertMeta('meta[name="twitter:title"]', {
       name: 'twitter:title',
@@ -81,6 +119,14 @@ export default function usePageMeta({ title, description, path, image } = {}) {
         'page-jsonld',
         getWebPageJsonLd({ title: pageTitle, description: pageDescription, path }),
       )
+      upsertJsonLd(
+        'breadcrumb-jsonld',
+        getBreadcrumbJsonLd({ path, breadcrumb }),
+      )
+      upsertJsonLd('faq-jsonld', getFaqPageJsonLd(faqs))
+    } else {
+      upsertJsonLd('breadcrumb-jsonld', null)
+      upsertJsonLd('faq-jsonld', null)
     }
-  }, [title, description, path, image])
+  }, [title, description, path, image, breadcrumb, faqs])
 }

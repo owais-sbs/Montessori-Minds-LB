@@ -3,72 +3,130 @@ import { contactPlaceholders } from '../data/contact'
 export const SITE_URL = 'https://www.montessorimindslb.com'
 
 export const defaultSeo = {
-  title: 'Montessori School, Pre-School & Nursery | Montessori Minds',
+  title: 'Montessori School, Nursery & Pre-School in Choueifat, Lebanon | Montessori Minds',
   description:
-    'Montessori Minds offers a nurturing Montessori learning environment for young children, with pre-school and nursery programs in Choueifat.',
-  image: `${SITE_URL}/images/branding/La%20casa%20verde%20logo2.png`,
+    'Montessori Minds in Choueifat offers Montessori nursery and pre-school for ages 6 months–6. La Casa Verde welcomes families from Beirut, Baabda and Mount Lebanon.',
+  image: `${SITE_URL}/images/hero/hero.jpg`,
+  logo: `${SITE_URL}/images/branding/La%20casa%20verde%20logo2.png`,
 }
 
-/** Primary mapped pages — do not duplicate these title/description pairs elsewhere. */
+/** Primary mapped pages — unique title + description per URL. */
 export const pageSeo = {
   home: {
     title: defaultSeo.title,
     description: defaultSeo.description,
     path: '/',
+    image: defaultSeo.image,
+    breadcrumb: 'Home',
   },
   laCasaVerde: {
-    title: 'La Casa Verde by Montessori Minds | Lebanon',
+    title: 'La Casa Verde by Montessori Minds | Montessori School Choueifat, Lebanon',
     description:
-      'Discover La Casa Verde by Montessori Minds, a nurturing early learning environment focused on Montessori-inspired education, development and discovery.',
+      'La Casa Verde is the Choueifat home of Montessori Minds — a Montessori school in Lebanon with nursery and pre-school pathways focused on independence and discovery.',
     path: '/la-casa-verde',
+    image: defaultSeo.image,
+    breadcrumb: 'La Casa Verde',
   },
   preschool: {
-    title: 'Montessori Pre-School in Choueifat | Montessori Minds',
+    title: 'Montessori Pre-School & Preschool in Choueifat | Ages 3–6 | Montessori Minds',
     description:
-      'Explore Montessori pre-school at Montessori Minds in Choueifat, supporting young children through hands-on learning, independence and discovery.',
+      'Montessori pre-school in Choueifat for ages 3–6. Children’s House at Montessori Minds — hands-on materials, mixed-age community and school readiness in Lebanon.',
     path: '/preschool',
+    image: `${SITE_URL}/images/programs/bloom.jpg`,
+    breadcrumb: 'Pre-School',
   },
   nursery: {
-    title: 'Montessori Nursery in Choueifat | Montessori Minds',
+    title: 'Montessori Nursery in Choueifat, Lebanon | Infant & Toddler | Montessori Minds',
     description:
-      'Discover a nurturing Montessori nursery in Choueifat designed to support young children through early learning, exploration, care and development.',
+      'Montessori nursery in Choueifat for infants and toddlers. The Nest and The Sprout at Montessori Minds — respectful care and early learning near Beirut.',
     path: '/nursery',
+    image: `${SITE_URL}/images/programs/nest.jpg`,
+    breadcrumb: 'Nursery',
   },
   ourApproach: {
-    title: 'Montessori Education & Early Learning | Montessori Minds',
+    title: 'Montessori Education & Early Learning Approach | Montessori Minds Choueifat',
     description:
-      "Learn about Montessori Minds, our Montessori approach, early learning environment, and commitment to supporting children's independence, curiosity and development.",
+      'How Montessori Minds teaches in Choueifat — prepared environments, trained Guides, practical life and respect for each child’s pace in our Lebanon nursery and pre-school.',
     path: '/our-approach',
+    image: `${SITE_URL}/images/classroom/approach.jpg`,
+    breadcrumb: 'Our approach',
   },
   programs: {
-    title: 'Montessori Programs for Every Stage | Montessori Minds',
+    title: 'Montessori Programs: Infant, Toddler & Pre-School | Choueifat | Montessori Minds',
     description:
-      'Compare Infant Community, Toddler Community and Children’s House pathways at Montessori Minds in Choueifat — Montessori programs for infants through age six.',
+      'Compare Infant Community, Toddler Community and Children’s House at Montessori Minds in Choueifat — Montessori programs from 6 months through age six in Lebanon.',
     path: '/programs',
+    image: `${SITE_URL}/images/programs/sprout.jpg`,
+    breadcrumb: 'Programs',
   },
   admission: {
-    title: 'Parents & Admissions at Montessori Minds | Choueifat',
+    title: 'Admissions & Parent FAQs | Montessori Nursery & Pre-School Choueifat',
     description:
-      'Parent resources, FAQs and the admissions journey at Montessori Minds — your path from discovery to welcome at our Choueifat nursery and pre-school.',
+      'Admissions at Montessori Minds in Choueifat — visit, apply and settle in. FAQs for families choosing a Montessori nursery or pre-school in Lebanon.',
     path: '/admission',
+    image: defaultSeo.image,
+    breadcrumb: 'Admissions',
   },
   gallery: {
-    title: 'Our Montessori Environment | Montessori Minds Choueifat',
+    title: 'Montessori Classroom & Environment Gallery | Montessori Minds Choueifat',
     description:
-      'Explore prepared classrooms, practical life, outdoor spaces and daily learning at Montessori Minds in Choueifat, Lebanon.',
+      'Photos of prepared classrooms, practical life, outdoor learning and daily rhythm at Montessori Minds — a Montessori nursery and pre-school in Choueifat, Lebanon.',
     path: '/gallery',
+    image: `${SITE_URL}/images/classroom/prepared-environment.jpg`,
+    breadcrumb: 'Gallery',
   },
   bookATour: {
-    title: 'Book a Visit | Montessori Minds Choueifat',
+    title: 'Book a School Tour | Montessori Minds Choueifat, Lebanon',
     description:
-      'Schedule a tour of Montessori Minds in Choueifat. Meet our Guides and experience our Montessori nursery and pre-school environments in person.',
+      'Schedule a visit to Montessori Minds in Choueifat. Tour our Montessori nursery and pre-school, meet Guides and see La Casa Verde in person.',
     path: '/book-a-tour',
+    image: defaultSeo.image,
+    breadcrumb: 'Book a visit',
   },
 }
 
 export function absoluteUrl(path = '/') {
   if (!path || path === '/') return `${SITE_URL}/`
   return `${SITE_URL}${path.startsWith('/') ? path : `/${path}`}`
+}
+
+export function getBreadcrumbJsonLd({ path, breadcrumb }) {
+  if (!path || path === '/' || !breadcrumb) return null
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: absoluteUrl('/'),
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: breadcrumb,
+        item: absoluteUrl(path),
+      },
+    ],
+  }
+}
+
+/** @param {{ title: string, body: string }[]} faqs */
+export function getFaqPageJsonLd(faqs) {
+  if (!faqs?.length) return null
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map((item) => ({
+      '@type': 'Question',
+      name: item.title,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.body,
+      },
+    })),
+  }
 }
 
 /** Global Organization / School JSON-LD (single source — matches footer NAP). */
@@ -84,18 +142,18 @@ export function getOrganizationJsonLd() {
         alternateName: 'La Casa Verde by Montessori Minds',
         description: defaultSeo.description,
         publisher: { '@id': `${SITE_URL}/#organization` },
-        inLanguage: 'en',
+        inLanguage: 'en-LB',
       },
       {
-        '@type': ['School', 'LocalBusiness', 'EducationalOrganization', 'Preschool'],
+        '@type': ['School', 'LocalBusiness', 'EducationalOrganization', 'Preschool', 'ChildCare'],
         '@id': `${SITE_URL}/#organization`,
         name: 'Montessori Minds',
         alternateName: ['La Casa Verde by Montessori Minds', 'La Casa Verde', 'Montessori Minds LB'],
         description:
-          'Montessori school, pre-school, and nursery in Choueifat, Lebanon — nurturing independence, curiosity and confidence through authentic Montessori education.',
+          'Montessori school, nursery, and pre-school in Choueifat, Lebanon — nurturing independence, curiosity and confidence through authentic Montessori education.',
         url: `${SITE_URL}/`,
-        logo: defaultSeo.image,
-        image: defaultSeo.image,
+        logo: defaultSeo.logo,
+        image: [defaultSeo.image, defaultSeo.logo],
         telephone: '+96171007150',
         email: contactPlaceholders.email,
         priceRange: '$$',
@@ -104,7 +162,8 @@ export function getOrganizationJsonLd() {
           '@type': 'PostalAddress',
           streetAddress: 'Saida Old Road, Al Omara District',
           addressLocality: 'Choueifat',
-          addressRegion: 'Mount Lebanon',
+          addressRegion: 'Mount Lebanon Governorate',
+          postalCode: '',
           addressCountry: 'LB',
         },
         geo: {
@@ -113,10 +172,16 @@ export function getOrganizationJsonLd() {
           longitude: 35.5,
         },
         areaServed: [
-          { '@type': 'City', name: 'Choueifat, Lebanon' },
-          { '@type': 'City', name: 'Beirut, Lebanon' },
-          { '@type': 'City', name: 'Baabda, Lebanon' },
+          { '@type': 'City', name: 'Choueifat' },
+          { '@type': 'City', name: 'Beirut' },
+          { '@type': 'City', name: 'Baabda' },
           { '@type': 'AdministrativeArea', name: 'Mount Lebanon' },
+        ],
+        knowsAbout: [
+          'Montessori education',
+          'Montessori nursery',
+          'Montessori pre-school',
+          'Early childhood education Lebanon',
         ],
         hasOfferCatalog: {
           '@type': 'OfferCatalog',
@@ -126,24 +191,27 @@ export function getOrganizationJsonLd() {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'EducationalOccupationalProgram',
-                name: 'Infant Community (Nido)',
-                description: 'Montessori nursery for infants in Choueifat',
+                name: 'The Nest — Infant Community',
+                description: 'Montessori nursery for infants in Choueifat, Lebanon',
+                educationalProgramMode: 'in person',
               },
             },
             {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'EducationalOccupationalProgram',
-                name: 'Toddler Community',
-                description: 'Montessori toddler program in Choueifat',
+                name: 'The Sprout — Toddler Community',
+                description: 'Montessori toddler nursery program in Choueifat',
+                educationalProgramMode: 'in person',
               },
             },
             {
               '@type': 'Offer',
               itemOffered: {
                 '@type': 'EducationalOccupationalProgram',
-                name: "Children's House",
+                name: "The Bloom — Children's House",
                 description: 'Montessori pre-school for ages 3–6 in Choueifat',
+                educationalProgramMode: 'in person',
               },
             },
           ],
@@ -164,6 +232,6 @@ export function getWebPageJsonLd({ title, description, path }) {
     description,
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
-    inLanguage: 'en',
+    inLanguage: 'en-LB',
   }
 }
