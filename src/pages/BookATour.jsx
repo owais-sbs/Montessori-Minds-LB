@@ -53,10 +53,33 @@ export default function BookATour() {
     <>
       <CreamHeroSection
         eyebrow="Book a visit"
-        title="Come inside."
-        titleAccent="Experience Montessori for yourself."
-        description="Meet our Guides, explore the environment and see what a day at Montessori Minds could feel like for your child."
+        title="Book a visit to Montessori Minds"
+        titleAccent="Weekday mornings on Saida Old Road."
+        description="Tour La Casa Verde in Choueifat, meet Guides, and see Infant, Toddler or Children’s House classrooms in session."
       />
+
+      <section className="bg-warm-beige py-12 md:py-16">
+        <Container size="narrow">
+          <FadeUp>
+            <h2 className="heading-xl">What happens on a visit</h2>
+            <p className="body-md mt-4">
+              Visits run during school hours so you can see arrival, a work cycle and outdoor time.
+              Campus: Saida Old Road, Al Omara District, Choueifat. Phone{' '}
+              <a href={contactPlaceholders.phoneTel} className="underline underline-offset-4 hover:text-accent-rose">
+                {contactPlaceholders.phone}
+              </a>
+              .
+            </p>
+            <ul className="body-md mt-6 list-disc space-y-2 pl-5 text-muted-text">
+              <li>Arrive at the gate; a Guide will greet you</li>
+              <li>Walk through the prepared environment for your child’s age group</li>
+              <li>Observe (quietly) while children work — we avoid interrupting concentration</li>
+              <li>Ask about placement, settling-in and current tuition figures</li>
+              <li>Typical windows: 9:00 AM, 10:00 AM, 11:00 AM, 1:00 PM, 2:00 PM or 3:00 PM</li>
+            </ul>
+          </FadeUp>
+        </Container>
+      </section>
 
       <section className="bg-warm-cream py-12 md:py-16">
         <Container size="narrow">

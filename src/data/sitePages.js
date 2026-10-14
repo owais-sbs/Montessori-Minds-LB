@@ -13,7 +13,7 @@ export const laCasaVerdePageContent = {
   history:
     'La Casa Verde by Montessori Minds opened as a response to families in Choueifat who wanted authentic Montessori practice close to home. The campus still sits on Saida Old Road in Al Omara District, Mount Lebanon — the same street address you will find on our maps listing and admissions forms.',
   founderStory:
-    'The school was founded on a practical idea: childhood is not a rehearsal for later life. Day-to-day work — pouring water, choosing a material, putting it back — builds the confidence parents notice at home months later. Founder biography and named leadership profiles will be published here once confirmed for the public site.',
+    'The school was founded on a practical idea: childhood is not a rehearsal for later life. Day-to-day work — pouring water, choosing a material, putting it back — builds the confidence parents notice at home months later. The Founding Director’s full name, biography and LinkedIn/Wikidata links will replace the role title on this page and in our Person schema once confirmed for public publication.',
   certifications:
     'Classroom practice follows Montessori principles used in AMI- and AMS-informed environments worldwide. We link to the American Montessori Society and Association Montessori Internationale as reference bodies. Ask during your visit which Guide trainings apply to the classroom you are considering — we do not list unverified credentials online.',
   nap: {

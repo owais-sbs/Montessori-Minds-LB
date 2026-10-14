@@ -6,8 +6,11 @@
   phoneTel: 'tel:+96171007150',
   hours: 'Monday – Friday · 8:00 AM – 4:00 PM',
   social: {
+    // Replace bare homepage URLs with the school’s real profile URLs so sameAs validates
     instagram: 'https://instagram.com',
     facebook: 'https://facebook.com',
+    linkedin: '',
+    wikidata: '',
   },
 }
 

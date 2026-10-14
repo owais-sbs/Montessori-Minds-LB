@@ -29,16 +29,48 @@ function upsertLink(rel, href) {
   el.setAttribute('href', href)
 }
 
-function upsertLlmsTxtLink() {
-  const selector = 'link[rel="alternate"][type="text/plain"][href="/llms.txt"]'
+function upsertAlternateLink({ type, href, title }) {
+  const selector = `link[rel="alternate"][type="${type}"][href="${href}"]`
   let el = document.head.querySelector(selector)
   if (!el) {
     el = document.createElement('link')
     el.setAttribute('rel', 'alternate')
-    el.setAttribute('type', 'text/plain')
-    el.setAttribute('href', '/llms.txt')
-    el.setAttribute('title', 'LLMs.txt')
+    el.setAttribute('type', type)
+    el.setAttribute('href', href)
+    if (title) el.setAttribute('title', title)
     document.head.appendChild(el)
+  }
+}
+
+function upsertDiscoveryHeadLinks() {
+  upsertAlternateLink({ type: 'text/plain', href: '/llms.txt', title: 'LLMs.txt' })
+  upsertAlternateLink({
+    type: 'application/rss+xml',
+    href: '/feed.xml',
+    title: 'Montessori Minds campus updates',
+  })
+
+  if (!document.head.querySelector('link[rel="manifest"]')) {
+    const manifest = document.createElement('link')
+    manifest.setAttribute('rel', 'manifest')
+    manifest.setAttribute('href', '/manifest.json')
+    document.head.appendChild(manifest)
+  }
+
+  if (!document.head.querySelector('link[rel="icon"][type="image/svg+xml"]')) {
+    const icon = document.createElement('link')
+    icon.setAttribute('rel', 'icon')
+    icon.setAttribute('type', 'image/svg+xml')
+    icon.setAttribute('href', '/favicon.svg')
+    document.head.insertBefore(icon, document.head.firstChild)
+  }
+
+  if (!document.head.querySelector('link[rel="author"][href="/humans.txt"]')) {
+    const humans = document.createElement('link')
+    humans.setAttribute('rel', 'author')
+    humans.setAttribute('type', 'text/plain')
+    humans.setAttribute('href', '/humans.txt')
+    document.head.appendChild(humans)
   }
 }
 
@@ -124,7 +156,7 @@ export default function usePageMeta({
       content: pageImage,
     })
     upsertLink('canonical', pageUrl)
-    upsertLlmsTxtLink()
+    upsertDiscoveryHeadLinks()
 
     upsertJsonLd('org-jsonld', getOrganizationJsonLd())
     upsertJsonLd(

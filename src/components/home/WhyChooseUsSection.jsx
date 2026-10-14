@@ -41,7 +41,7 @@ export default function WhyChooseUsSection() {
           <p className="body-lg mt-5">{homeWhyChoose.description}</p>
           <p className="quote-serif mt-10 text-deep-forest">&ldquo;I can do it myself.&rdquo;</p>
           <div className="mt-8">
-            <TextLink to={ROUTES.ourApproach}>Discover our approach</TextLink>
+            <TextLink to={ROUTES.ourApproach}>How Montessori works here</TextLink>
           </div>
         </FadeUp>
 

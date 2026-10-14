@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Montessori Minds — Campus updates</title>
+    <link>https://www.montessorimindslb.com/</link>
+    <description>Admissions notes, program updates and parent resources from Montessori Minds (La Casa Verde) in Choueifat, Lebanon.</description>
+    <language>en-lb</language>
+    <lastBuildDate>Tue, 14 Oct 2026 12:00:00 GMT</lastBuildDate>
+    <atom:link href="https://www.montessorimindslb.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>FAQ published for parents comparing Montessori nursery and pre-school</title>
+      <link>https://www.montessorimindslb.com/faq</link>
+      <guid isPermaLink="true">https://www.montessorimindslb.com/faq</guid>
+      <pubDate>Tue, 14 Oct 2026 12:00:00 GMT</pubDate>
+      <description>Direct answers on the Montessori method, age groups (infancy–6), hours (Mon–Fri 8:00 AM–4:00 PM), location on Saida Old Road, enrollment steps and Guide training questions.</description>
+    </item>
+    <item>
+      <title>Programs overview: Infant, Toddler and Children’s House</title>
+      <link>https://www.montessorimindslb.com/programs</link>
+      <guid isPermaLink="true">https://www.montessorimindslb.com/programs</guid>
+      <pubDate>Tue, 14 Oct 2026 11:00:00 GMT</pubDate>
+      <description>Compare age ranges and daily rhythm for The Nest, The Sprout and The Bloom at our Choueifat campus.</description>
+    </item>
+    <item>
+      <title>Book a weekday campus visit</title>
+      <link>https://www.montessorimindslb.com/book-a-tour</link>
+      <guid isPermaLink="true">https://www.montessorimindslb.com/book-a-tour</guid>
+      <pubDate>Tue, 14 Oct 2026 10:00:00 GMT</pubDate>
+      <description>Schedule a morning tour of La Casa Verde by Montessori Minds. Tuition figures are shared in person after you see the classrooms.</description>
+    </item>
+    <item>
+      <title>About La Casa Verde — mission, history and NAP</title>
+      <link>https://www.montessorimindslb.com/la-casa-verde</link>
+      <guid isPermaLink="true">https://www.montessorimindslb.com/la-casa-verde</guid>
+      <pubDate>Tue, 14 Oct 2026 09:00:00 GMT</pubDate>
+      <description>School history, mission, teacher-training stance (AMI/AMS-informed practice) and full name/address/phone for citations.</description>
+    </item>
+  </channel>
+</rss>

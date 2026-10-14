@@ -1,0 +1,7 @@
+Contact: mailto:hello@montessorimindslb.com
+Contact: tel:+96171007150
+Expires: 2027-12-31T23:59:59.000Z
+Canonical: https://www.montessorimindslb.com/.well-known/security.txt
+Preferred-Languages: en, ar, fr
+Policy: https://www.montessorimindslb.com/
+Acknowledgments: https://www.montessorimindslb.com/la-casa-verde

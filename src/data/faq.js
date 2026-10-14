@@ -36,6 +36,11 @@ export const siteFaqs = [
     body: 'Classrooms are led by Montessori Guides who prepare the environment, observe closely and support independence. We align our practice with Montessori principles and welcome questions about training during your visit.',
   },
   {
+    id: 'certifications',
+    title: 'What teacher certifications do you follow?',
+    body: 'Classroom practice follows Montessori principles used in AMI- and AMS-informed environments worldwide. We reference the Association Montessori Internationale and the American Montessori Society. Ask on your visit which Guide trainings apply to the classroom you are considering — we do not list unverified credentials online.',
+  },
+  {
     id: 'nursery-preschool',
     title: 'Do you offer both nursery and pre-school?',
     body: 'Yes. Nursery pathways cover infants and toddlers; Children’s House is our Montessori pre-school for ages three to six. Many families stay with us as their child grows from nursery into pre-school on the same Choueifat campus.',

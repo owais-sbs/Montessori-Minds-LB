@@ -18,9 +18,11 @@
     })(window,document,'script','dataLayer','GTM-W39SPTTR');</script>
     <!-- End Google Tag Manager -->
     <link rel="preload" as="image" href="/images/hero/hero.jpg" fetchpriority="high" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" type="image/png" sizes="192x192" href="/images/branding/La casa verde logo2.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="/images/branding/La casa verde logo2.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/images/branding/La casa verde logo2.png" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
@@ -32,6 +34,8 @@
     <meta name="googlebot" content="index, follow" />
     <link rel="canonical" href="https://www.montessorimindslb.com/" />
     <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml" title="Montessori Minds campus updates" />
+    <link rel="author" type="text/plain" href="/humans.txt" />
 
     <!-- Geo-targeting for Lebanon -->
     <meta name="geo.region" content="LB" />
@@ -134,6 +138,8 @@
               "Sensorial Learning",
               "Children’s House"
             ],
+            "founder": { "@id": "https://www.montessorimindslb.com/#director" },
+            "employee": { "@id": "https://www.montessorimindslb.com/#director" },
             "areaServed": [
               { "@type": "City", "name": "Choueifat" },
               { "@type": "City", "name": "Beirut" },
@@ -181,34 +187,116 @@
             }
           },
           {
+            "@type": "Person",
+            "@id": "https://www.montessorimindslb.com/#director",
+            "name": "Founding Director",
+            "jobTitle": "Founding Director",
+            "description": "Leads La Casa Verde by Montessori Minds in Choueifat. Named biography and public profiles will replace this role title once approved for publication.",
+            "url": "https://www.montessorimindslb.com/la-casa-verde",
+            "worksFor": { "@id": "https://www.montessorimindslb.com/#organization" },
+            "knowsAbout": ["Montessori Education", "Early Childhood Development", "Pre-School Programs"],
+            "sameAs": ["https://amshq.org/", "https://montessori-ami.org/"]
+          },
+          {
             "@type": "Course",
-            "@id": "https://www.montessorimindslb.com/nursery#the-nest-infant-community-nido",
+            "@id": "https://www.montessorimindslb.com/#course-nest",
             "name": "The Nest — Infant Community (Nido)",
-            "description": "Montessori infant community for birth to 18 months at Montessori Minds in Choueifat. Secure care, sensory exploration and responsive language.",
+            "description": "Montessori infant community for birth to 18 months at Montessori Minds in Choueifat. Secure care, sensory exploration and responsive language. Campus hours Monday–Friday 8:00 AM–4:00 PM.",
             "provider": { "@id": "https://www.montessorimindslb.com/#organization" },
             "url": "https://www.montessorimindslb.com/nursery",
             "educationalLevel": "Birth – 18 months",
-            "teaches": "Montessori Education"
+            "teaches": "Montessori Education",
+            "hasCourseInstance": {
+              "@type": "CourseInstance",
+              "courseMode": "onsite",
+              "description": "Age range: Birth – 18 months. Schedule: Monday–Friday, 8:00 AM–4:00 PM."
+            }
           },
           {
             "@type": "Course",
-            "@id": "https://www.montessorimindslb.com/nursery#the-sprout-toddler-community",
+            "@id": "https://www.montessorimindslb.com/#course-sprout",
             "name": "The Sprout — Toddler Community",
-            "description": "Montessori toddler program for 18 months to 3 years. Practical life, movement, language and growing independence.",
+            "description": "Montessori toddler program for 18 months to 3 years. Practical life, movement, language and growing independence. Campus hours Monday–Friday 8:00 AM–4:00 PM.",
             "provider": { "@id": "https://www.montessorimindslb.com/#organization" },
             "url": "https://www.montessorimindslb.com/nursery",
             "educationalLevel": "18 months – 3 years",
-            "teaches": "Montessori Education"
+            "teaches": "Montessori Education",
+            "hasCourseInstance": {
+              "@type": "CourseInstance",
+              "courseMode": "onsite",
+              "description": "Age range: 18 months – 3 years. Schedule: Monday–Friday, 8:00 AM–4:00 PM."
+            }
           },
           {
             "@type": "Course",
-            "@id": "https://www.montessorimindslb.com/preschool#the-bloom-children-s-house",
+            "@id": "https://www.montessorimindslb.com/#course-bloom",
             "name": "The Bloom — Children's House",
-            "description": "Montessori pre-school / Children’s House for ages 3–6. Mixed-age classroom, Montessori materials and uninterrupted work cycles.",
+            "description": "Montessori pre-school / Children’s House for ages 3–6. Mixed-age classroom, Montessori materials and uninterrupted work cycles. Campus hours Monday–Friday 8:00 AM–4:00 PM.",
             "provider": { "@id": "https://www.montessorimindslb.com/#organization" },
             "url": "https://www.montessorimindslb.com/preschool",
             "educationalLevel": "3 – 6 years",
-            "teaches": "Montessori Education"
+            "teaches": "Montessori Education",
+            "hasCourseInstance": {
+              "@type": "CourseInstance",
+              "courseMode": "onsite",
+              "description": "Age range: 3 – 6 years. Schedule: Monday–Friday, 8:00 AM–4:00 PM."
+            }
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json" id="faq-jsonld">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the Montessori method?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Montessori is an educational approach built around how children naturally develop. In a prepared classroom, children choose hands-on work, practise at their own pace, and build independence with a trained Guide who observes rather than lectures."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What age groups does Montessori Minds serve?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We welcome children from infancy through age six: Infant Community (birth–18 months), Toddler Community (18 months–3 years), and Children’s House (3–6 years)."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is Montessori Minds located?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "La Casa Verde by Montessori Minds is on Saida Old Road, Al Omara District, Choueifat, Mount Lebanon, Lebanon."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What are your school hours?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Monday through Friday, 8:00 AM to 4:00 PM."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does enrollment work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Start with a campus visit, then complete an application and share information about your child. We plan a gradual settling-in period so the transition feels calm for both child and family."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What teacher certifications do you follow?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Classroom practice follows Montessori principles used in AMI- and AMS-informed environments. Ask during your visit which Guide trainings apply to the classroom you are considering."
+            }
           }
         ]
       }

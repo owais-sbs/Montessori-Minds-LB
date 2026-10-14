@@ -31,3 +31,10 @@ User-agent: Google-Extended
 Allow: /
 
 Sitemap: https://www.montessorimindslb.com/sitemap.xml
+
+# Machine-readable discovery files
+# LLMs: https://www.montessorimindslb.com/llms.txt
+# Security: https://www.montessorimindslb.com/.well-known/security.txt
+# Humans: https://www.montessorimindslb.com/humans.txt
+# Feed: https://www.montessorimindslb.com/feed.xml
+# Manifest: https://www.montessorimindslb.com/manifest.json

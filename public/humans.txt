@@ -1,0 +1,15 @@
+/* TEAM */
+Organization: Montessori Minds (La Casa Verde by Montessori Minds)
+Campus: Saida Old Road, Al Omara District, Choueifat, Mount Lebanon, Lebanon
+Contact: hello@montessorimindslb.com
+Phone: +961 71 007 150
+Site: https://www.montessorimindslb.com/
+
+/* SITE */
+Standards: HTML5, CSS3, Schema.org JSON-LD
+Components: React, Vite
+Languages: English, Arabic, French
+Doctype: HTML5
+LLM guide: /llms.txt
+Security: /.well-known/security.txt
+Last update: 2026-10-14
