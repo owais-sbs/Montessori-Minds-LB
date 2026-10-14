@@ -2,14 +2,16 @@ import { pageSeo } from './seoPages.js'
 import { ROUTES } from './routes.js'
 import { nurseryFaqs, preschoolFaqs } from '../data/programPages.js'
 import { parentsPageContent } from '../data/sitePages.js'
+import { siteFaqs } from '../data/faq.js'
 
 const SEO_BY_PATH = {
-  [ROUTES.home]: pageSeo.home,
+  [ROUTES.home]: { ...pageSeo.home, faqs: siteFaqs },
   [ROUTES.laCasaVerde]: pageSeo.laCasaVerde,
   [ROUTES.preschool]: { ...pageSeo.preschool, faqs: preschoolFaqs },
   [ROUTES.nursery]: { ...pageSeo.nursery, faqs: nurseryFaqs },
   [ROUTES.ourApproach]: pageSeo.ourApproach,
   [ROUTES.programs]: pageSeo.programs,
+  [ROUTES.faq]: { ...pageSeo.faq, faqs: siteFaqs },
   [ROUTES.admission]: { ...pageSeo.admission, faqs: parentsPageContent.faqs },
   [ROUTES.gallery]: pageSeo.gallery,
   [ROUTES.bookATour]: pageSeo.bookATour,

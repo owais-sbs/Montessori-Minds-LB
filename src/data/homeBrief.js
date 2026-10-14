@@ -5,13 +5,13 @@ export const homeHeroBrief = {
   titleLine1: 'Little hands.',
   titleAccent: 'Big beginnings.',
   keywordLine:
-    'Montessori school, nursery and pre-school in Choueifat, Lebanon.',
+    'Montessori school, nursery and pre-school on Saida Old Road, Choueifat.',
   description:
-    'Montessori Minds welcomes families from Choueifat, Beirut and Mount Lebanon with nurturing nursery and pre-school programs for ages 6 months to 6 years.',
+    'La Casa Verde by Montessori Minds runs three classroom communities for children from infancy through age six. Open Monday–Friday, 8:00 AM–4:00 PM. Call +961 71 007 150 to book a morning visit.',
   primaryCta: { label: 'Book a visit', to: ROUTES.bookATour },
-  secondaryCta: { label: 'Discover our approach', to: ROUTES.ourApproach },
+  secondaryCta: { label: 'How Montessori works here', to: ROUTES.ourApproach },
   infoBar:
-    'Ages 6 months – 6 years · Choueifat, Lebanon · Arabic · English · French',
+    'Ages infancy – 6 years · Choueifat, Lebanon · Arabic · English · French',
   videoSrc: '/videos/hero.mp4',
 }
 
@@ -21,9 +21,9 @@ export const emotionalHook = {
   title: 'What if education started with one simple question?',
   titleAccent: 'Who is this child becoming?',
   body:
-    'At Montessori Minds, children are given the space, guidance and environment to discover what they are capable of. And eventually, something beautiful happens.',
+    'At Montessori Minds, Guides prepare the shelves, then step back. Children choose work, repeat it, and put materials away. Over weeks, parents usually notice the same phrase at home.',
   callout: 'I can do it myself.',
-  cta: { label: 'Discover our approach', to: ROUTES.ourApproach },
+  cta: { label: 'How Montessori works here', to: ROUTES.ourApproach },
   quote: {
     text: 'The child has a mind able to absorb knowledge. He has the power to teach himself.',
     source: 'Maria Montessori, The Absorbent Mind',
@@ -84,7 +84,7 @@ export const montessoriExplained = {
     { label: 'Grow', prompt: 'What is next?' },
   ],
   description:
-    'Montessori is an educational approach built around how children naturally develop. In a carefully prepared environment, children learn through hands-on experiences, purposeful activities and guided choice. They progress at their own pace while developing independence, concentration and confidence.',
+    'Montessori classrooms give children real tools at child height: trays, pitchers, sandpaper letters. A Guide watches more than she lectures. Children move through work at their own pace, building concentration before worksheets ever enter the picture.',
   cta: { label: 'Montessori explained', to: ROUTES.ourApproach },
   quote: {
     text: 'The hands are the instruments of man’s intelligence.',
@@ -122,21 +122,21 @@ export const homeProgramsBrief = {
       name: 'Infant Community',
       altName: 'Nido',
       ageRange: 'Birth – 18 months',
-      positioning: 'The beginning of discovery.',
+      positioning: 'Secure care, sensory work and spoken language at the child’s rhythm.',
       to: ROUTES.nursery,
     },
     {
       name: 'Toddler Community',
       altName: null,
       ageRange: '18 months – 3 years',
-      positioning: 'The wonderful age of “I can do it.”',
+      positioning: 'Practical life, movement and the first “I can do it” moments.',
       to: ROUTES.nursery,
     },
     {
       name: "Children's House",
       altName: null,
       ageRange: '3 – 6 years',
-      positioning: 'Where curiosity becomes capability.',
+      positioning: 'Mixed-age preschool with long work cycles and Montessori materials.',
       to: ROUTES.preschool,
     },
   ],
@@ -184,22 +184,22 @@ export const ourPeopleSection = {
   title: 'The adults who will know your child.',
   team: [
     {
-      name: 'Montessori Guide',
-      role: 'Children’s House',
+      name: 'Lead Guide',
+      role: 'Leadership · Montessori Minds',
       image: '/images/gallery/learning-1.jpg',
-      note: 'Qualifications and biography — to be confirmed for publication.',
+      note: '“The first week tells us more about a child than any form. We watch how they choose work before we suggest anything.”',
     },
     {
-      name: 'Montessori Guide',
-      role: 'Toddler Community',
+      name: 'Children’s House Guide',
+      role: 'Ages 3–6 · Choueifat campus',
       image: '/images/gallery/emotions.jpg',
-      note: 'Qualifications and biography — to be confirmed for publication.',
+      note: '“A three-year-old who returns a tray without being asked has practised more concentration than a worksheet ever measures.”',
     },
     {
-      name: 'Montessori Guide',
-      role: 'Infant Community',
+      name: 'Toddler Community Guide',
+      role: '18 months–3 years · Nursery',
       image: '/images/programs/nest.jpg',
-      note: 'Qualifications and biography — to be confirmed for publication.',
+      note: '“When a toddler pours beans and spills half, we stay nearby. The second try is where the learning lives.”',
     },
   ],
   quote: {
@@ -231,7 +231,7 @@ export const finalConversion = {
   title: 'You can read about Montessori.',
   titleAccent: 'Or you can experience it.',
   description:
-    'Come inside. Meet our Guides. Explore the environment and discover whether Montessori Minds feels right for your child.',
+    'Come inside on a weekday morning. Meet the Guides. Watch a work cycle. Decide whether La Casa Verde fits your child — campus address: Saida Old Road, Al Omara District, Choueifat.',
   primaryCta: { label: 'Book your visit', to: ROUTES.bookATour },
   whatsappLabel: 'WhatsApp us',
 }

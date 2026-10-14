@@ -28,9 +28,9 @@ function programCta(program) {
     return { to: ROUTES.preschool, label: 'Explore Montessori pre-school' }
   }
   if (program.id === 'sprout') {
-    return { to: ROUTES.nursery, label: 'Discover our toddler nursery' }
+    return { to: ROUTES.nursery, label: 'Toddler nursery details' }
   }
-  return { to: ROUTES.nursery, label: 'Explore our infant nursery' }
+  return { to: ROUTES.nursery, label: 'Infant nursery details' }
 }
 
 export default function ProgramCard({ program, showCta = true }) {

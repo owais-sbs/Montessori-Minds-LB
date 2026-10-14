@@ -5,7 +5,7 @@ export const homeHero = {
   title: 'Montessori School, Pre-School & Nursery',
   titleLine2: 'in Choueifat',
   description:
-    'Montessori Minds provides a nurturing learning environment in Choueifat where young children can explore, develop independence, and build confidence through hands-on Montessori education. Our Montessori school in Lebanon offers calm nursery and pre-school pathways for infants, toddlers, and young children.',
+    'Montessori Minds runs Infant, Toddler and Children’s House communities on Saida Old Road, Choueifat. Children practise real tasks — pouring, choosing materials, putting work away — Monday through Friday, 8:00 AM–4:00 PM.',
   imageAlt: 'Children learning together at La Casa Verde by Montessori Minds in Choueifat',
   primaryButton: { label: 'Explore Our Programs', to: ROUTES.programs },
   secondaryButton: { label: 'Schedule A Tour', to: ROUTES.bookATour },
@@ -28,7 +28,7 @@ export const homePrograms = {
   eyebrow: 'Programs',
   title: 'Nursery & Pre-School Programs',
   description:
-    'From infants to preschoolers, each Montessori pathway is designed around where your child is in their development — with nurturing nursery care and Montessori pre-school learning under one school community.',
+    'From infants to preschoolers, each pathway matches a developmental stage: Nido and Toddler Community for nursery ages, Children’s House for Montessori pre-school ages 3–6 — one campus in Choueifat.',
 }
 
 export const homePhilosophy = {
@@ -47,9 +47,9 @@ export const homeNature = {
 
 export const homeIndependence = {
   eyebrow: 'Development',
-  title: 'Nurturing Independence & Confidence',
+  title: 'Independence & confidence, practised daily',
   description:
-    'Montessori education is about the whole child. We help children build not just academic foundations, but also the emotional and social skills they need to thrive — pouring, preparing, collaborating, and solving small problems with dignity and joy.',
+    'Montessori education is about the whole child. Children pour, prepare, collaborate and solve small problems themselves — skills parents usually notice at home within the first term.',
   imageAlt: 'Child building independence through Montessori practical life work',
 }
 

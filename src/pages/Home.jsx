@@ -8,6 +8,7 @@ import LanguagesSection from '../components/home/LanguagesSection'
 import EnvironmentSection from '../components/home/EnvironmentSection'
 import OurPeopleSection from '../components/home/OurPeopleSection'
 import SocialProofSection from '../components/home/SocialProofSection'
+import HomeFaqSection from '../components/home/HomeFaqSection'
 import FinalConversionSection from '../components/home/FinalConversionSection'
 
 export default function Home() {
@@ -23,6 +24,7 @@ export default function Home() {
       <EnvironmentSection />
       <OurPeopleSection />
       <SocialProofSection />
+      <HomeFaqSection />
       <FinalConversionSection />
     </>
   )

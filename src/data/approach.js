@@ -20,7 +20,7 @@ export const approachSections = [
     reverse: false,
     links: [
       { label: 'Explore our Montessori Pre-School', to: '/preschool' },
-      { label: 'Discover our Montessori Nursery', to: '/nursery' },
+      { label: 'Montessori nursery in Choueifat', to: '/nursery' },
     ],
   },
   {

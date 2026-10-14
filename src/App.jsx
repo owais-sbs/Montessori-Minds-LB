@@ -9,6 +9,7 @@ import Nursery from './pages/Nursery'
 import OurApproach from './pages/OurApproach'
 import Programs from './pages/Programs'
 import Admission from './pages/Admission'
+import Faq from './pages/Faq'
 import Gallery from './pages/Gallery'
 import BookATour from './pages/BookATour'
 import { ROUTES } from './lib/routes'
@@ -26,6 +27,7 @@ export default function App() {
           <Route path={ROUTES.nursery} element={<Nursery />} />
           <Route path={ROUTES.ourApproach} element={<OurApproach />} />
           <Route path={ROUTES.programs} element={<Programs />} />
+          <Route path={ROUTES.faq} element={<Faq />} />
           <Route path={ROUTES.admission} element={<Admission />} />
           <Route path={ROUTES.gallery} element={<Gallery />} />
           <Route path={ROUTES.bookATour} element={<BookATour />} />

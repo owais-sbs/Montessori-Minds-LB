@@ -23,11 +23,14 @@ export default function Accordion({ items, className = '', dark = false }) {
                 {isOpen ? '−' : '+'}
               </span>
             </button>
-            {isOpen && (
-              <div className={`px-4 pb-4 sm:px-5 sm:pb-5 ${dark ? 'body-sm !text-warm-cream/85' : 'body-sm'}`}>
-                {item.body}
-              </div>
-            )}
+            {/* Keep answer text in the HTML source (display:none only) for AI/crawler extractability */}
+            <div
+              className={`px-4 pb-4 sm:px-5 sm:pb-5 ${dark ? 'body-sm !text-warm-cream/85' : 'body-sm'} ${
+                isOpen ? 'block' : 'hidden'
+              }`}
+            >
+              {item.body}
+            </div>
           </FadeUp>
         )
       })}

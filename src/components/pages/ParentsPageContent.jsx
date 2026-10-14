@@ -34,10 +34,28 @@ export default function ParentsPageContent() {
         </Container>
       </section>
 
+      <section className="bg-warm-beige py-14 md:py-20">
+        <Container size="narrow">
+          <FadeUp>
+            <h2 className="heading-xl">What to prepare for your visit</h2>
+            <p className="body-md mt-3">
+              Bring notes, not a perfect plan. These points help Guides place your child faster.
+            </p>
+            <ul className="body-md mt-6 list-disc space-y-2 pl-5 text-muted-text">
+              <li>Child’s date of birth and preferred start window</li>
+              <li>Current sleep and meal routines</li>
+              <li>Languages spoken at home</li>
+              <li>Questions about hours (Mon–Fri, 8:00 AM–4:00 PM) and settling-in</li>
+              <li>Whether you are comparing nursery, toddler or Children’s House placement</li>
+            </ul>
+          </FadeUp>
+        </Container>
+      </section>
+
       <section className="bg-warm-cream py-14 md:py-24">
         <Container>
           <FadeUp className="mb-8 text-left">
-            <p className="eyebrow">FAQs & policies</p>
+            <p className="eyebrow">FAQs &amp; policies</p>
             <h2 className="heading-xl mt-3 text-deep-forest">Answers when you need them.</h2>
           </FadeUp>
           <Accordion items={c.faqs} />

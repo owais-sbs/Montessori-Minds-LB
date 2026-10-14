@@ -4,6 +4,7 @@ import {
   defaultSeo,
   getBreadcrumbJsonLd,
   getFaqPageJsonLd,
+  getOrganizationJsonLd,
   getWebPageJsonLd,
 } from '../lib/seo.js'
 
@@ -26,6 +27,19 @@ function upsertLink(rel, href) {
     document.head.appendChild(el)
   }
   el.setAttribute('href', href)
+}
+
+function upsertLlmsTxtLink() {
+  const selector = 'link[rel="alternate"][type="text/plain"][href="/llms.txt"]'
+  let el = document.head.querySelector(selector)
+  if (!el) {
+    el = document.createElement('link')
+    el.setAttribute('rel', 'alternate')
+    el.setAttribute('type', 'text/plain')
+    el.setAttribute('href', '/llms.txt')
+    el.setAttribute('title', 'LLMs.txt')
+    document.head.appendChild(el)
+  }
 }
 
 function upsertJsonLd(id, data) {
@@ -110,7 +124,9 @@ export default function usePageMeta({
       content: pageImage,
     })
     upsertLink('canonical', pageUrl)
+    upsertLlmsTxtLink()
 
+    upsertJsonLd('org-jsonld', getOrganizationJsonLd())
     upsertJsonLd(
       'page-jsonld',
       getWebPageJsonLd({ title: pageTitle, description: pageDescription, path: pagePath }),

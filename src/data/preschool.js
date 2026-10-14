@@ -56,7 +56,7 @@ export const preschoolPage = {
       reverse: true,
       links: [
         { label: 'Explore La Casa Verde by Montessori Minds', to: ROUTES.laCasaVerde },
-        { label: 'Discover our Montessori Nursery', to: ROUTES.nursery },
+        { label: 'Montessori nursery in Choueifat', to: ROUTES.nursery },
       ],
     },
     {
@@ -69,7 +69,7 @@ export const preschoolPage = {
       imageAlt: 'Young children learning together in Montessori pre-school at Montessori Minds',
       reverse: false,
       links: [
-        { label: 'Discover our Montessori Nursery', to: ROUTES.nursery },
+        { label: 'Montessori nursery in Choueifat', to: ROUTES.nursery },
         { label: 'View nursery and pre-school programs', to: ROUTES.programs },
       ],
     },

@@ -5,6 +5,7 @@ export const ROUTES = {
   nursery: '/nursery',
   ourApproach: '/our-approach',
   programs: '/programs',
+  faq: '/faq',
   admission: '/admission',
   gallery: '/gallery',
   bookATour: '/book-a-tour',

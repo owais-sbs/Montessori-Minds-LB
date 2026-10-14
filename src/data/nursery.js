@@ -6,7 +6,7 @@ export const nurseryPage = {
     eyebrow: 'Nursery',
     title: 'Montessori Nursery in Choueifat',
     description:
-      'A nurturing Montessori nursery designed for infants and toddlers — early learning, exploration, care, and development at Montessori Minds in Choueifat.',
+      'Infant and toddler Montessori communities on Saida Old Road, Choueifat — The Nest (birth–18 months) and The Sprout (18 months–3 years).',
     image: images.programs.sprout,
     imageAlt: 'Toddler engaged in a Montessori nursery practical life activity',
   },
@@ -16,7 +16,7 @@ export const nurseryPage = {
       eyebrow: 'Early Years',
       title: 'Nursery School with a Montessori Heart',
       description:
-        'Our Montessori nursery in Choueifat welcomes the youngest learners into a calm, secure space. Closely observed care, gentle routines, and sensory-rich materials support early years growth for toddlers and infants alike.',
+        'Our Montessori nursery in Choueifat keeps group sizes small enough for Guides to observe each infant and toddler. Routines follow the child; materials invite grasping, pouring and early language.',
       image: images.programs.nest,
       imageAlt: 'Sensory Montessori materials used in our nursery for young children',
       reverse: false,
@@ -30,7 +30,7 @@ export const nurseryPage = {
       eyebrow: 'Toddlers',
       title: 'Montessori for Toddlers',
       description:
-        'Toddlers thrive when they can move, choose, and try for themselves. Our toddler Montessori program in Choueifat — a nursery for toddlers and young children — emphasizes practical life, language-rich moments, and respectful guidance. Families seeking nursery school in Choueifat or early years nursery options in Lebanon are welcome to visit.',
+        'Toddlers thrive when they can move, choose and try for themselves. The Sprout classroom emphasizes practical life, spoken language and outdoor time. Parents comparing nursery options in Choueifat or commuting from Beirut usually visit mid-morning to see a work cycle in progress.',
       image: images.independence,
       imageAlt: 'Toddler practicing independence in the Montessori nursery',
       reverse: true,

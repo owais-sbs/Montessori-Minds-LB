@@ -4,7 +4,7 @@ export const SITE_URL = 'https://www.montessorimindslb.com'
 export const defaultSeo = {
   title: 'Montessori School, Pre-School & Nursery | Montessori Minds',
   description:
-    'Montessori Minds offers a nurturing Montessori learning environment for young children, with pre-school and nursery programs in Choueifat.',
+    'Montessori school on Saida Old Road, Choueifat: Infant, Toddler and Children’s House (infancy–age 6). Mon–Fri 8:00 AM–4:00 PM. +961 71 007 150.',
   image: `${SITE_URL}/images/hero/hero.jpg`,
   logo: `${SITE_URL}/images/branding/La%20casa%20verde%20logo2.png`,
 }
@@ -20,7 +20,7 @@ export const pageSeo = {
   laCasaVerde: {
     title: 'La Casa Verde by Montessori Minds | Lebanon',
     description:
-      'Discover La Casa Verde by Montessori Minds, a nurturing early learning environment focused on Montessori-inspired education, development and discovery.',
+      'About La Casa Verde by Montessori Minds in Choueifat: campus history, mission, Guides, and full address on Saida Old Road, Al Omara District.',
     path: '/la-casa-verde',
     image: defaultSeo.image,
     breadcrumb: 'La Casa Verde',
@@ -28,7 +28,7 @@ export const pageSeo = {
   preschool: {
     title: 'Montessori Pre-School in Choueifat | Montessori Minds',
     description:
-      'Explore Montessori pre-school at Montessori Minds in Choueifat, supporting young children through hands-on learning, independence and discovery.',
+      'Children’s House Montessori pre-school for ages 3–6 in Choueifat: mixed-age classroom, work cycles and materials for practical life, language and maths.',
     path: '/preschool',
     image: `${SITE_URL}/images/programs/bloom.jpg`,
     breadcrumb: 'Pre-School',
@@ -36,7 +36,7 @@ export const pageSeo = {
   nursery: {
     title: 'Montessori Nursery in Choueifat | Montessori Minds',
     description:
-      'Discover a nurturing Montessori nursery in Choueifat designed to support young children through early learning, exploration, care and development.',
+      'Montessori nursery in Choueifat for infants and toddlers: Nido (birth–18 months) and Toddler Community (18 months–3 years) on Saida Old Road.',
     path: '/nursery',
     image: `${SITE_URL}/images/programs/nest.jpg`,
     breadcrumb: 'Nursery',
@@ -44,7 +44,7 @@ export const pageSeo = {
   ourApproach: {
     title: 'Montessori Education & Early Learning | Montessori Minds',
     description:
-      "Learn about Montessori Minds, our Montessori approach, early learning environment, and commitment to supporting children's independence, curiosity and development.",
+      'How Montessori works at Montessori Minds in Choueifat: prepared environments, Guides who observe, and materials for practical life, language and mathematics.',
     path: '/our-approach',
     image: `${SITE_URL}/images/classroom/approach.jpg`,
     breadcrumb: 'Our approach',
@@ -56,6 +56,14 @@ export const pageSeo = {
     path: '/programs',
     image: `${SITE_URL}/images/programs/sprout.jpg`,
     breadcrumb: 'Programs',
+  },
+  faq: {
+    title: 'FAQ | Montessori Minds Choueifat',
+    description:
+      'Answers about the Montessori method, age groups, hours, location, enrollment and programs at Montessori Minds in Choueifat, Lebanon.',
+    path: '/faq',
+    image: defaultSeo.image,
+    breadcrumb: 'FAQ',
   },
   admission: {
     title: 'Parents & Admissions at Montessori Minds | Choueifat',

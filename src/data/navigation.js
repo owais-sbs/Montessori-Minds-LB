@@ -13,9 +13,10 @@ export const primaryNavLinks = [
 export const footerNavLinks = [
   { label: 'La Casa Verde by Montessori Minds', to: ROUTES.laCasaVerde },
   { label: 'Explore our Montessori Pre-School', to: ROUTES.preschool },
-  { label: 'Discover our Montessori Nursery', to: ROUTES.nursery },
+  { label: 'Montessori nursery in Choueifat', to: ROUTES.nursery },
   { label: 'Learn about our Montessori approach', to: ROUTES.ourApproach },
   { label: 'Programs', to: ROUTES.programs },
+  { label: 'FAQ', to: ROUTES.faq },
   { label: 'Admissions', to: ROUTES.admission },
   { label: 'Gallery', to: ROUTES.gallery },
   { label: 'Book a school tour', to: ROUTES.bookATour },

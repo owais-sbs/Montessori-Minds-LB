@@ -26,11 +26,12 @@
 
     <!-- Primary SEO -->
     <title>Montessori School, Pre-School &amp; Nursery | Montessori Minds</title>
-    <meta name="description" content="Montessori Minds offers a nurturing Montessori learning environment for young children, with pre-school and nursery programs in Choueifat." />
+    <meta name="description" content="Montessori school on Saida Old Road, Choueifat: Infant, Toddler and Children’s House (infancy–age 6). Mon–Fri 8:00 AM–4:00 PM. +961 71 007 150." />
     <meta name="author" content="Montessori Minds" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="googlebot" content="index, follow" />
     <link rel="canonical" href="https://www.montessorimindslb.com/" />
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLMs.txt" />
 
     <!-- Geo-targeting for Lebanon -->
     <meta name="geo.region" content="LB" />
@@ -43,7 +44,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.montessorimindslb.com/" />
     <meta property="og:title" content="Montessori School, Pre-School &amp; Nursery | Montessori Minds" />
-    <meta property="og:description" content="Montessori Minds offers a nurturing Montessori learning environment for young children, with pre-school and nursery programs in Choueifat." />
+    <meta property="og:description" content="Montessori school on Saida Old Road, Choueifat: Infant, Toddler and Children’s House (infancy–age 6). Mon–Fri 8:00 AM–4:00 PM. +961 71 007 150." />
     <meta property="og:image" content="https://www.montessorimindslb.com/images/hero/hero.jpg" />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
@@ -54,7 +55,7 @@
     <!-- Twitter / X -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Montessori School, Pre-School &amp; Nursery | Montessori Minds" />
-    <meta name="twitter:description" content="Montessori Minds offers a nurturing Montessori learning environment for young children, with pre-school and nursery programs in Choueifat." />
+    <meta name="twitter:description" content="Montessori school on Saida Old Road, Choueifat: Infant, Toddler and Children’s House (infancy–age 6). Mon–Fri 8:00 AM–4:00 PM. +961 71 007 150." />
     <meta name="twitter:image" content="https://www.montessorimindslb.com/images/hero/hero.jpg" />
     <meta name="twitter:image:alt" content="La Casa Verde by Montessori Minds logo" />
 
@@ -68,8 +69,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
 
-    <!-- Structured Data (JSON-LD) -->
-    <script type="application/ld+json">
+    <!-- Structured Data (JSON-LD) — Organization + EducationalOrganization + Course -->
+    <script type="application/ld+json" id="org-jsonld">
       {
         "@context": "https://schema.org",
         "@graph": [
@@ -79,16 +80,17 @@
             "url": "https://www.montessorimindslb.com/",
             "name": "Montessori Minds",
             "alternateName": "La Casa Verde by Montessori Minds",
-            "description": "Montessori Minds offers a nurturing Montessori learning environment for young children, with pre-school and nursery programs in Choueifat.",
+            "description": "Montessori school on Saida Old Road, Choueifat: Infant, Toddler and Children’s House (infancy–age 6). Mon–Fri 8:00 AM–4:00 PM.",
             "publisher": { "@id": "https://www.montessorimindslb.com/#organization" },
-            "inLanguage": "en"
+            "inLanguage": "en-LB"
           },
           {
-            "@type": ["School", "LocalBusiness", "EducationalOrganization", "Preschool", "ChildCare"],
+            "@type": ["Organization", "School", "LocalBusiness", "EducationalOrganization", "Preschool", "ChildCare"],
             "@id": "https://www.montessorimindslb.com/#organization",
             "name": "Montessori Minds",
+            "legalName": "La Casa Verde by Montessori Minds",
             "alternateName": ["La Casa Verde by Montessori Minds", "La Casa Verde", "Montessori Minds LB"],
-            "description": "A Montessori school in Choueifat, Lebanon offering nursery and pre-school programs that nurture independence, curiosity, and confidence through authentic Montessori education.",
+            "description": "Montessori school, pre-school and nursery on Saida Old Road, Al Omara District, Choueifat, Lebanon. Programs for infants through age six, Monday–Friday 8:00 AM–4:00 PM.",
             "url": "https://www.montessorimindslb.com/",
             "logo": "https://www.montessorimindslb.com/images/branding/La%20casa%20verde%20logo2.png",
             "image": [
@@ -98,55 +100,115 @@
             "telephone": "+96171007150",
             "email": "hello@montessorimindslb.com",
             "priceRange": "$$",
-            "openingHours": "Mo-Fr 08:00-16:00",
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "16:00"
+              }
+            ],
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "Saida Old Road, Al Omara District",
               "addressLocality": "Choueifat",
-              "addressRegion": "Mount Lebanon",
+              "addressRegion": "Mount Lebanon Governorate",
               "addressCountry": "LB"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "latitude": "33.8",
-              "longitude": "35.5"
+              "latitude": 33.8,
+              "longitude": 35.5
             },
+            "sameAs": [
+              "https://amshq.org/",
+              "https://montessori-ami.org/"
+            ],
+            "knowsAbout": [
+              "Montessori Education",
+              "Early Childhood Development",
+              "Pre-School Programs",
+              "Nursery Education",
+              "Toddler Development",
+              "Practical Life Education",
+              "Sensorial Learning",
+              "Children’s House"
+            ],
             "areaServed": [
-              { "@type": "City", "name": "Choueifat, Lebanon" },
-              { "@type": "City", "name": "Beirut, Lebanon" },
-              { "@type": "City", "name": "Baabda, Lebanon" },
+              { "@type": "City", "name": "Choueifat" },
+              { "@type": "City", "name": "Beirut" },
+              { "@type": "City", "name": "Baabda" },
               { "@type": "AdministrativeArea", "name": "Mount Lebanon" }
             ],
             "hasOfferCatalog": {
               "@type": "OfferCatalog",
-              "name": "Programs",
+              "name": "Montessori programs",
               "itemListElement": [
                 {
                   "@type": "Offer",
+                  "position": 1,
                   "itemOffered": {
-                    "@type": "EducationalOccupationalProgram",
-                    "name": "The Nest",
-                    "description": "Montessori nursery program for infants aged 0-18 months"
+                    "@type": "Course",
+                    "name": "The Nest — Infant Community (Nido)",
+                    "description": "Montessori infant community for birth to 18 months at Montessori Minds in Choueifat.",
+                    "url": "https://www.montessorimindslb.com/nursery",
+                    "provider": { "@id": "https://www.montessorimindslb.com/#organization" }
                   }
                 },
                 {
                   "@type": "Offer",
+                  "position": 2,
                   "itemOffered": {
-                    "@type": "EducationalOccupationalProgram",
-                    "name": "The Sprout",
-                    "description": "Montessori nursery / toddler program for ages 18 months to 3 years"
+                    "@type": "Course",
+                    "name": "The Sprout — Toddler Community",
+                    "description": "Montessori toddler program for 18 months to 3 years.",
+                    "url": "https://www.montessorimindslb.com/nursery",
+                    "provider": { "@id": "https://www.montessorimindslb.com/#organization" }
                   }
                 },
                 {
                   "@type": "Offer",
+                  "position": 3,
                   "itemOffered": {
-                    "@type": "EducationalOccupationalProgram",
-                    "name": "The Bloom",
-                    "description": "Montessori pre-school program for ages 3 to 6 years"
+                    "@type": "Course",
+                    "name": "The Bloom — Children's House",
+                    "description": "Montessori pre-school / Children’s House for ages 3–6.",
+                    "url": "https://www.montessorimindslb.com/preschool",
+                    "provider": { "@id": "https://www.montessorimindslb.com/#organization" }
                   }
                 }
               ]
             }
+          },
+          {
+            "@type": "Course",
+            "@id": "https://www.montessorimindslb.com/nursery#the-nest-infant-community-nido",
+            "name": "The Nest — Infant Community (Nido)",
+            "description": "Montessori infant community for birth to 18 months at Montessori Minds in Choueifat. Secure care, sensory exploration and responsive language.",
+            "provider": { "@id": "https://www.montessorimindslb.com/#organization" },
+            "url": "https://www.montessorimindslb.com/nursery",
+            "educationalLevel": "Birth – 18 months",
+            "teaches": "Montessori Education"
+          },
+          {
+            "@type": "Course",
+            "@id": "https://www.montessorimindslb.com/nursery#the-sprout-toddler-community",
+            "name": "The Sprout — Toddler Community",
+            "description": "Montessori toddler program for 18 months to 3 years. Practical life, movement, language and growing independence.",
+            "provider": { "@id": "https://www.montessorimindslb.com/#organization" },
+            "url": "https://www.montessorimindslb.com/nursery",
+            "educationalLevel": "18 months – 3 years",
+            "teaches": "Montessori Education"
+          },
+          {
+            "@type": "Course",
+            "@id": "https://www.montessorimindslb.com/preschool#the-bloom-children-s-house",
+            "name": "The Bloom — Children's House",
+            "description": "Montessori pre-school / Children’s House for ages 3–6. Mixed-age classroom, Montessori materials and uninterrupted work cycles.",
+            "provider": { "@id": "https://www.montessorimindslb.com/#organization" },
+            "url": "https://www.montessorimindslb.com/preschool",
+            "educationalLevel": "3 – 6 years",
+            "teaches": "Montessori Education"
           }
         ]
       }
@@ -156,7 +218,7 @@
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W39SPTTR"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
+    <!-- End Google Tag Manager -->
     <div id="app"></div>
     <!-- crawl-body -->
     <div id="crawl-content" class="sr-only">
@@ -170,23 +232,44 @@
             <li><a href="/nursery">Montessori nursery</a></li>
             <li><a href="/preschool">Montessori pre-school</a></li>
             <li><a href="/admission">Admissions</a></li>
+            <li><a href="/faq">FAQ</a></li>
             <li><a href="/gallery">Gallery</a></li>
             <li><a href="/book-a-tour">Book a visit</a></li>
           </ul>
         </nav>
       </header>
       <main>
-        <h1>Little hands. Big beginnings.</h1>
-        <p>Montessori Minds is a Montessori school in Choueifat, Lebanon — nursery and pre-school programs for young children.</p>
-        <p><a href="/nursery">Montessori nursery in Choueifat</a> · <a href="/preschool">Montessori pre-school in Choueifat</a> · <a href="/our-approach">Our Montessori approach</a> · <a href="/book-a-tour">Book a visit</a></p>
+        <h1>Montessori Minds — Montessori school in Choueifat</h1>
+        <p>La Casa Verde by Montessori Minds is a Montessori school on Saida Old Road, Al Omara District, Choueifat, Lebanon. We run Infant Community (birth–18 months), Toddler Community (18 months–3 years) and Children’s House (ages 3–6). Campus hours are Monday–Friday, 8:00 AM–4:00 PM. Phone +961 71 007 150. Email hello@montessorimindslb.com.</p>
+        <section>
+          <h2>Our Montessori programs</h2>
+          <ul>
+            <li><h3>Infant Community (Nido)</h3><p>Birth–18 months — secure care, sensory exploration, responsive language.</p></li>
+            <li><h3>Toddler Community</h3><p>18 months–3 years — practical life, movement and early independence.</p></li>
+            <li><h3>Children’s House</h3><p>Ages 3–6 — Montessori pre-school with mixed ages and long work cycles.</p></li>
+          </ul>
+        </section>
+        <section>
+          <h2>Frequently asked questions</h2>
+          <ul>
+            <li><h3>What is the Montessori method?</h3><p>Children choose hands-on work in a prepared classroom and progress at their own pace with a trained Guide who observes rather than lectures.</p></li>
+            <li><h3>Where are you located?</h3><p>Saida Old Road, Al Omara District, Choueifat, Mount Lebanon, Lebanon.</p></li>
+            <li><h3>How do I enroll?</h3><p>Book a campus visit, complete an application, then plan a gradual settling-in period with our team.</p></li>
+          </ul>
+        </section>
+        <p><a href="/nursery">Montessori nursery in Choueifat</a> · <a href="/preschool">Montessori pre-school in Choueifat</a> · <a href="/our-approach">How Montessori works here</a> · <a href="/faq">Full FAQ</a> · <a href="/book-a-tour">Book a visit</a> · <a href="/llms.txt">LLMs.txt</a></p>
       </main>
+      <footer>
+        <p>La Casa Verde by Montessori Minds · Saida Old Road, Al Omara District, Choueifat, Mount Lebanon, Lebanon · <a href="mailto:hello@montessorimindslb.com">hello@montessorimindslb.com</a> · <a href="tel:+96171007150">+961 71 007 150</a> · Monday–Friday 8:00 AM–4:00 PM</p>
+      </footer>
     </div>
     <!-- crawl-body -->
     <noscript>
       <p>
         Montessori Minds — Montessori nursery and pre-school in Choueifat, Lebanon. Browse
         <a href="/nursery">nursery</a>, <a href="/preschool">pre-school</a>,
-        <a href="/la-casa-verde">La Casa Verde</a>, <a href="/admission">admissions</a>, or
+        <a href="/la-casa-verde">La Casa Verde</a>, <a href="/admission">admissions</a>,
+        <a href="/faq">FAQ</a>, or
         <a href="/book-a-tour">book a tour</a>. Contact hello@montessorimindslb.com · +961 71 007 150.
       </p>
     </noscript>

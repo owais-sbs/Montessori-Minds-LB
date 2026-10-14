@@ -8,14 +8,14 @@ export const programs = [
     ageRange: 'Infants (0-18 months)',
     shortDescription: 'A gentle start for our youngest learners.',
     description:
-      'In The Nest, infants are welcomed into a warm Montessori nursery space designed for exploration and connection. We follow their natural rhythm of play, rest, and discovery.',
+      'In The Nest, infants join a Montessori infant community sized for movement, rest and close observation. Guides follow each child’s sleep and feeding rhythm rather than a fixed group schedule.',
     image: images.programs.nest,
     icon: 'nest',
     features: [
-      'A safe, nurturing space for infants',
-      'Sensory exploration at their own pace',
+      'Floor beds and open movement space',
+      'Sensory exploration at the child’s pace',
       'Individualized care and close observation',
-      'Calm, comfortable spaces for rest',
+      'Calm rooms reserved for rest',
     ],
   },
   {
