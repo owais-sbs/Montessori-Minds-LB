@@ -1,7 +1,7 @@
 import { ROUTES } from '../lib/routes'
 
 export const primaryNavLinks = [
-  { label: 'Casa Verde', to: ROUTES.laCasaVerde },
+  { label: 'La Casa Verde', to: ROUTES.laCasaVerde },
   { label: 'Approach', to: ROUTES.ourApproach },
   { label: 'Programs', to: ROUTES.programs },
   { label: 'Nursery', to: ROUTES.nursery },
