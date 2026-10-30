@@ -43,6 +43,11 @@ export const siteFaqs = [
   {
     id: 'nursery-preschool',
     title: 'Do you offer both nursery and pre-school?',
-    body: 'Yes. Nursery pathways cover infants and toddlers; Children’s House is our Montessori pre-school for ages three to six. Many families stay with us as their child grows from nursery into pre-school on the same Choueifat campus.',
+    body: 'Yes. Nursery pathways cover infants and toddlers; Children’s House is our Montessori pre-school for ages three to six. Many families stay with us as their child grows from nursery into pre-school on the same Choueifat campus. Compare pathways on the Programs page, then book a school visit when you are ready.',
+  },
+  {
+    id: 'book-visit',
+    title: 'How do I book a school visit?',
+    body: 'Use the Book a visit form on montessorimindslb.com/book-a-tour, or call +961 71 007 150 / email hello@montessorimindslb.com. Weekday morning visits let families see Infant, Toddler or Children’s House classrooms in session.',
   },
 ]

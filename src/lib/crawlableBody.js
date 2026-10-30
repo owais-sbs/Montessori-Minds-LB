@@ -55,9 +55,9 @@ function block({ h1, intro, sections = [], extraLinks = [] }) {
 
 export const CRAWLABLE_BODY_BY_PATH = {
   '/': block({
-    h1: 'Montessori Minds — Montessori school in Choueifat',
+    h1: 'Montessori Preschool in Choueifat — La Casa Verde by Montessori Minds',
     intro:
-      'La Casa Verde by Montessori Minds is a Montessori school on Saida Old Road, Al Omara District, Choueifat, Lebanon. We run Infant Community (birth–18 months), Toddler Community (18 months–3 years) and Children’s House (ages 3–6). Campus hours are Monday–Friday, 8:00 AM–4:00 PM. Phone +961 71 007 150. Email hello@montessorimindslb.com. Arabic, English and French are part of daily classroom life.',
+      'La Casa Verde by Montessori Minds is a Montessori preschool, nursery and school on Saida Old Road, Al Omara District, Choueifat, Lebanon. We run Infant Community (birth–18 months), Toddler Community (18 months–3 years) and Children’s House (ages 3–6). Campus hours are Monday–Friday, 8:00 AM–4:00 PM. Phone +961 71 007 150. Email hello@montessorimindslb.com. Arabic, English and French are part of daily classroom life.',
     sections: [
       {
         h2: 'What children practise here',

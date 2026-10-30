@@ -11,9 +11,9 @@ export default function Faq() {
     <>
       <CreamHeroSection
         eyebrow="FAQ"
-        title="Montessori Minds — Frequently asked questions"
+        title="Montessori nursery & preschool FAQs"
         titleAccent="Clear answers for parents."
-        description="Practical details about our Montessori approach, age groups, hours, location and enrollment at La Casa Verde in Choueifat."
+        description="Practical details about ages, hours, location, enrollment and Montessori practice at La Casa Verde by Montessori Minds in Choueifat."
       />
 
       <section className="bg-warm-cream py-14 md:py-20" aria-labelledby="faq-heading">

@@ -113,8 +113,8 @@ export function getOrganizationJsonLd() {
         '@type': 'WebSite',
         '@id': `${SITE_URL}/#website`,
         url: `${SITE_URL}/`,
-        name: 'Montessori Minds',
-        alternateName: 'La Casa Verde by Montessori Minds',
+        name: 'La Casa Verde by Montessori Minds',
+        alternateName: ['Montessori Minds', 'La Casa Verde'],
         description: defaultSeo.description,
         publisher: { '@id': `${SITE_URL}/#organization` },
         inLanguage: 'en-LB',
@@ -129,17 +129,27 @@ export function getOrganizationJsonLd() {
           'ChildCare',
         ],
         '@id': `${SITE_URL}/#organization`,
-        name: 'Montessori Minds',
+        name: 'La Casa Verde by Montessori Minds',
         legalName: 'La Casa Verde by Montessori Minds',
-        alternateName: ['La Casa Verde by Montessori Minds', 'La Casa Verde', 'Montessori Minds LB'],
+        alternateName: ['Montessori Minds', 'La Casa Verde', 'Montessori Minds LB'],
         description:
-          'Montessori school, pre-school and nursery on Saida Old Road, Al Omara District, Choueifat, Lebanon. Programs for infants through age six, Monday–Friday 8:00 AM–4:00 PM.',
+          'A Montessori preschool in Choueifat, Lebanon, offering programs for infants, toddlers, and preschool-aged children on Saida Old Road, Al Omara District. Monday–Friday 8:00 AM–4:00 PM.',
         url: `${SITE_URL}/`,
         logo: defaultSeo.logo,
         image: [defaultSeo.image, defaultSeo.logo],
         telephone: '+96171007150',
         email: contactPlaceholders.email,
         priceRange: '$$',
+        contactPoint: [
+          {
+            '@type': 'ContactPoint',
+            telephone: '+96171007150',
+            email: contactPlaceholders.email,
+            contactType: 'admissions',
+            areaServed: 'LB',
+            availableLanguage: ['English', 'Arabic', 'French'],
+          },
+        ],
         openingHoursSpecification: [
           {
             '@type': 'OpeningHoursSpecification',
@@ -152,7 +162,7 @@ export function getOrganizationJsonLd() {
           '@type': 'PostalAddress',
           streetAddress: 'Saida Old Road, Al Omara District',
           addressLocality: 'Choueifat',
-          addressRegion: 'Mount Lebanon Governorate',
+          addressRegion: 'Mount Lebanon',
           addressCountry: 'LB',
         },
         geo: {
@@ -204,6 +214,7 @@ export function getOrganizationJsonLd() {
         provider: { '@id': `${SITE_URL}/#organization` },
         url: course.url,
         educationalLevel: course.ageRange,
+        typicalAgeRange: course.ageRange,
         teaches: 'Montessori Education',
         timeRequired: 'P1D',
         hasCourseInstance: {
@@ -216,7 +227,7 @@ export function getOrganizationJsonLd() {
               '@type': 'PostalAddress',
               streetAddress: 'Saida Old Road, Al Omara District',
               addressLocality: 'Choueifat',
-              addressRegion: 'Mount Lebanon Governorate',
+              addressRegion: 'Mount Lebanon',
               addressCountry: 'LB',
             },
           },
@@ -246,5 +257,10 @@ export function getWebPageJsonLd({ title, description, path }) {
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
     inLanguage: 'en-LB',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '#crawl-content h1', '#crawl-content p'],
+    },
+    dateModified: '2026-10-30',
   }
 }

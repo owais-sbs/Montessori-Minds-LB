@@ -42,13 +42,34 @@ function upsertAlternateLink({ type, href, title }) {
   }
 }
 
+function upsertDescribedBy(href) {
+  let el = document.head.querySelector('link[rel="describedby"][href$="llms.txt"]')
+  if (!el) {
+    el = document.createElement('link')
+    el.setAttribute('rel', 'describedby')
+    document.head.appendChild(el)
+  }
+  el.setAttribute('href', href)
+}
+
 function upsertDiscoveryHeadLinks() {
   upsertAlternateLink({ type: 'text/plain', href: '/llms.txt', title: 'LLMs.txt' })
+  upsertAlternateLink({
+    type: 'text/plain',
+    href: '/llms-full.txt',
+    title: 'LLMs full guide',
+  })
+  upsertAlternateLink({
+    type: 'text/markdown',
+    href: '/sitemap.md',
+    title: 'Markdown sitemap',
+  })
   upsertAlternateLink({
     type: 'application/rss+xml',
     href: '/feed.xml',
     title: 'Montessori Minds campus updates',
   })
+  upsertDescribedBy('/llms.txt')
 
   if (!document.head.querySelector('link[rel="manifest"]')) {
     const manifest = document.createElement('link')
@@ -117,7 +138,7 @@ export default function usePageMeta({
     })
     upsertMeta('meta[property="og:site_name"]', {
       property: 'og:site_name',
-      content: 'Montessori Minds',
+      content: 'La Casa Verde by Montessori Minds',
     })
     upsertMeta('meta[property="og:locale"]', {
       property: 'og:locale',
@@ -157,6 +178,13 @@ export default function usePageMeta({
     })
     upsertLink('canonical', pageUrl)
     upsertDiscoveryHeadLinks()
+
+    const markdownPath = pagePath === '/' ? '/index.md' : `${pagePath}.md`
+    upsertAlternateLink({
+      type: 'text/markdown',
+      href: markdownPath,
+      title: 'Markdown version',
+    })
 
     upsertJsonLd('org-jsonld', getOrganizationJsonLd())
     upsertJsonLd(

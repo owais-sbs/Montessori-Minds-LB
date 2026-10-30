@@ -6,10 +6,14 @@ Phone: +961 71 007 150
 Site: https://www.montessorimindslb.com/
 
 /* SITE */
-Standards: HTML5, CSS3, Schema.org JSON-LD
+Standards: HTML5, CSS3, Schema.org JSON-LD, llms.txt
 Components: React, Vite
 Languages: English, Arabic, French
 Doctype: HTML5
 LLM guide: /llms.txt
+LLM full guide: /llms-full.txt
+AI policy: /ai.txt
+Agents: /AGENTS.md
+Markdown sitemap: /sitemap.md
 Security: /.well-known/security.txt
-Last update: 2026-10-14
+Last update: 2026-10-30

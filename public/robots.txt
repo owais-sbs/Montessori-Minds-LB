@@ -2,39 +2,73 @@
 User-agent: *
 Allow: /
 
-# OpenAI / ChatGPT
-User-agent: GPTBot
-Allow: /
-
+# OpenAI / ChatGPT — citation & search
 User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: ChatGPT-User
 Allow: /
 
-# Anthropic / Claude
-User-agent: ClaudeBot
+User-agent: GPTBot
+Allow: /
+
+# Anthropic / Claude — citation & search
+User-agent: Claude-SearchBot
 Allow: /
 
 User-agent: Claude-User
 Allow: /
 
-User-agent: Claude-SearchBot
+User-agent: ClaudeBot
 Allow: /
 
 # Perplexity
 User-agent: PerplexityBot
 Allow: /
 
-# Google Gemini / AI Overviews training
+User-agent: Perplexity-User
+Allow: /
+
+# Google Gemini / AI Overviews training control
 User-agent: Google-Extended
+Allow: /
+
+# Apple Intelligence / Applebot
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta AI
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: FacebookBot
+Allow: /
+
+# Common Crawl (often used by research / AI corpora)
+User-agent: CCBot
+Allow: /
+
+# ByteDance
+User-agent: Bytespider
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
 Allow: /
 
 Sitemap: https://www.montessorimindslb.com/sitemap.xml
 
-# Machine-readable discovery files
-# LLMs: https://www.montessorimindslb.com/llms.txt
-# Security: https://www.montessorimindslb.com/.well-known/security.txt
+# AI / agent discovery files
+# LLMs (short): https://www.montessorimindslb.com/llms.txt
+# LLMs (full): https://www.montessorimindslb.com/llms-full.txt
+# Well-known LLMs: https://www.montessorimindslb.com/.well-known/llms.txt
+# AI policy: https://www.montessorimindslb.com/ai.txt
+# Agents: https://www.montessorimindslb.com/AGENTS.md
+# Markdown sitemap: https://www.montessorimindslb.com/sitemap.md
+# RSS: https://www.montessorimindslb.com/feed.xml
 # Humans: https://www.montessorimindslb.com/humans.txt
-# Feed: https://www.montessorimindslb.com/feed.xml
+# Security: https://www.montessorimindslb.com/.well-known/security.txt
 # Manifest: https://www.montessorimindslb.com/manifest.json

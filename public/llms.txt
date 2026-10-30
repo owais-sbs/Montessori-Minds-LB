@@ -1,28 +1,29 @@
-# Montessori Minds (La Casa Verde by Montessori Minds)
-> Montessori school, nursery and pre-school in Choueifat, Lebanon for children from infancy through age six.
+# La Casa Verde by Montessori Minds
 
-Montessori Minds operates La Casa Verde on Saida Old Road, Al Omara District, Choueifat, Mount Lebanon. We offer Montessori Infant Community / Nido (birth–18 months), Toddler Community (18 months–3 years), and Children's House pre-school (ages 3–6). Hours: Monday–Friday, 8:00 AM–4:00 PM. Phone: +961 71 007 150. Email: hello@montessorimindslb.com.
+> Montessori school, nursery and pre-school in Choueifat, Lebanon for children from infancy through age six. Campus on Saida Old Road, Al Omara District. Hours Monday–Friday, 8:00 AM–4:00 PM. Phone +961 71 007 150. Email hello@montessorimindslb.com.
 
-## What we offer
-- Prepared Montessori classrooms with Guides who observe before they intervene
-- Nursery pathways for infants and toddlers; Children's House for ages 3–6
-- Arabic, English and French in daily classroom life
-- Campus visits for families comparing early childhood options near Choueifat, Beirut and Baabda
+Montessori Minds operates La Casa Verde with AMI- and AMS-informed classroom practice. Programs: Infant Community / Nido (birth–18 months), Toddler Community (18 months–3 years), and Children’s House pre-school (ages 3–6). Arabic, English and French are part of daily classroom life.
 
 ## Key pages
-- Programs: https://www.montessorimindslb.com/programs
-- Admissions: https://www.montessorimindslb.com/admission
-- About / La Casa Verde: https://www.montessorimindslb.com/la-casa-verde
-- FAQ: https://www.montessorimindslb.com/faq
-- Contact / book a visit: https://www.montessorimindslb.com/book-a-tour
-- Nursery: https://www.montessorimindslb.com/nursery
-- Pre-school: https://www.montessorimindslb.com/preschool
-- Our approach: https://www.montessorimindslb.com/our-approach
-- Home: https://www.montessorimindslb.com/
 
-## Machine-readable files
-- Sitemap: https://www.montessorimindslb.com/sitemap.xml
-- RSS feed: https://www.montessorimindslb.com/feed.xml
-- Security: https://www.montessorimindslb.com/.well-known/security.txt
-- Humans: https://www.montessorimindslb.com/humans.txt
-- Web manifest: https://www.montessorimindslb.com/manifest.json
+- [Home](https://www.montessorimindslb.com/): Montessori preschool, nursery and school overview in Choueifat
+- [La Casa Verde](https://www.montessorimindslb.com/la-casa-verde): Campus mission, history and contact details
+- [Our approach](https://www.montessorimindslb.com/our-approach): How Montessori works in our prepared environments
+- [Programs](https://www.montessorimindslb.com/programs): Infant, toddler and Children’s House pathways compared
+- [Montessori nursery](https://www.montessorimindslb.com/nursery): Nido and Toddler Community in Choueifat
+- [Montessori pre-school](https://www.montessorimindslb.com/preschool): Children’s House for ages 3–6
+- [Admissions](https://www.montessorimindslb.com/admission): Enrollment journey for families
+- [FAQ](https://www.montessorimindslb.com/faq): Direct answers on ages, hours, location and enrollment
+- [Gallery](https://www.montessorimindslb.com/gallery): Prepared classrooms and campus life
+- [Book a visit](https://www.montessorimindslb.com/book-a-tour): Schedule a weekday campus tour
+
+## Optional
+
+- [Full LLM guide](https://www.montessorimindslb.com/llms-full.txt): Extended facts, FAQs and citation-ready answers
+- [AI policy](https://www.montessorimindslb.com/ai.txt): Plain-language AI crawler and citation policy
+- [Agent guide](https://www.montessorimindslb.com/AGENTS.md): How assistants should describe and cite this school
+- [Markdown sitemap](https://www.montessorimindslb.com/sitemap.md): Human-readable page map
+- [XML sitemap](https://www.montessorimindslb.com/sitemap.xml): Machine sitemap for crawlers
+- [RSS feed](https://www.montessorimindslb.com/feed.xml): Campus updates feed
+- [Humans](https://www.montessorimindslb.com/humans.txt): Team and site credits
+- [Security](https://www.montessorimindslb.com/.well-known/security.txt): Security contact
