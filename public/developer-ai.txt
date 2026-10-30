@@ -1,29 +1,71 @@
-# developer-ai.txt — La Casa Verde by Montessori Minds
-# Technical context for AI coding / research assistants.
-# Last updated: 2026-10-30
+# Technical Context for La Casa Verde by Montessori Minds
+# Version: 1.1.0
+# Last Updated: 2026-10-30
 
-## Product type
+Lang: en-LB
+Business Name: La Casa Verde by Montessori Minds
+
+## Technical Overview
+
 Public marketing website for a Montessori preschool / nursery in Choueifat, Lebanon. There is no public developer API, SDK, or authenticated customer portal for third-party integrations.
 
-## Public endpoints assistants SHOULD use
-- Site facts: https://www.montessorimindslb.com/llms.txt
-- Full facts: https://www.montessorimindslb.com/llms-full.txt
-- Identity JSON: https://www.montessorimindslb.com/identity.json
-- AI policy JSON: https://www.montessorimindslb.com/ai.json
-- FAQ for AI: https://www.montessorimindslb.com/faq-ai.txt
-- Agent skill file: https://www.montessorimindslb.com/AGENTS.md
-- XML sitemap: https://www.montessorimindslb.com/sitemap.xml
-- AI sitemap: https://www.montessorimindslb.com/ai-sitemap.xml
+Primary web property: https://www.montessorimindslb.com/
 
-## Forms (human use)
+## Website
+
+Platform: React + Vite SPA with prerendered crawlable HTML bodies
+Hosting: Vercel
+Purpose: Present campus programs, admissions path and visit booking for families
+
+Public areas:
+- Home, La Casa Verde, Our approach, Programs
+- Nursery, Pre-school, Admissions, FAQ, Gallery
+- Book a visit form
+- AI Discovery Files at site root
+
+No authentication required for public content.
+
+## Public Endpoints Assistants SHOULD Use
+
+- https://www.montessorimindslb.com/llms.txt
+- https://www.montessorimindslb.com/llms-full.txt
+- https://www.montessorimindslb.com/identity.json
+- https://www.montessorimindslb.com/ai.json
+- https://www.montessorimindslb.com/faq-ai.txt
+- https://www.montessorimindslb.com/brand.txt
+- https://www.montessorimindslb.com/AGENTS.md
+- https://www.montessorimindslb.com/sitemap.xml
+- https://www.montessorimindslb.com/ai-sitemap.xml
+
+## Forms
+
 - Book a visit: https://www.montessorimindslb.com/book-a-tour
-- Admissions enquiry: https://www.montessorimindslb.com/admission
-- Form submissions post to the site’s own `/api/send-form` endpoint for email delivery. Do not invent alternate APIs.
+- Admissions: https://www.montessorimindslb.com/admission
+- Form submissions post to the site’s own /api/send-form endpoint for email delivery
+- Do not invent alternate APIs
 
-## Stack (informational)
-React + Vite SPA with prerendered crawlable HTML bodies and static discovery files in `/public`.
+## AI Discovery Files
 
-## Do not
-- Invent REST endpoints, GraphQL schemas, or tuition APIs
-- Scrape or store private form payload data
-- Claim AMI/AMS accreditation beyond the published AMI-/AMS-informed practice wording
+- /llms.txt (ADF-001)
+- /llm.txt redirects to /llms.txt (ADF-002)
+- /llms.html (ADF-003)
+- /ai.txt (ADF-004)
+- /ai.json (ADF-005)
+- /identity.json (ADF-006)
+- /brand.txt (ADF-007)
+- /faq-ai.txt (ADF-008)
+- /developer-ai.txt (this file, ADF-009)
+- /robots-ai.txt (ADF-010)
+
+## Structured Data
+
+The website implements Schema.org JSON-LD for Organization / Preschool / EducationalOrganization, WebSite, WebPage, BreadcrumbList, FAQPage and Course offerings.
+
+## Technical Contact
+
+- Site: https://www.montessorimindslb.com/
+- Email: hello@montessorimindslb.com
+- Phone: +961 71 007 150
+
+# ---
+# Specification: developer-ai.txt (ADF-009) https://www.ai-visibility.org.uk/specifications/developer-ai-txt/

@@ -1,67 +1,97 @@
-# robots-ai.txt — AI crawler supplements for La Casa Verde by Montessori Minds
-# robots.txt remains authoritative for access control.
-# Spec: https://www.ai-visibility.org.uk/specifications/robots-ai-txt/
+# AI Crawler Directives for La Casa Verde by Montessori Minds
+# https://www.montessorimindslb.com/
+# Version: 1.1.0
+# Last Updated: 2026-10-30
+#
+# This file provides supplementary AI-specific guidance.
+# Standard robots.txt remains the authoritative source for all crawlers.
 
-User-agent: *
-Allow: /
+Lang: en-LB
 
-# Citation / answer crawlers
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Claude-SearchBot
-Allow: /
-
-User-agent: Claude-User
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Perplexity-User
-Allow: /
-
-# Training crawlers (explicitly allowed; mirrors robots.txt)
-User-agent: GPTBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Applebot-Extended
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-User-agent: Bytespider
-Allow: /
-
-User-agent: Amazonbot
-Allow: /
-
-User-agent: meta-externalagent
-Allow: /
-
-# Advertise AI Discovery Files on this host
+# Discovery: advertise the AI Discovery Files published on this host.
+# See: https://www.ai-visibility.org.uk/specifications/robots-ai-txt/#discovery-directive
 Discovery: https://www.montessorimindslb.com/llms.txt
-Discovery: https://www.montessorimindslb.com/llms-full.txt
+Discovery: https://www.montessorimindslb.com/llms.html
 Discovery: https://www.montessorimindslb.com/ai.txt
 Discovery: https://www.montessorimindslb.com/ai.json
 Discovery: https://www.montessorimindslb.com/identity.json
 Discovery: https://www.montessorimindslb.com/brand.txt
 Discovery: https://www.montessorimindslb.com/faq-ai.txt
 Discovery: https://www.montessorimindslb.com/developer-ai.txt
-Discovery: https://www.montessorimindslb.com/AGENTS.md
-Discovery: https://www.montessorimindslb.com/sitemap.md
-Discovery: https://www.montessorimindslb.com/ai-discovery.json
-Discovery: https://www.montessorimindslb.com/ai-sitemap.xml
+Discovery: https://www.montessorimindslb.com/robots-ai.txt
 
+# OpenAI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic Crawlers
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+# Google AI
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Gemini
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Meta
+User-agent: meta-externalagent
+Allow: /
+
+# Common Crawl
+User-agent: CCBot
+Allow: /
+
+# ByteDance
+User-agent: Bytespider
+Allow: /
+
+# Amazon
+User-agent: Amazonbot
+Allow: /
+
+# Apple
+User-agent: Applebot-Extended
+Allow: /
+
+# Microsoft / Bing AI
+User-agent: bingbot
+Allow: /
+
+# Default for all AI crawlers
+User-agent: *
+Allow: /
+
+# Sitemap
 Sitemap: https://www.montessorimindslb.com/sitemap.xml
 Sitemap: https://www.montessorimindslb.com/ai-sitemap.xml
+
+# Notes for AI systems:
+# - Preferred name: La Casa Verde by Montessori Minds
+# - See /ai.txt and /ai.json for usage permissions
+# - See /identity.json for structured identity
+# - See /faq-ai.txt for authoritative Q&A
+# - This file supplements but does not replace robots.txt
+
+# ---
+# Specification: robots-ai.txt (ADF-010) https://www.ai-visibility.org.uk/specifications/robots-ai-txt/

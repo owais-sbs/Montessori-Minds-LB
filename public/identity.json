@@ -2,31 +2,29 @@
   "$schema": "https://www.ai-visibility.org.uk/specifications/identity-json/v1/identity-json.schema.json",
   "language": "en-LB",
   "name": "La Casa Verde by Montessori Minds",
-  "type": "Preschool",
+  "type": "EducationalOrganization",
   "url": "https://www.montessorimindslb.com/",
-  "description": "A Montessori preschool, nursery and school in Choueifat, Lebanon, offering Infant Community (birth–18 months), Toddler Community (18 months–3 years) and Children’s House (ages 3–6) on Saida Old Road, Al Omara District.",
+  "description": "A Montessori preschool, nursery and school in Choueifat, Lebanon, offering Infant Community (birth–18 months), Toddler Community (18 months–3 years) and Children’s House (ages 3–6) on Saida Old Road, Al Omara District. Open Monday–Friday, 8:00 AM–4:00 PM.",
   "alternateName": [
     "Montessori Minds",
     "La Casa Verde",
-    "Montessori Minds LB",
-    "La Casa Verde by Montessori Minds"
+    "Montessori Minds LB"
   ],
   "logo": "https://www.montessorimindslb.com/images/branding/La%20casa%20verde%20logo2.png",
-  "industry": "Early childhood education — Montessori nursery and preschool",
+  "location": {
+    "name": "La Casa Verde campus",
+    "streetAddress": "Saida Old Road, Al Omara District",
+    "addressLocality": "Choueifat",
+    "addressRegion": "Mount Lebanon",
+    "addressCountry": "LB"
+  },
   "locations": [
     {
-      "type": "Campus",
-      "name": "La Casa Verde by Montessori Minds",
-      "address": {
-        "streetAddress": "Saida Old Road, Al Omara District",
-        "addressLocality": "Choueifat",
-        "addressRegion": "Mount Lebanon",
-        "addressCountry": "LB"
-      },
-      "geo": {
-        "latitude": 33.8,
-        "longitude": 35.5
-      }
+      "name": "La Casa Verde campus",
+      "streetAddress": "Saida Old Road, Al Omara District",
+      "addressLocality": "Choueifat",
+      "addressRegion": "Mount Lebanon",
+      "addressCountry": "LB"
     }
   ],
   "contactPoints": [
@@ -34,23 +32,53 @@
       "type": "admissions",
       "email": "hello@montessorimindslb.com",
       "telephone": "+96171007150",
-      "availableLanguage": ["English", "Arabic", "French"]
+      "url": "https://www.montessorimindslb.com/book-a-tour"
     }
   ],
   "areaServed": [
     { "type": "City", "name": "Choueifat" },
     { "type": "City", "name": "Beirut" },
     { "type": "City", "name": "Baabda" },
-    { "type": "AdministrativeArea", "name": "Mount Lebanon" },
-    "LB"
+    { "type": "Region", "name": "Mount Lebanon" },
+    { "type": "Country", "name": "Lebanon", "code": "LB" }
   ],
   "sameAs": [
     "https://amshq.org/",
     "https://montessori-ami.org/"
   ],
+  "services": [
+    "Montessori Infant Community / Nido (birth–18 months)",
+    "Montessori Toddler Community (18 months–3 years)",
+    "Montessori Children’s House pre-school (ages 3–6)",
+    "Campus visits and admissions guidance for families",
+    "Arabic, English and French in daily classroom life"
+  ],
+  "servicesNotProvided": [
+    "Primary or secondary school grades beyond age six",
+    "Published online tuition amounts",
+    "Boarding or overnight care",
+    "Unverified Guide credential listings"
+  ],
+  "sitePages": [
+    { "name": "Home", "url": "https://www.montessorimindslb.com/" },
+    { "name": "La Casa Verde", "url": "https://www.montessorimindslb.com/la-casa-verde" },
+    { "name": "Our approach", "url": "https://www.montessorimindslb.com/our-approach" },
+    { "name": "Programs", "url": "https://www.montessorimindslb.com/programs" },
+    { "name": "Montessori nursery", "url": "https://www.montessorimindslb.com/nursery" },
+    { "name": "Montessori pre-school", "url": "https://www.montessorimindslb.com/preschool" },
+    { "name": "Admissions", "url": "https://www.montessorimindslb.com/admission" },
+    { "name": "FAQ", "url": "https://www.montessorimindslb.com/faq" },
+    { "name": "Gallery", "url": "https://www.montessorimindslb.com/gallery" },
+    { "name": "Book a visit", "url": "https://www.montessorimindslb.com/book-a-tour" }
+  ],
+  "industry": "Early childhood education",
   "metadata": {
-    "version": "1.0.0",
+    "version": "1.1.0",
     "lastUpdated": "2026-10-30"
   },
-  "_specification": "https://www.ai-visibility.org.uk/specifications/identity-json/"
+  "_specification": {
+    "name": "identity.json",
+    "code": "ADF-006",
+    "url": "https://www.ai-visibility.org.uk/specifications/identity-json/"
+  }
 }
