@@ -1,0 +1,52 @@
+{
+  "name": "La Casa Verde by Montessori Minds",
+  "url": "https://www.montessorimindslb.com/",
+  "description": "Montessori preschool, nursery and school in Choueifat, Lebanon for children from infancy through age six.",
+  "version": "1.0.0",
+  "lastUpdated": "2026-10-30",
+  "permissions": {
+    "citation": true,
+    "summarisation": true,
+    "training": true,
+    "attributionRequired": true
+  },
+  "preferredCitation": "La Casa Verde by Montessori Minds (https://www.montessorimindslb.com/)",
+  "contact": {
+    "email": "hello@montessorimindslb.com",
+    "telephone": "+96171007150"
+  },
+  "discovery": {
+    "llmsTxt": "https://www.montessorimindslb.com/llms.txt",
+    "llmsFull": "https://www.montessorimindslb.com/llms-full.txt",
+    "llmsHtml": "https://www.montessorimindslb.com/llms.html",
+    "aiTxt": "https://www.montessorimindslb.com/ai.txt",
+    "aiJson": "https://www.montessorimindslb.com/ai.json",
+    "identityJson": "https://www.montessorimindslb.com/identity.json",
+    "brandTxt": "https://www.montessorimindslb.com/brand.txt",
+    "faqAiTxt": "https://www.montessorimindslb.com/faq-ai.txt",
+    "robotsAiTxt": "https://www.montessorimindslb.com/robots-ai.txt",
+    "developerAiTxt": "https://www.montessorimindslb.com/developer-ai.txt",
+    "agentsMd": "https://www.montessorimindslb.com/AGENTS.md",
+    "sitemapXml": "https://www.montessorimindslb.com/sitemap.xml",
+    "aiSitemapXml": "https://www.montessorimindslb.com/ai-sitemap.xml",
+    "sitemapMd": "https://www.montessorimindslb.com/sitemap.md",
+    "knowledgeGraph": "https://www.montessorimindslb.com/knowledge-graph.json"
+  },
+  "programs": [
+    {
+      "name": "The Nest — Infant Community (Nido)",
+      "ages": "birth–18 months",
+      "url": "https://www.montessorimindslb.com/nursery"
+    },
+    {
+      "name": "The Sprout — Toddler Community",
+      "ages": "18 months–3 years",
+      "url": "https://www.montessorimindslb.com/nursery"
+    },
+    {
+      "name": "The Bloom — Children's House",
+      "ages": "3–6 years",
+      "url": "https://www.montessorimindslb.com/preschool"
+    }
+  ]
+}

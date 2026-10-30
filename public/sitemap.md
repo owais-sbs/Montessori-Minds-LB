@@ -33,12 +33,26 @@
 - [FAQ](https://www.montessorimindslb.com/faq.md)
 - [Book a visit](https://www.montessorimindslb.com/book-a-tour.md)
 
-## Discovery files
+## Parent resources
+
+- [Parent guide](https://www.montessorimindslb.com/parents-guide.md)
+
+## Discovery files (Complete AI Discovery Files set)
 
 - [llms.txt](https://www.montessorimindslb.com/llms.txt)
 - [llms-full.txt](https://www.montessorimindslb.com/llms-full.txt)
+- [llms.html](https://www.montessorimindslb.com/llms.html)
 - [ai.txt](https://www.montessorimindslb.com/ai.txt)
+- [ai.json](https://www.montessorimindslb.com/ai.json)
+- [identity.json](https://www.montessorimindslb.com/identity.json)
+- [brand.txt](https://www.montessorimindslb.com/brand.txt)
+- [faq-ai.txt](https://www.montessorimindslb.com/faq-ai.txt)
+- [developer-ai.txt](https://www.montessorimindslb.com/developer-ai.txt)
+- [robots-ai.txt](https://www.montessorimindslb.com/robots-ai.txt)
+- [ai-discovery.json](https://www.montessorimindslb.com/ai-discovery.json)
+- [knowledge-graph.json](https://www.montessorimindslb.com/knowledge-graph.json)
 - [AGENTS.md](https://www.montessorimindslb.com/AGENTS.md)
 - [robots.txt](https://www.montessorimindslb.com/robots.txt)
 - [sitemap.xml](https://www.montessorimindslb.com/sitemap.xml)
+- [ai-sitemap.xml](https://www.montessorimindslb.com/ai-sitemap.xml)
 - [feed.xml](https://www.montessorimindslb.com/feed.xml)

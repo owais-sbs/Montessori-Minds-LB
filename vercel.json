@@ -1,5 +1,17 @@
 {
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/llm.txt",
+      "destination": "/llms.txt",
+      "permanent": true
+    },
+    {
+      "source": "/llms-lite.txt",
+      "destination": "/llms.txt",
+      "permanent": true
+    }
+  ],
   "rewrites": [{ "source": "/api/(.*)", "destination": "/api/$1" }],
   "headers": [
     {
@@ -7,7 +19,7 @@
       "headers": [
         {
           "key": "Link",
-          "value": "</llms.txt>; rel=\"describedby\", </llms-full.txt>; rel=\"alternate\"; type=\"text/plain\", </sitemap.md>; rel=\"alternate\"; type=\"text/markdown\""
+          "value": "</llms.txt>; rel=\"describedby\", </identity.json>; rel=\"alternate\"; type=\"application/json\", </ai.json>; rel=\"alternate\"; type=\"application/json\", </faq-ai.txt>; rel=\"alternate\"; type=\"text/plain\", </sitemap.md>; rel=\"alternate\"; type=\"text/markdown\""
         }
       ]
     },
@@ -24,12 +36,48 @@
       "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
     },
     {
+      "source": "/brand.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    },
+    {
+      "source": "/faq-ai.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    },
+    {
+      "source": "/robots-ai.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    },
+    {
+      "source": "/developer-ai.txt",
+      "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    },
+    {
       "source": "/robots.txt",
       "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
     },
     {
       "source": "/humans.txt",
       "headers": [{ "key": "Content-Type", "value": "text/plain; charset=utf-8" }]
+    },
+    {
+      "source": "/identity.json",
+      "headers": [{ "key": "Content-Type", "value": "application/json; charset=utf-8" }]
+    },
+    {
+      "source": "/ai.json",
+      "headers": [{ "key": "Content-Type", "value": "application/json; charset=utf-8" }]
+    },
+    {
+      "source": "/ai-discovery.json",
+      "headers": [{ "key": "Content-Type", "value": "application/json; charset=utf-8" }]
+    },
+    {
+      "source": "/knowledge-graph.json",
+      "headers": [{ "key": "Content-Type", "value": "application/json; charset=utf-8" }]
+    },
+    {
+      "source": "/.well-known/tdmrep.json",
+      "headers": [{ "key": "Content-Type", "value": "application/json; charset=utf-8" }]
     },
     {
       "source": "/AGENTS.md",

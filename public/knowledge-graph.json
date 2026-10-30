@@ -1,0 +1,60 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Organization", "Preschool", "EducationalOrganization", "LocalBusiness"],
+      "@id": "https://www.montessorimindslb.com/#organization",
+      "name": "La Casa Verde by Montessori Minds",
+      "alternateName": ["Montessori Minds", "La Casa Verde", "Montessori Minds LB"],
+      "url": "https://www.montessorimindslb.com/",
+      "email": "hello@montessorimindslb.com",
+      "telephone": "+96171007150",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Saida Old Road, Al Omara District",
+        "addressLocality": "Choueifat",
+        "addressRegion": "Mount Lebanon",
+        "addressCountry": "LB"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "16:00"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Montessori programs",
+        "itemListElement": [
+          { "@id": "https://www.montessorimindslb.com/#course-nest" },
+          { "@id": "https://www.montessorimindslb.com/#course-sprout" },
+          { "@id": "https://www.montessorimindslb.com/#course-bloom" }
+        ]
+      }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://www.montessorimindslb.com/#course-nest",
+      "name": "The Nest — Infant Community (Nido)",
+      "educationalLevel": "Birth – 18 months",
+      "url": "https://www.montessorimindslb.com/nursery",
+      "provider": { "@id": "https://www.montessorimindslb.com/#organization" }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://www.montessorimindslb.com/#course-sprout",
+      "name": "The Sprout — Toddler Community",
+      "educationalLevel": "18 months – 3 years",
+      "url": "https://www.montessorimindslb.com/nursery",
+      "provider": { "@id": "https://www.montessorimindslb.com/#organization" }
+    },
+    {
+      "@type": "Course",
+      "@id": "https://www.montessorimindslb.com/#course-bloom",
+      "name": "The Bloom — Children's House",
+      "educationalLevel": "3 – 6 years",
+      "url": "https://www.montessorimindslb.com/preschool",
+      "provider": { "@id": "https://www.montessorimindslb.com/#organization" }
+    }
+  ]
+}

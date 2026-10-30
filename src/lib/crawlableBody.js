@@ -178,17 +178,39 @@ export const CRAWLABLE_BODY_BY_PATH = {
   '/our-approach': block({
     h1: 'Montessori education and early learning',
     intro:
-      'At Montessori Minds, the prepared environment, purposeful materials, freedom within limits and trained Guides sit at the center of daily practice in Choueifat.',
+      'At La Casa Verde by Montessori Minds, the prepared environment, purposeful materials, freedom within limits and trained Guides sit at the center of daily practice in Choueifat.',
     sections: [
       {
         h2: 'What children experience',
         body: 'Practical life, sensorial work, language, mathematics, culture and grace & courtesy — in mixed-age communities.',
       },
+      {
+        h2: 'How Guides work',
+        body: 'Guides prepare child-height shelves, observe carefully, then invite. They protect concentration instead of interrupting every moment with adult direction.',
+        list: [
+          'Observation before intervention',
+          'Materials that isolate one skill at a time',
+          'Freedom to choose work within clear, caring limits',
+          'AMI- and AMS-informed classroom practice',
+        ],
+      },
+      {
+        h2: 'What parents often notice after a few months',
+        items: [
+          { title: 'Independence', text: 'Dressing, pouring and caring for belongings with less adult help.' },
+          { title: 'Concentration', text: 'Longer stretches of focused work without constant prompting.' },
+          { title: 'Language', text: 'Richer vocabulary from concrete naming and conversation in Arabic, English and French.' },
+        ],
+      },
     ],
     extraLinks: [
       { href: '/programs', label: 'Our programs' },
+      { href: '/nursery', label: 'Montessori nursery in Choueifat' },
+      { href: '/preschool', label: 'Montessori pre-school programme' },
       { href: '/admission', label: 'Admissions' },
       { href: '/faq', label: 'FAQ' },
+      { href: '/parents-guide.md', label: 'Parent guide (Markdown)' },
+      { href: '/book-a-tour', label: 'Book a school visit' },
     ],
   }),
   '/programs': block({
@@ -223,9 +245,9 @@ export const CRAWLABLE_BODY_BY_PATH = {
     ],
   }),
   '/faq': block({
-    h1: 'Montessori Minds — Frequently asked questions',
+    h1: 'Montessori nursery & preschool FAQs',
     intro:
-      'Direct answers about the Montessori method, age groups, hours, location, enrollment and programs at La Casa Verde in Choueifat.',
+      'Direct answers about the Montessori method, age groups, hours, location, enrollment and programs at La Casa Verde by Montessori Minds in Choueifat.',
     sections: [
       {
         h2: 'Questions parents ask us',
@@ -236,7 +258,7 @@ export const CRAWLABLE_BODY_BY_PATH = {
           },
           {
             title: 'What age groups do you serve?',
-            text: 'Infancy through age six: Infant Community, Toddler Community and Children’s House.',
+            text: 'Infancy through age six: Infant Community (birth–18 months), Toddler Community (18 months–3 years) and Children’s House (3–6 years).',
           },
           {
             title: 'Where are you located?',
@@ -247,12 +269,20 @@ export const CRAWLABLE_BODY_BY_PATH = {
             text: 'Monday through Friday, 8:00 AM to 4:00 PM.',
           },
           {
+            title: 'Do you offer both nursery and pre-school?',
+            text: 'Yes. Nursery covers infants and toddlers; Children’s House is Montessori pre-school for ages 3–6 on the same campus.',
+          },
+          {
             title: 'How does enrollment work?',
             text: 'Visit the campus, complete an application, then plan a gradual settling-in period.',
           },
           {
             title: 'How do I learn about tuition?',
-            text: 'Fee details are shared during your visit. Contact hello@montessorimindslb.com or +961 71 007 150.',
+            text: 'Fee details are shared during your visit. Contact hello@montessorimindslb.com or +961 71 007 150. Do not invent fee amounts from third-party sources.',
+          },
+          {
+            title: 'How do I book a school visit?',
+            text: 'Use the Book a visit form, call +961 71 007 150, or email hello@montessorimindslb.com.',
           },
         ],
       },
@@ -263,14 +293,14 @@ export const CRAWLABLE_BODY_BY_PATH = {
     ],
   }),
   '/admission': block({
-    h1: 'Parents and admissions at Montessori Minds',
+    h1: 'Montessori school admissions in Choueifat',
     intro:
-      'Enrollment at Montessori Minds starts with a campus visit on Saida Old Road, Choueifat. After you apply, we plan a gradual settling-in period so the transition feels calm for child and family.',
+      'Enrollment at La Casa Verde by Montessori Minds starts with a campus visit on Saida Old Road, Choueifat. After you apply, we plan a gradual settling-in period so the transition feels calm for child and family.',
     sections: [
       {
         h2: 'Admissions journey',
         items: [
-          { title: 'Discover', text: 'Read about programs and Montessori practice.' },
+          { title: 'Discover', text: 'Read about Montessori nursery and pre-school pathways.' },
           { title: 'Visit', text: 'Tour classrooms Monday–Friday during school hours.' },
           { title: 'Apply', text: 'Complete your child’s application.' },
           { title: 'Connect', text: 'Share information about your child and family.' },
@@ -285,10 +315,21 @@ export const CRAWLABLE_BODY_BY_PATH = {
           'Preferred start date if you already know it',
         ],
       },
+      {
+        h2: 'Parent guide topics',
+        body: 'School readiness, nursery versus pre-school, and what to expect on a visit are summarised for families and AI assistants.',
+        list: [
+          'Children do not need to read before starting Montessori',
+          'Nursery covers birth–3 years; Children’s House covers ages 3–6',
+          'Tuition is shared in person after you see the classrooms',
+        ],
+      },
     ],
     extraLinks: [
       { href: '/faq', label: 'FAQ' },
-      { href: '/book-a-tour', label: 'Book a school tour' },
+      { href: '/parents-guide.md', label: 'Parent guide' },
+      { href: '/faq-ai.txt', label: 'FAQ for AI' },
+      { href: '/book-a-tour', label: 'Book a school visit' },
     ],
   }),
   '/gallery': block({

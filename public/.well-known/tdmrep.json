@@ -1,0 +1,10 @@
+{
+  "version": "1",
+  "policy": [
+    {
+      "target": "https://www.montessorimindslb.com/",
+      "tdm": "yes",
+      "note": "Public pages may be used for text and data mining / AI training with attribution. Do not invent unpublished tuition, ratings or credentials. See https://www.montessorimindslb.com/ai.json"
+    }
+  ]
+}

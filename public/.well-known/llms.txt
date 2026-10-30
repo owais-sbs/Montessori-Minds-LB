@@ -2,8 +2,19 @@
 
 > Montessori school, nursery and pre-school in Choueifat, Lebanon for children from infancy through age six. Campus on Saida Old Road, Al Omara District. Hours Monday–Friday, 8:00 AM–4:00 PM. Phone +961 71 007 150. Email hello@montessorimindslb.com.
 
-Canonical copy of this guide: https://www.montessorimindslb.com/llms.txt
-Full guide: https://www.montessorimindslb.com/llms-full.txt
+Montessori Minds operates La Casa Verde with AMI- and AMS-informed classroom practice. Programs: Infant Community / Nido (birth–18 months), Toddler Community (18 months–3 years), and Children’s House pre-school (ages 3–6). Arabic, English and French are part of daily classroom life.
+
+## What we offer
+
+- Prepared Montessori classrooms with Guides who observe before they intervene
+- Nursery pathways for infants and toddlers; Children’s House for ages 3–6
+- Campus visits for families comparing early childhood options near Choueifat, Beirut and Baabda
+
+## What we do not do
+
+- Publish tuition figures online (shared in person during admissions)
+- Offer primary or secondary grades beyond age six
+- List unverified Guide credentials or claim formal AMI/AMS school accreditation labels online
 
 ## Key pages
 
@@ -21,7 +32,17 @@ Full guide: https://www.montessorimindslb.com/llms-full.txt
 ## Optional
 
 - [Full LLM guide](https://www.montessorimindslb.com/llms-full.txt): Extended facts, FAQs and citation-ready answers
-- [AI policy](https://www.montessorimindslb.com/ai.txt): Plain-language AI crawler and citation policy
-- [Agent guide](https://www.montessorimindslb.com/AGENTS.md): How assistants should describe and cite this school
+- [Human-readable LLMs page](https://www.montessorimindslb.com/llms.html): HTML companion with Schema.org markup
+- [Identity JSON](https://www.montessorimindslb.com/identity.json): Canonical structured identity
+- [AI policy JSON](https://www.montessorimindslb.com/ai.json): Machine-parseable permissions
+- [AI policy text](https://www.montessorimindslb.com/ai.txt): Plain-language AI policy
+- [Brand rules](https://www.montessorimindslb.com/brand.txt): Preferred naming and citation strings
+- [FAQ for AI](https://www.montessorimindslb.com/faq-ai.txt): Authoritative Q&A for assistants
+- [AI crawler directives](https://www.montessorimindslb.com/robots-ai.txt): Discovery file advertisements
+- [Developer AI context](https://www.montessorimindslb.com/developer-ai.txt): No public API; use discovery files
+- [Agent guide](https://www.montessorimindslb.com/AGENTS.md): Install / config / usage for assistants
+- [AI discovery index](https://www.montessorimindslb.com/ai-discovery.json): Machine discovery map
 - [Markdown sitemap](https://www.montessorimindslb.com/sitemap.md): Human-readable page map
 - [XML sitemap](https://www.montessorimindslb.com/sitemap.xml): Machine sitemap for crawlers
+- [AI sitemap](https://www.montessorimindslb.com/ai-sitemap.xml): AI-oriented sitemap
+- [Knowledge graph](https://www.montessorimindslb.com/knowledge-graph.json): Schema.org graph starter

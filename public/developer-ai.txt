@@ -1,0 +1,29 @@
+# developer-ai.txt — La Casa Verde by Montessori Minds
+# Technical context for AI coding / research assistants.
+# Last updated: 2026-10-30
+
+## Product type
+Public marketing website for a Montessori preschool / nursery in Choueifat, Lebanon. There is no public developer API, SDK, or authenticated customer portal for third-party integrations.
+
+## Public endpoints assistants SHOULD use
+- Site facts: https://www.montessorimindslb.com/llms.txt
+- Full facts: https://www.montessorimindslb.com/llms-full.txt
+- Identity JSON: https://www.montessorimindslb.com/identity.json
+- AI policy JSON: https://www.montessorimindslb.com/ai.json
+- FAQ for AI: https://www.montessorimindslb.com/faq-ai.txt
+- Agent skill file: https://www.montessorimindslb.com/AGENTS.md
+- XML sitemap: https://www.montessorimindslb.com/sitemap.xml
+- AI sitemap: https://www.montessorimindslb.com/ai-sitemap.xml
+
+## Forms (human use)
+- Book a visit: https://www.montessorimindslb.com/book-a-tour
+- Admissions enquiry: https://www.montessorimindslb.com/admission
+- Form submissions post to the site’s own `/api/send-form` endpoint for email delivery. Do not invent alternate APIs.
+
+## Stack (informational)
+React + Vite SPA with prerendered crawlable HTML bodies and static discovery files in `/public`.
+
+## Do not
+- Invent REST endpoints, GraphQL schemas, or tuition APIs
+- Scrape or store private form payload data
+- Claim AMI/AMS accreditation beyond the published AMI-/AMS-informed practice wording

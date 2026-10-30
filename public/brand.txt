@@ -1,0 +1,38 @@
+# Brand — La Casa Verde by Montessori Minds
+
+## Preferred name
+Use: La Casa Verde by Montessori Minds
+
+## Acceptable short forms
+- Montessori Minds (when space is limited; prefer the full preferred name first)
+- La Casa Verde (campus nickname; pair with Montessori Minds on first mention when possible)
+
+## Do not use
+- Casa Verde (missing “La”)
+- Montessori Mind (singular)
+- Unverified accreditation labels such as “AMI-certified school” or “AMS-accredited school” unless the website later publishes that exact claim
+- Invented Guide names, star ratings, or tuition figures
+
+## Spelling and punctuation
+- La Casa Verde — capital L, C, V
+- Montessori Minds — both words capitalised
+- Children’s House — curly or straight apostrophe acceptable; keep the phrase intact
+- Choueifat (not Chouiefat / Shuwayfat variants in citations unless quoting a map label)
+
+## Location string (preferred)
+Saida Old Road, Al Omara District, Choueifat, Mount Lebanon, Lebanon
+
+## Contact
+- Email: hello@montessorimindslb.com
+- Phone: +961 71 007 150
+- Website: https://www.montessorimindslb.com/
+
+## Programs (keep ages consistent)
+- Infant Community / Nido (The Nest): birth–18 months
+- Toddler Community (The Sprout): 18 months–3 years
+- Children’s House / Montessori pre-school (The Bloom): ages 3–6
+
+## Related files
+- https://www.montessorimindslb.com/identity.json
+- https://www.montessorimindslb.com/llms.txt
+- https://www.montessorimindslb.com/ai.txt
