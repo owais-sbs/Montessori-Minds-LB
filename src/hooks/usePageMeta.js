@@ -4,9 +4,11 @@ import {
   defaultSeo,
   getBreadcrumbJsonLd,
   getFaqPageJsonLd,
+  getImageGalleryJsonLd,
   getOrganizationJsonLd,
   getWebPageJsonLd,
 } from '../lib/seo.js'
+import { galleryItems } from '../data/gallery.js'
 
 function upsertMeta(selector, attrs) {
   let el = document.head.querySelector(selector)
@@ -189,9 +191,18 @@ export default function usePageMeta({
     upsertJsonLd('org-jsonld', getOrganizationJsonLd())
     upsertJsonLd(
       'page-jsonld',
-      getWebPageJsonLd({ title: pageTitle, description: pageDescription, path: pagePath }),
+      getWebPageJsonLd({
+        title: pageTitle,
+        description: pageDescription,
+        path: pagePath,
+        image: pageImage,
+      }),
     )
     upsertJsonLd('breadcrumb-jsonld', getBreadcrumbJsonLd({ path: pagePath, breadcrumb }))
     upsertJsonLd('faq-jsonld', getFaqPageJsonLd(faqs))
+    upsertJsonLd(
+      'gallery-jsonld',
+      pagePath === '/gallery' ? getImageGalleryJsonLd(galleryItems) : null,
+    )
   }, [title, description, path, image, breadcrumb, faqs])
 }

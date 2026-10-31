@@ -42,10 +42,7 @@
     { "type": "Region", "name": "Mount Lebanon" },
     { "type": "Country", "name": "Lebanon", "code": "LB" }
   ],
-  "sameAs": [
-    "https://amshq.org/",
-    "https://montessori-ami.org/"
-  ],
+  "sameAs": [],
   "services": [
     "Montessori Infant Community / Nido (birth–18 months)",
     "Montessori Toddler Community (18 months–3 years)",

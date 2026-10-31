@@ -1,4 +1,4 @@
-import { ROUTES } from '../lib/routes'
+import { ROUTES } from '../lib/routes.js'
 
 export const homeHeroBrief = {
   eyebrow: 'Montessori Minds',

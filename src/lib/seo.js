@@ -1,4 +1,4 @@
-import { contactPlaceholders } from '../data/contact'
+import { contactPlaceholders } from '../data/contact.js'
 import { SITE_URL, defaultSeo, absoluteUrl } from './seoPages.js'
 
 export { SITE_URL, defaultSeo, pageSeo, ALL_PAGE_SEO, absoluteUrl } from './seoPages.js'
@@ -8,6 +8,7 @@ export function getBreadcrumbJsonLd({ path, breadcrumb }) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
+    '@id': `${absoluteUrl(path)}#breadcrumb`,
     itemListElement: [
       {
         '@type': 'ListItem',
@@ -85,22 +86,8 @@ function buildSameAs() {
     links.push(linkedin)
   }
   if (wikidata) links.push(wikidata)
-  // Reference bodies until school-owned social / Wikidata URLs are confirmed
-  links.push('https://amshq.org/', 'https://montessori-ami.org/')
+  // Only the school's own profiles belong in sameAs (it means "this same entity").
   return [...new Set(links)]
-}
-
-const DIRECTOR_PERSON = {
-  '@type': 'Person',
-  '@id': `${SITE_URL}/#director`,
-  name: 'Founding Director',
-  jobTitle: 'Founding Director',
-  description:
-    'Leads La Casa Verde by Montessori Minds in Choueifat. Named biography and public profiles will replace this role title once approved for publication.',
-  url: `${SITE_URL}/la-casa-verde`,
-  worksFor: { '@id': `${SITE_URL}/#organization` },
-  knowsAbout: ['Montessori Education', 'Early Childhood Development', 'Pre-School Programs'],
-  sameAs: buildSameAs(),
 }
 
 export function getOrganizationJsonLd() {
@@ -139,7 +126,6 @@ export function getOrganizationJsonLd() {
         image: [defaultSeo.image, defaultSeo.logo],
         telephone: '+96171007150',
         email: contactPlaceholders.email,
-        priceRange: '$$',
         contactPoint: [
           {
             '@type': 'ContactPoint',
@@ -165,12 +151,7 @@ export function getOrganizationJsonLd() {
           addressRegion: 'Mount Lebanon',
           addressCountry: 'LB',
         },
-        geo: {
-          '@type': 'GeoCoordinates',
-          latitude: 33.8,
-          longitude: 35.5,
-        },
-        sameAs,
+        ...(sameAs.length ? { sameAs } : {}),
         knowsAbout: [
           'Montessori Education',
           'Early Childhood Development',
@@ -181,8 +162,6 @@ export function getOrganizationJsonLd() {
           'Sensorial Learning',
           'Children’s House',
         ],
-        founder: { '@id': `${SITE_URL}/#director` },
-        employee: { '@id': `${SITE_URL}/#director` },
         areaServed: [
           { '@type': 'City', name: 'Choueifat' },
           { '@type': 'City', name: 'Beirut' },
@@ -205,7 +184,6 @@ export function getOrganizationJsonLd() {
           })),
         },
       },
-      DIRECTOR_PERSON,
       ...COURSE_OFFERINGS.map((course) => ({
         '@type': 'Course',
         '@id': `${SITE_URL}/#course-${course.id}`,
@@ -216,7 +194,6 @@ export function getOrganizationJsonLd() {
         educationalLevel: course.ageRange,
         typicalAgeRange: course.ageRange,
         teaches: 'Montessori Education',
-        timeRequired: 'P1D',
         hasCourseInstance: {
           '@type': 'CourseInstance',
           courseMode: 'onsite',
@@ -245,22 +222,68 @@ export function getOrganizationJsonLd() {
   }
 }
 
-export function getWebPageJsonLd({ title, description, path }) {
+export function getWebPageJsonLd({ title, description, path, image }) {
   const url = absoluteUrl(path)
+  const normalized = !path || path === '/' ? '/' : path
+  const course = PAGE_COURSES[normalized]
   return {
     '@context': 'https://schema.org',
-    '@type': 'WebPage',
+    '@type': PAGE_TYPES[normalized] || 'WebPage',
     '@id': `${url}#webpage`,
     url,
     name: title,
     description,
     isPartOf: { '@id': `${SITE_URL}/#website` },
     about: { '@id': `${SITE_URL}/#organization` },
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    ...(image
+      ? { primaryImageOfPage: { '@type': 'ImageObject', url: image }, image }
+      : {}),
+    ...(normalized !== '/' ? { breadcrumb: { '@id': `${url}#breadcrumb` } } : {}),
+    ...(course ? { mainEntity: course.map((id) => ({ '@id': `${SITE_URL}/#course-${id}` })) } : {}),
     inLanguage: 'en-LB',
     speakable: {
       '@type': 'SpeakableSpecification',
-      cssSelector: ['h1', '#crawl-content h1', '#crawl-content p'],
+      cssSelector: ['h1', '#crawl-content h1', '#crawl-content article > p'],
     },
-    dateModified: '2026-10-30',
+    datePublished: '2026-09-21',
+    dateModified: SITE_LAST_MODIFIED,
+  }
+}
+
+/** Bump when page copy changes; feeds WebPage.dateModified and sitemap lastmod. */
+export const SITE_LAST_MODIFIED = '2026-10-31'
+
+/** schema.org WebPage subtypes that match each page's purpose. */
+const PAGE_TYPES = {
+  '/la-casa-verde': 'AboutPage',
+  '/programs': 'CollectionPage',
+  '/gallery': 'CollectionPage',
+  '/book-a-tour': 'ContactPage',
+}
+
+/** Program pages point at the Course nodes they describe. */
+const PAGE_COURSES = {
+  '/nursery': ['nest', 'sprout'],
+  '/preschool': ['bloom'],
+  '/programs': ['nest', 'sprout', 'bloom'],
+}
+
+/** ImageGallery for the gallery page, built from the visible photo captions. */
+export function getImageGalleryJsonLd(items) {
+  if (!items?.length) return null
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ImageGallery',
+    '@id': `${SITE_URL}/gallery#gallery`,
+    name: 'Life at La Casa Verde',
+    url: `${SITE_URL}/gallery`,
+    about: { '@id': `${SITE_URL}/#organization` },
+    image: items.map((g) => ({
+      '@type': 'ImageObject',
+      contentUrl: absoluteUrl(g.image),
+      name: g.title,
+      description: g.alt,
+    })),
   }
 }

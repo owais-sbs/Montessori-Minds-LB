@@ -51,3 +51,6 @@ export const siteFaqs = [
     body: 'Use the Book a visit form on montessorimindslb.com/book-a-tour, or call +961 71 007 150 / email hello@montessorimindslb.com. Weekday morning visits let families see Infant, Toddler or Children’s House classrooms in session.',
   },
 ]
+
+/** The FAQs previewed on the homepage (also used for its FAQPage schema). */
+export const homeFaqPreview = siteFaqs.slice(0, 6)

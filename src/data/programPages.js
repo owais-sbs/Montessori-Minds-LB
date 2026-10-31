@@ -1,4 +1,4 @@
-import { images } from './images'
+import { images } from './images.js'
 
 const typicalDay = [
   { time: 'Good morning', detail: 'Warm arrival and connection.' },
@@ -74,7 +74,7 @@ export const infantProgramPage = {
     { title: 'Language', description: 'Rich spoken language and responsive communication.' },
   ],
   typicalDay,
-  gallery: [images.programs.nest, images.gallery.classroom-1, images.gallery.mealtime],
+  gallery: [images.programs.nest, images.gallery.classroom1, images.gallery.mealtime],
   faqs: nurseryFaqs,
   ctaDescription: 'See the Infant Community and meet our Guides.',
 }
@@ -110,7 +110,7 @@ export const toddlerProgramPage = {
     { title: 'Social', description: 'Learning to be part of a small community.' },
   ],
   typicalDay,
-  gallery: [images.programs.sprout, images.gallery.activity-2, images.gallery.outdoor-2],
+  gallery: [images.programs.sprout, images.gallery.activity2, images.gallery.outdoor2],
   faqs: nurseryFaqs,
   ctaDescription: 'Walk through the Toddler Community with us.',
 }
@@ -146,7 +146,7 @@ export const childrensHouseProgramPage = {
     { title: 'Social responsibility', description: 'Care for others and the environment.' },
   ],
   typicalDay,
-  gallery: [images.programs.bloom, images.gallery.learning-1, images.gallery.geography],
+  gallery: [images.programs.bloom, images.gallery.learning1, images.gallery.geography],
   faqs: preschoolFaqs,
   ctaDescription: "Experience Children's House in person.",
 }

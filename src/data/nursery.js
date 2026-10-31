@@ -1,5 +1,5 @@
-import { images } from './images'
-import { ROUTES } from '../lib/routes'
+import { images } from './images.js'
+import { ROUTES } from '../lib/routes.js'
 
 export const nurseryPage = {
   hero: {

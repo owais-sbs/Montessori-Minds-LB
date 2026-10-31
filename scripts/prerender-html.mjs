@@ -3,6 +3,15 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { ALL_PAGE_SEO, absoluteUrl } from '../src/lib/seoPages.js'
 import { getCrawlableBodyHtml } from '../src/lib/crawlableBody.js'
+import { getSeoForPathname } from '../src/lib/getRouteSeo.js'
+import {
+  getOrganizationJsonLd,
+  getWebPageJsonLd,
+  getBreadcrumbJsonLd,
+  getFaqPageJsonLd,
+  getImageGalleryJsonLd,
+} from '../src/lib/seo.js'
+import { galleryItems } from '../src/data/gallery.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const distDir = path.join(__dirname, '../dist')
@@ -69,6 +78,52 @@ function injectPageHead(html, { title, description, path: routePath, image }) {
   return out
 }
 
+/** JSON-LD safe for inline <script>: escape "<" so text can never close the tag. */
+function jsonLdScript(id, data) {
+  const json = JSON.stringify(data, null, 2).replace(/</g, '\\u003c')
+  return `<script type="application/ld+json" id="${id}">\n${json}\n</script>`
+}
+
+/**
+ * Same structured data the client adds at runtime, baked into static HTML so
+ * crawlers that skip JavaScript still see per-page WebPage, BreadcrumbList,
+ * FAQPage and ImageGallery markup.
+ */
+function injectStructuredData(html, page) {
+  const seo = getSeoForPathname(page.path)
+  const blocks = [
+    jsonLdScript('org-jsonld', getOrganizationJsonLd()),
+    jsonLdScript(
+      'page-jsonld',
+      getWebPageJsonLd({
+        title: page.title,
+        description: page.description,
+        path: page.path,
+        image: page.image,
+      }),
+    ),
+  ]
+  const breadcrumb = getBreadcrumbJsonLd({ path: page.path, breadcrumb: seo.breadcrumb })
+  if (breadcrumb) blocks.push(jsonLdScript('breadcrumb-jsonld', breadcrumb))
+  const faq = getFaqPageJsonLd(seo.faqs)
+  if (faq) blocks.push(jsonLdScript('faq-jsonld', faq))
+  if (page.path === '/gallery') {
+    blocks.push(jsonLdScript('gallery-jsonld', getImageGalleryJsonLd(galleryItems)))
+  }
+
+  // Drop the template's static JSON-LD, then add this page's set before </head>.
+  let out = html.replace(
+    /\s*<script type="application\/ld\+json" id="(org|faq)-jsonld">[\s\S]*?<\/script>/g,
+    '',
+  )
+  const markdownHref = page.path === '/' ? '/index.md' : `${page.path}.md`
+  const markdownLink = fs.existsSync(path.join(distDir, markdownHref))
+    ? `<link rel="alternate" type="text/markdown" href="${markdownHref}" title="Markdown version" />\n`
+    : ''
+  out = out.replace('</head>', `${markdownLink}${blocks.join('\n')}\n</head>`)
+  return out
+}
+
 function injectCrawlBody(html, routePath) {
   const crawlHtml = getCrawlableBodyHtml(routePath)
   if (html.includes(CRAWL_MARKER)) {
@@ -89,6 +144,7 @@ const template = fs.readFileSync(templatePath, 'utf8')
 
 for (const page of ALL_PAGE_SEO) {
   let html = injectPageHead(template, page)
+  html = injectStructuredData(html, page)
   html = injectCrawlBody(html, page.path)
   if (page.path === '/') {
     fs.writeFileSync(templatePath, html)

@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom'
 import Container from '../layout/Container'
 import { FadeUp } from '../animations'
-import { siteFaqs } from '../../data/faq'
+import { homeFaqPreview } from '../../data/faq.js'
 import { ROUTES } from '../../lib/routes'
 
 /** Visible Q&A on the homepage for extractability + FAQPage schema (via RouteMeta). */
 export default function HomeFaqSection() {
-  const preview = siteFaqs.slice(0, 6)
+  const preview = homeFaqPreview
 
   return (
     <section className="bg-warm-beige py-14 md:py-20" aria-labelledby="home-faq-heading">

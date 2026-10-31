@@ -1,4 +1,26 @@
-/** Server-rendered crawlable body snippets (injected at build per route). */
+/**
+ * Server-rendered crawlable body (injected into static HTML per route at build).
+ *
+ * Copy is assembled from the same data modules the React pages render, so the
+ * no-JavaScript HTML that search and AI crawlers read matches what visitors see.
+ * Every page gets one H1, an answer-first intro and at least three
+ * question-shaped H2 sections.
+ */
+import { siteFaqs, homeFaqPreview } from '../data/faq.js'
+import {
+  nurseryFaqs,
+  preschoolFaqs,
+  infantProgramPage,
+  toddlerProgramPage,
+  childrensHouseProgramPage,
+} from '../data/programPages.js'
+import { nurseryPage } from '../data/nursery.js'
+import { preschoolPage } from '../data/preschool.js'
+import { programs } from '../data/programs.js'
+import { laCasaVerdePage } from '../data/laCasaVerde.js'
+import { approachSections } from '../data/approach.js'
+import { approachPageContent, parentsPageContent } from '../data/sitePages.js'
+import { galleryItems } from '../data/gallery.js'
 
 export const GLOBAL_NAV_LINKS = [
   { href: '/', label: 'Home' },
@@ -13,350 +35,459 @@ export const GLOBAL_NAV_LINKS = [
   { href: '/book-a-tour', label: 'Book a visit' },
 ]
 
+const NAP = {
+  name: 'La Casa Verde by Montessori Minds',
+  address: 'Saida Old Road, Al Omara District, Choueifat, Mount Lebanon, Lebanon',
+  phone: '+961 71 007 150',
+  phoneHref: '+96171007150',
+  email: 'hello@montessorimindslb.com',
+  hours: 'Monday–Friday, 8:00 AM–4:00 PM',
+}
+
+const AGES =
+  'Infant Community, The Nest (birth–18 months); Toddler Community, The Sprout (18 months–3 years); and Children’s House, The Bloom (3–6 years)'
+
+function esc(value) {
+  return String(value)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+}
+
 function navHtml() {
-  const items = GLOBAL_NAV_LINKS.map(
-    (l) => `<li><a href="${l.href}">${l.label}</a></li>`,
-  ).join('')
+  const items = GLOBAL_NAV_LINKS.map((l) => `<li><a href="${l.href}">${l.label}</a></li>`).join('')
   return `<nav aria-label="Primary"><ul>${items}</ul></nav>`
 }
 
-function block({ h1, intro, sections = [], extraLinks = [] }) {
-  const sectionHtml = sections
-    .map(
-      (s) =>
-        `<section><h2>${s.h2}</h2>${s.body ? `<p>${s.body}</p>` : ''}${
-          s.items
-            ? `<ul>${s.items.map((i) => `<li><h3>${i.title}</h3><p>${i.text}</p></li>`).join('')}</ul>`
-            : ''
-        }${
-          s.list
-            ? `<ul>${s.list.map((li) => `<li>${li}</li>`).join('')}</ul>`
-            : ''
-        }</section>`,
-    )
+/**
+ * Section shape:
+ *   h2      — heading (prefer a question parents actually ask)
+ *   body    — string or array of paragraphs (may contain trusted inline links)
+ *   items   — [{ title, text }] rendered as H3 + paragraph
+ *   list    — [string] rendered as a bullet list
+ */
+function sectionHtml(s) {
+  const paragraphs = (Array.isArray(s.body) ? s.body : s.body ? [s.body] : [])
+    .map((p) => `<p>${p}</p>`)
     .join('')
+  const items = s.items
+    ? `<ul>${s.items.map((i) => `<li><h3>${esc(i.title)}</h3><p>${esc(i.text)}</p></li>`).join('')}</ul>`
+    : ''
+  const list = s.list ? `<ul>${s.list.map((li) => `<li>${esc(li)}</li>`).join('')}</ul>` : ''
+  return `<section><h2>${esc(s.h2)}</h2>${paragraphs}${items}${list}</section>`
+}
+
+function faqSection(h2, faqs) {
+  return {
+    h2,
+    items: faqs.map((f) => ({ title: f.title, text: f.body })),
+  }
+}
+
+function block({ h1, intro, sections = [], extraLinks = [] }) {
   const linksHtml = extraLinks.length
-    ? `<p>${extraLinks.map((l) => `<a href="${l.href}">${l.label}</a>`).join(' · ')}</p>`
+    ? `<p>Related pages: ${extraLinks.map((l) => `<a href="${l.href}">${l.label}</a>`).join(' · ')}</p>`
     : ''
 
   return `<div id="crawl-content" class="sr-only">
   <header>${navHtml()}</header>
   <main>
-    <h1>${h1}</h1>
+    <article>
+    <h1>${esc(h1)}</h1>
     <p>${intro}</p>
-    ${sectionHtml}
+    ${sections.map(sectionHtml).join('\n    ')}
     ${linksHtml}
+    </article>
   </main>
   <footer>
-    <p>La Casa Verde by Montessori Minds · Saida Old Road, Al Omara District, Choueifat, Mount Lebanon, Lebanon · <a href="mailto:hello@montessorimindslb.com">hello@montessorimindslb.com</a> · <a href="tel:+96171007150">+961 71 007 150</a> · Monday–Friday 8:00 AM–4:00 PM</p>
+    <p>${NAP.name} · ${NAP.address} · <a href="mailto:${NAP.email}">${NAP.email}</a> · <a href="tel:${NAP.phoneHref}">${NAP.phone}</a> · ${NAP.hours}</p>
   </footer>
 </div>`
+}
+
+const link = (href, label) => `<a href="${href}">${label}</a>`
+
+const typicalDayList = infantProgramPage.typicalDay.map((d) => `${d.time} — ${d.detail}`)
+
+const visitSection = {
+  h2: 'How do I book a visit?',
+  body: `Use the ${link('/book-a-tour', 'book a school visit')} form, call ${NAP.phone} or email ${NAP.email}. Weekday morning visits (${NAP.hours}) let families see arrival, a work cycle and outdoor time in one trip to ${NAP.address}.`,
 }
 
 export const CRAWLABLE_BODY_BY_PATH = {
   '/': block({
     h1: 'Montessori Preschool in Choueifat — La Casa Verde by Montessori Minds',
-    intro:
-      'La Casa Verde by Montessori Minds is a Montessori preschool, nursery and school on Saida Old Road, Al Omara District, Choueifat, Lebanon. We run Infant Community (birth–18 months), Toddler Community (18 months–3 years) and Children’s House (ages 3–6). Campus hours are Monday–Friday, 8:00 AM–4:00 PM. Phone +961 71 007 150. Email hello@montessorimindslb.com. Arabic, English and French are part of daily classroom life.',
+    intro: `${NAP.name} is a Montessori preschool and nursery on ${NAP.address}. We welcome children from infancy to age six in three communities: ${AGES}. Campus hours are ${NAP.hours}. Phone ${NAP.phone} · ${NAP.email}. Arabic, English and French are part of daily classroom life.`,
     sections: [
       {
-        h2: 'What children practise here',
-        body: 'Guides prepare child-height shelves, then observe. Children choose work, repeat it and put materials away. Parents often notice the same independence at home within a few months.',
-        items: [
-          { title: 'Independence', text: 'Pouring, dressing and caring for the classroom.' },
-          { title: 'Concentration', text: 'Uninterrupted work cycles instead of constant adult interruption.' },
-          { title: 'Curiosity', text: 'Hands-on materials before abstract worksheets.' },
+        h2: 'What is La Casa Verde by Montessori Minds?',
+        body: [
+          laCasaVerdePage.sections[0].description,
+          laCasaVerdePage.sections[1].description,
         ],
       },
       {
-        h2: 'Our Montessori programs',
-        body: 'Three communities on one Choueifat campus.',
-        items: [
-          { title: 'Infant Community (Nido)', text: 'Birth–18 months — secure care, sensory exploration, responsive language.' },
-          { title: 'Toddler Community', text: '18 months–3 years — practical life, movement and early independence.' },
-          { title: "Children's House", text: 'Ages 3–6 — Montessori pre-school with mixed ages and long work cycles.' },
-        ],
+        h2: 'Which Montessori programs do you offer?',
+        body: `Three communities share one Choueifat campus, so children can grow from our ${link('/nursery', 'Montessori nursery in Choueifat')} into our ${link('/preschool', 'Montessori pre-school programme')} without changing schools.`,
+        items: programs.map((p) => ({ title: `${p.name} — ${p.ageRange}`, text: p.description })),
       },
       {
-        h2: 'Frequently asked questions',
-        items: [
-          {
-            title: 'What is the Montessori method?',
-            text: 'Children choose hands-on work in a prepared classroom and progress at their own pace with a trained Guide who observes rather than lectures.',
-          },
-          {
-            title: 'Where are you located?',
-            text: 'Saida Old Road, Al Omara District, Choueifat, Mount Lebanon, Lebanon.',
-          },
-          {
-            title: 'How do I enroll?',
-            text: 'Book a campus visit, complete an application, then plan a gradual settling-in period with our team.',
-          },
-        ],
+        h2: 'How does Montessori work here?',
+        body: approachSections[0].description,
+        items: approachPageContent.sixtySeconds.concepts.map((c) => ({ title: c.label, text: c.detail })),
       },
+      {
+        h2: 'What does a typical day look like?',
+        list: typicalDayList,
+      },
+      faqSection('Frequently asked questions', homeFaqPreview),
+      visitSection,
     ],
     extraLinks: [
-      { href: '/nursery', label: 'Montessori nursery in Choueifat' },
-      { href: '/preschool', label: 'Montessori pre-school in Choueifat' },
+      { href: '/programs', label: 'Compare Montessori programs' },
       { href: '/our-approach', label: 'How Montessori works here' },
+      { href: '/admission', label: 'Admissions' },
       { href: '/faq', label: 'Full FAQ' },
-      { href: '/book-a-tour', label: 'Book a visit' },
       { href: '/llms.txt', label: 'LLMs.txt' },
     ],
   }),
-  '/nursery': block({
-    h1: 'Montessori nursery in Choueifat',
-    intro:
-      'Infant Community (birth–18 months) and Toddler Community (18 months–3 years) share our Choueifat campus on Saida Old Road. Families commuting from Beirut or Baabda often tour mid-morning to see arrival and outdoor time in one visit.',
+
+  '/la-casa-verde': block({
+    h1: 'La Casa Verde by Montessori Minds',
+    intro: `${laCasaVerdePage.hero.description} Address: ${NAP.address}. Hours: ${NAP.hours}. Phone ${NAP.phone}.`,
     sections: [
       {
-        h2: 'Infant Community (Nido)',
-        body: 'Close observation, safe movement spaces and rich spoken language at each infant’s rhythm.',
-        list: ['Individualized care routines', 'Calm sensory environment', 'Secure attachment with Guides'],
+        h2: 'What kind of school is La Casa Verde?',
+        body: laCasaVerdePage.sections[0].description,
       },
       {
-        h2: 'Toddler Community',
-        body: 'Movement, repetition and real tasks — pouring, dressing, language and outdoor play.',
-        list: ['Practical life every day', 'Sensorial exploration', 'Grace and courtesy in a small group'],
+        h2: 'How is Montessori education practised at La Casa Verde?',
+        body: [
+          laCasaVerdePage.sections[1].description,
+          approachSections.find((s) => s.id === 'teacher').description,
+        ],
       },
+      {
+        h2: 'Which programs run on the La Casa Verde campus?',
+        body: `${laCasaVerdePage.sections[2].description} See the ${link('/nursery', 'Montessori nursery')} and ${link('/preschool', 'Montessori pre-school')} pages for details.`,
+        items: programs.map((p) => ({ title: `${p.name} — ${p.ageRange}`, text: p.shortDescription })),
+      },
+      {
+        h2: 'Where is La Casa Verde and how do I contact the school?',
+        body: laCasaVerdePage.sections[3].description,
+        list: [
+          `Name: ${NAP.name} (also known as Montessori Minds)`,
+          `Address: ${NAP.address}`,
+          `Phone: ${NAP.phone}`,
+          `Email: ${NAP.email}`,
+          `Hours: ${NAP.hours}`,
+        ],
+      },
+      {
+        h2: 'What Montessori training do Guides follow?',
+        body: siteFaqs.find((f) => f.id === 'certifications').body,
+      },
+      {
+        h2: 'How can I visit La Casa Verde?',
+        body: `${laCasaVerdePage.cta.description} ${link('/book-a-tour', 'Book a school visit')} or ${link('/admission', 'start an application')}.`,
+      },
+    ],
+    extraLinks: [
+      { href: '/our-approach', label: 'Our approach' },
+      { href: '/programs', label: 'Programs' },
+      { href: '/faq', label: 'FAQ' },
+    ],
+  }),
+
+  '/nursery': block({
+    h1: 'Montessori Nursery in Choueifat',
+    intro: `${nurseryPage.hero.description} Our nursery serves infants and toddlers from birth to 3 years at ${NAP.name}, open ${NAP.hours}.`,
+    sections: [
+      {
+        h2: 'What is the Montessori nursery at La Casa Verde?',
+        body: [nurseryPage.sections[0].description, nurseryPage.sections[2].description],
+      },
+      {
+        h2: `What happens in the Infant Community (${infantProgramPage.hero.ageRange})?`,
+        body: [infantProgramPage.hero.description, infantProgramPage.understanding.body],
+        list: infantProgramPage.inside.items,
+      },
+      {
+        h2: `What happens in the Toddler Community (${toddlerProgramPage.hero.ageRange})?`,
+        body: [nurseryPage.sections[1].description, toddlerProgramPage.understanding.body],
+        list: toddlerProgramPage.inside.items,
+      },
+      {
+        h2: 'What skills does the nursery help children develop?',
+        items: [...infantProgramPage.developing, ...toddlerProgramPage.developing].map((d) => ({
+          title: d.title,
+          text: d.description,
+        })),
+      },
+      {
+        h2: 'What does a nursery day look like?',
+        list: typicalDayList,
+      },
+      {
+        h2: 'What comes after nursery?',
+        body: `${nurseryPage.sections[3].description} Read about our ${link('/preschool', 'Montessori pre-school programme')} for ages 3–6.`,
+      },
+      faqSection('Montessori nursery questions from parents', nurseryFaqs),
+      { ...visitSection, h2: 'How do I book a nursery tour?' },
     ],
     extraLinks: [
       { href: '/programs', label: 'All programs' },
-      { href: '/preschool', label: 'Montessori pre-school' },
-      { href: '/faq', label: 'FAQ' },
-      { href: '/book-a-tour', label: 'Book a nursery tour' },
+      { href: '/our-approach', label: 'Our Montessori approach' },
+      { href: '/admission', label: 'Admissions' },
     ],
   }),
+
   '/preschool': block({
-    h1: 'Montessori pre-school in Choueifat',
-    intro:
-      'Children’s House is our Montessori preschool for ages three to six: mixed ages, long work cycles and materials for practical life, language and mathematics on Saida Old Road, Choueifat.',
+    h1: 'Montessori Pre-School in Choueifat',
+    intro: `${childrensHouseProgramPage.hero.description} Children’s House (The Bloom) serves ages 3–6 at ${NAP.name}, ${NAP.address}, open ${NAP.hours}.`,
     sections: [
       {
-        h2: "Children's House (Ages 3–6)",
-        body: 'Peer mentoring across ages, uninterrupted morning work and daily outdoor exploration.',
-        list: ['Practical life', 'Sensorial', 'Language', 'Mathematics', 'Culture & discovery'],
+        h2: 'What is the Montessori pre-school at La Casa Verde?',
+        body: [preschoolPage.sections[0].description, childrensHouseProgramPage.understanding.body],
       },
+      {
+        h2: 'What do children learn in Children’s House?',
+        body: preschoolPage.sections[1].description,
+        items: approachPageContent.learningAreas.map((a) => ({ title: a.name, text: a.description })),
+      },
+      {
+        h2: 'What happens inside the pre-school classroom?',
+        body: preschoolPage.sections[2].description,
+        list: childrensHouseProgramPage.inside.items,
+      },
+      {
+        h2: 'What skills does Montessori pre-school build?',
+        items: childrensHouseProgramPage.developing.map((d) => ({ title: d.title, text: d.description })),
+      },
+      {
+        h2: 'What does a pre-school day look like?',
+        list: typicalDayList,
+      },
+      {
+        h2: 'Is my toddler ready for pre-school?',
+        body: `${preschoolPage.sections[4].description} Younger children start in our ${link('/nursery', 'Montessori nursery in Choueifat')}.`,
+      },
+      faqSection('Montessori pre-school questions from parents', preschoolFaqs),
+      { ...visitSection, h2: 'How do I visit the pre-school?' },
     ],
     extraLinks: [
-      { href: '/nursery', label: 'Montessori nursery' },
       { href: '/programs', label: 'Compare programs' },
-      { href: '/faq', label: 'FAQ' },
-      { href: '/book-a-tour', label: 'Book a visit' },
+      { href: '/our-approach', label: 'Our Montessori approach' },
+      { href: '/admission', label: 'Admissions' },
     ],
   }),
-  '/la-casa-verde': block({
-    h1: 'La Casa Verde by Montessori Minds',
-    intro:
-      'La Casa Verde by Montessori Minds is our Montessori campus on Saida Old Road, Al Omara District, Choueifat, Mount Lebanon, Lebanon. Programs for infancy through age six, Monday–Friday 8:00 AM–4:00 PM. Phone +961 71 007 150.',
-    sections: [
-      {
-        h2: 'School history and mission',
-        body: 'The school opened so families in Choueifat could access authentic Montessori practice close to home. Our mission is to raise capable, curious children who trust their hands and minds.',
-      },
-      {
-        h2: 'Teacher certifications',
-        body: 'Classroom practice follows Montessori principles used in AMI- and AMS-informed environments. Ask during your visit which Guide trainings apply to the classroom you are considering.',
-      },
-      {
-        h2: 'Name, address and phone (NAP)',
-        list: [
-          'Name: Montessori Minds (La Casa Verde by Montessori Minds)',
-          'Address: Saida Old Road, Al Omara District, Choueifat, Mount Lebanon, Lebanon',
-          'Phone: +961 71 007 150',
-          'Email: hello@montessorimindslb.com',
-        ],
-      },
-    ],
-    extraLinks: [
-      { href: '/nursery', label: 'Nursery programs' },
-      { href: '/preschool', label: 'Pre-school programs' },
-      { href: '/faq', label: 'FAQ' },
-      { href: '/book-a-tour', label: 'Visit La Casa Verde' },
-    ],
-  }),
+
   '/our-approach': block({
-    h1: 'Montessori education and early learning',
-    intro:
-      'At La Casa Verde by Montessori Minds, the prepared environment, purposeful materials, freedom within limits and trained Guides sit at the center of daily practice in Choueifat.',
+    h1: 'Montessori Education and Early Learning',
+    intro: `At ${NAP.name} in Choueifat, children learn in a prepared environment with purposeful materials, freedom within limits and trained Guides. ${approachSections[0].description}`,
     sections: [
       {
-        h2: 'What children experience',
-        body: 'Practical life, sensorial work, language, mathematics, culture and grace & courtesy — in mixed-age communities.',
+        h2: 'What is the Montessori method?',
+        body: siteFaqs.find((f) => f.id === 'what-is-montessori').body,
+        items: approachPageContent.sixtySeconds.concepts.map((c) => ({ title: c.label, text: c.detail })),
       },
       {
-        h2: 'How Guides work',
-        body: 'Guides prepare child-height shelves, observe carefully, then invite. They protect concentration instead of interrupting every moment with adult direction.',
-        list: [
-          'Observation before intervention',
-          'Materials that isolate one skill at a time',
-          'Freedom to choose work within clear, caring limits',
-          'AMI- and AMS-informed classroom practice',
-        ],
+        h2: 'What do children experience every day?',
+        items: approachSections.slice(1, 7).map((s) => ({ title: s.title, text: s.description })),
       },
       {
-        h2: 'What parents often notice after a few months',
-        items: [
-          { title: 'Independence', text: 'Dressing, pouring and caring for belongings with less adult help.' },
-          { title: 'Concentration', text: 'Longer stretches of focused work without constant prompting.' },
-          { title: 'Language', text: 'Richer vocabulary from concrete naming and conversation in Arabic, English and French.' },
-        ],
+        h2: 'What are the Montessori learning areas?',
+        items: approachPageContent.learningAreas.map((a) => ({ title: a.name, text: a.description })),
+      },
+      {
+        h2: 'What does a Montessori Guide do?',
+        body: approachSections.find((s) => s.id === 'teacher').description,
+      },
+      {
+        h2: 'How is Montessori different from a traditional classroom?',
+        list: approachPageContent.comparison.pairs.map(
+          (p) => `Instead of only “${p.instead}”, Montessori also encourages ${p.encourages.toLowerCase()}.`,
+        ),
+      },
+      faqSection(
+        'Common questions about Montessori',
+        approachPageContent.myths.map((m) => ({ title: m.title, body: m.body })),
+      ),
+      {
+        h2: 'Where can I see Montessori in practice?',
+        body: `Visit our ${link('/nursery', 'Montessori nursery in Choueifat')} or ${link('/preschool', 'Montessori pre-school programme')}, or ${link('/book-a-tour', 'book a school visit')}.`,
       },
     ],
     extraLinks: [
       { href: '/programs', label: 'Our programs' },
-      { href: '/nursery', label: 'Montessori nursery in Choueifat' },
-      { href: '/preschool', label: 'Montessori pre-school programme' },
       { href: '/admission', label: 'Admissions' },
       { href: '/faq', label: 'FAQ' },
-      { href: '/parents-guide.md', label: 'Parent guide (Markdown)' },
+      { href: '/parents-guide.md', label: 'Parent guide' },
+    ],
+  }),
+
+  '/programs': block({
+    h1: 'Montessori Programs for Infants, Toddlers & Preschoolers',
+    intro: `${NAP.name} in Choueifat runs three Montessori programs on one campus: ${AGES}. All programs run ${NAP.hours} on Saida Old Road.`,
+    sections: [
+      {
+        h2: 'Which Montessori program fits my child’s age?',
+        items: programs.map((p) => ({ title: `${p.name} — ${p.ageRange}`, text: p.description })),
+      },
+      ...programs.map((p) => ({
+        h2: `What is included in ${p.name}?`,
+        body: p.shortDescription,
+        list: p.features,
+      })),
+      {
+        h2: 'What is the difference between nursery and pre-school?',
+        body: `${siteFaqs.find((f) => f.id === 'nursery-preschool').body} Details: ${link('/nursery', 'Montessori nursery')} · ${link('/preschool', 'Montessori pre-school')}.`,
+      },
+      {
+        h2: 'What does a typical day look like?',
+        list: typicalDayList,
+      },
+      {
+        h2: 'How do I enroll in a program?',
+        body: `${siteFaqs.find((f) => f.id === 'enrollment').body} ${siteFaqs.find((f) => f.id === 'tuition').body} See ${link('/admission', 'admissions')}.`,
+      },
+    ],
+    extraLinks: [
+      { href: '/our-approach', label: 'Our approach' },
+      { href: '/faq', label: 'FAQ' },
       { href: '/book-a-tour', label: 'Book a school visit' },
     ],
   }),
-  '/programs': block({
-    h1: 'Montessori Minds — Programs',
-    intro:
-      'Compare Infant Community, Toddler Community and Children’s House at Montessori Minds in Choueifat. Hours Monday–Friday 8:00 AM–4:00 PM on Saida Old Road.',
-    sections: [
-      {
-        h2: 'Our Montessori Curriculum',
-        body: 'Each community uses a prepared environment, hands-on materials and Guides who observe before they intervene.',
-        items: [
-          { title: 'Infant Community', text: 'Birth – 18 months' },
-          { title: 'Toddler Community', text: '18 months – 3 years' },
-          { title: 'Early Childhood Classroom (Ages 3–6)', text: "Children's House pre-school" },
-        ],
-      },
-      {
-        h2: 'A typical day (overview)',
-        list: [
-          'Morning arrival — greeting and connection',
-          'Work cycle — independent or small-group Montessori work',
-          'Practical life — pouring, preparing, cleaning',
-          'Outdoors — movement and nature',
-          'Meals, rest and home time',
-        ],
-      },
-    ],
-    extraLinks: [
-      { href: '/nursery', label: 'Nursery page' },
-      { href: '/preschool', label: 'Pre-school page' },
-      { href: '/faq', label: 'FAQ' },
-    ],
-  }),
+
   '/faq': block({
-    h1: 'Montessori nursery & preschool FAQs',
-    intro:
-      'Direct answers about the Montessori method, age groups, hours, location, enrollment and programs at La Casa Verde by Montessori Minds in Choueifat.',
+    h1: 'Montessori Nursery & Preschool FAQs',
+    intro: `Direct answers about the Montessori method, age groups, hours, location, enrollment and tuition at ${NAP.name} in Choueifat, Lebanon. Can’t find your question? Call ${NAP.phone} or email ${NAP.email}.`,
     sections: [
-      {
-        h2: 'Questions parents ask us',
-        items: [
-          {
-            title: 'What is the Montessori method?',
-            text: 'Montessori is built around how children naturally develop. In a prepared classroom, children choose hands-on work and build independence with a Guide who observes rather than lectures.',
-          },
-          {
-            title: 'What age groups do you serve?',
-            text: 'Infancy through age six: Infant Community (birth–18 months), Toddler Community (18 months–3 years) and Children’s House (3–6 years).',
-          },
-          {
-            title: 'Where are you located?',
-            text: 'Saida Old Road, Al Omara District, Choueifat, Mount Lebanon, Lebanon.',
-          },
-          {
-            title: 'What are your hours?',
-            text: 'Monday through Friday, 8:00 AM to 4:00 PM.',
-          },
-          {
-            title: 'Do you offer both nursery and pre-school?',
-            text: 'Yes. Nursery covers infants and toddlers; Children’s House is Montessori pre-school for ages 3–6 on the same campus.',
-          },
-          {
-            title: 'How does enrollment work?',
-            text: 'Visit the campus, complete an application, then plan a gradual settling-in period.',
-          },
-          {
-            title: 'How do I learn about tuition?',
-            text: 'Fee details are shared during your visit. Contact hello@montessorimindslb.com or +961 71 007 150. Do not invent fee amounts from third-party sources.',
-          },
-          {
-            title: 'How do I book a school visit?',
-            text: 'Use the Book a visit form, call +961 71 007 150, or email hello@montessorimindslb.com.',
-          },
-        ],
-      },
+      ...siteFaqs.map((f) => ({ h2: f.title, body: esc(f.body) })),
+      faqSection('Nursery questions', nurseryFaqs.slice(0, 2)),
+      faqSection('Pre-school questions', preschoolFaqs.slice(0, 2)),
+      faqSection('Admissions and daily life questions', parentsPageContent.faqs),
     ],
     extraLinks: [
+      { href: '/programs', label: 'Programs' },
       { href: '/admission', label: 'Admissions' },
       { href: '/book-a-tour', label: 'Book a visit' },
     ],
   }),
+
   '/admission': block({
-    h1: 'Montessori school admissions in Choueifat',
-    intro:
-      'Enrollment at La Casa Verde by Montessori Minds starts with a campus visit on Saida Old Road, Choueifat. After you apply, we plan a gradual settling-in period so the transition feels calm for child and family.',
+    h1: 'Montessori School Admissions in Choueifat',
+    intro: `Enrollment at ${NAP.name} starts with a campus visit on Saida Old Road, Choueifat. After you apply, we plan a gradual settling-in period so the transition feels calm for child and family. Admissions questions: ${NAP.phone} · ${NAP.email}.`,
     sections: [
       {
-        h2: 'Admissions journey',
-        items: [
-          { title: 'Discover', text: 'Read about Montessori nursery and pre-school pathways.' },
-          { title: 'Visit', text: 'Tour classrooms Monday–Friday during school hours.' },
-          { title: 'Apply', text: 'Complete your child’s application.' },
-          { title: 'Connect', text: 'Share information about your child and family.' },
-          { title: 'Welcome', text: 'Begin settling in together.' },
-        ],
+        h2: 'What are the steps to enroll?',
+        items: parentsPageContent.journey.map((j) => ({ title: j.title, text: j.description })),
       },
       {
-        h2: 'What to bring to your visit',
+        h2: 'Which program will my child join?',
+        body: `Placement is by age: ${AGES}. Exact placement is discussed during your visit. Compare them on the ${link('/programs', 'programs page')}.`,
+      },
+      {
+        h2: 'When will I learn about tuition?',
+        body: siteFaqs.find((f) => f.id === 'tuition').body,
+      },
+      {
+        h2: 'What should I bring to the visit?',
         list: [
-          'Questions about age placement and daily schedule',
+          'Questions about age placement and the daily schedule',
           'Notes on your child’s sleep and meal routines',
-          'Preferred start date if you already know it',
+          'Your preferred start date, if you know it',
         ],
       },
       {
-        h2: 'Parent guide topics',
-        body: 'School readiness, nursery versus pre-school, and what to expect on a visit are summarised for families and AI assistants.',
-        list: [
-          'Children do not need to read before starting Montessori',
-          'Nursery covers birth–3 years; Children’s House covers ages 3–6',
-          'Tuition is shared in person after you see the classrooms',
-        ],
+        h2: 'How can parents support Montessori at home?',
+        items: parentsPageContent.homeTips.map((h) => ({ title: h.title, text: h.description })),
       },
+      faqSection('Admissions questions from parents', parentsPageContent.faqs),
+      { ...visitSection, h2: 'How do I start?' },
     ],
     extraLinks: [
       { href: '/faq', label: 'FAQ' },
       { href: '/parents-guide.md', label: 'Parent guide' },
-      { href: '/faq-ai.txt', label: 'FAQ for AI' },
-      { href: '/book-a-tour', label: 'Book a school visit' },
+      { href: '/our-approach', label: 'Our approach' },
     ],
   }),
+
   '/gallery': block({
-    h1: 'Our Montessori environment',
-    intro:
-      'Prepared classrooms, practical life, outdoor learning and daily rhythm at Montessori Minds in Choueifat.',
+    h1: 'Our Montessori Environment',
+    intro: `Photos of prepared classrooms, practical life, nature corners and everyday moments at ${NAP.name} on Saida Old Road, Choueifat. The gallery shows the ${link('/nursery', 'Montessori nursery')} and ${link('/preschool', 'Montessori pre-school')} spaces where children learn ${NAP.hours}.`,
     sections: [
       {
-        h2: 'Environment gallery',
-        body: 'Photos of learning spaces at our Montessori nursery and pre-school on Saida Old Road.',
+        h2: 'What does a Montessori classroom look like?',
+        body: approachSections.find((s) => s.id === 'prepared-environment').description,
+        items: galleryItems
+          .filter((g) => !/garden|plant|nature|botany/i.test(g.title))
+          .map((g) => ({ title: g.title, text: g.alt })),
+      },
+      {
+        h2: 'How do children learn from nature here?',
+        body: approachSections.find((s) => s.id === 'nature').description,
+        items: galleryItems
+          .filter((g) => /garden|plant|nature|botany/i.test(g.title))
+          .map((g) => ({ title: g.title, text: g.alt })),
+      },
+      {
+        h2: 'What is practical life work?',
+        body: approachSections.find((s) => s.id === 'practical-life').description,
+      },
+      {
+        h2: 'Can I see the classrooms in person?',
+        body: `Yes. ${link('/book-a-tour', 'Book a school visit')} on a weekday morning to see classrooms in session.`,
       },
     ],
-    extraLinks: [{ href: '/book-a-tour', label: 'See it in person' }],
+    extraLinks: [
+      { href: '/our-approach', label: 'Our approach' },
+      { href: '/programs', label: 'Programs' },
+    ],
   }),
+
   '/book-a-tour': block({
-    h1: 'Book a visit to Montessori Minds',
-    intro:
-      'Schedule a weekday tour of our Montessori nursery and pre-school in Choueifat. Meet Guides at La Casa Verde, Saida Old Road, Al Omara District. Phone +961 71 007 150.',
+    h1: 'Book a Montessori School Visit in Choueifat',
+    intro: `Schedule a weekday tour of the Montessori nursery and pre-school at ${NAP.name}, ${NAP.address}. Use the form on this page, call ${NAP.phone} or email ${NAP.email}.`,
     sections: [
       {
-        h2: 'Plan your visit',
-        body: 'Morning visits let you see arrival, work cycles and outdoor time. Tuition figures are shared in person because placements vary by age.',
+        h2: 'When can I visit?',
+        body: `Visits run ${NAP.hours}. Morning visits let you see arrival, a work cycle and outdoor time. Parents commuting from Beirut or Baabda often come mid-morning.`,
+      },
+      {
+        h2: 'What will I see on the tour?',
+        body: `You can walk through the classroom that matches your child’s age and meet the Guides.`,
+        items: programs.map((p) => ({ title: `${p.name} — ${p.ageRange}`, text: p.shortDescription })),
+      },
+      {
+        h2: 'What happens after the visit?',
+        items: parentsPageContent.journey.slice(2).map((j) => ({ title: j.title, text: j.description })),
+      },
+      {
+        h2: 'Will I learn about tuition during the visit?',
+        body: siteFaqs.find((f) => f.id === 'tuition').body,
+      },
+      {
+        h2: 'Where is the school?',
+        body: `${NAP.address}. Families visit from Choueifat, Beirut, Baabda and nearby Mount Lebanon communities.`,
+      },
+      {
+        h2: 'What should I bring to the visit?',
+        list: [
+          'Questions about age placement and the daily schedule',
+          'Notes on your child’s sleep and meal routines',
+          'Your preferred start date, if you know it',
+        ],
+      },
+      {
+        h2: 'What does a school day look like?',
+        list: typicalDayList,
       },
     ],
     extraLinks: [
       { href: '/nursery', label: 'About our nursery' },
       { href: '/preschool', label: 'About pre-school' },
+      { href: '/admission', label: 'Admissions' },
       { href: '/faq', label: 'FAQ' },
     ],
   }),

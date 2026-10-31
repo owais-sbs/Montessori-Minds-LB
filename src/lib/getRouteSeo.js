@@ -2,10 +2,10 @@ import { pageSeo } from './seoPages.js'
 import { ROUTES } from './routes.js'
 import { nurseryFaqs, preschoolFaqs } from '../data/programPages.js'
 import { parentsPageContent } from '../data/sitePages.js'
-import { siteFaqs } from '../data/faq.js'
+import { siteFaqs, homeFaqPreview } from '../data/faq.js'
 
 const SEO_BY_PATH = {
-  [ROUTES.home]: { ...pageSeo.home, faqs: siteFaqs },
+  [ROUTES.home]: { ...pageSeo.home, faqs: homeFaqPreview },
   [ROUTES.laCasaVerde]: pageSeo.laCasaVerde,
   [ROUTES.preschool]: { ...pageSeo.preschool, faqs: preschoolFaqs },
   [ROUTES.nursery]: { ...pageSeo.nursery, faqs: nurseryFaqs },
